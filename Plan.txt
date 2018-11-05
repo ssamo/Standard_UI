@@ -1,0 +1,14 @@
+Standard UI - Plan
+
+Step 1. 기본문서 코드규칙 공유 (분류방법, 정의방법)
+Step 2. STD_UI 제작방법 및 활용목적 정의 (가이드 템플릿 또는 독립된 사이트)
+Step 3. 제작 준비단계 (레이아웃, 메뉴리스트, 페이지구성)
+Step 4. 제작 진행단계 (Basic UI, Extend UI, Theme UI로 단계별 범위 정의)
+Step 5. 제작 완료단계 (디자인 고도화)
+Step 6. 오픈준비 (기획, 디자인, 기능, 설계 최종검수)
+Step 7. Standard UI - Basic UI 오픈
+Step 8. Extend UI 추가작업
+Step 9. Theme UI 추가작업
+
+	
+

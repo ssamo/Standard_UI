@@ -1,0 +1,45 @@
+@charset 'utf-8';
+
+/*  File Inforomaiton
+    Description    : Layout Style
+    Order Reset   : Tags > Fonts
+    Order Property : Display > Position > Box Model > Design > Paragrahph
+
+    ##             : (분류검색의 키워드 중복방지 # 붙힘)
+    Reset          : 전체영역 레이아웃
+*/
+
+/*-------------------------------------------------------------------
+    ## Reset
+-------------------------------------------------------------------*/
+/* Tags */
+*, *:before, *:after {margin:0; padding:0; border:0; font-family:"NSR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial"; box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
+html {height:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box;}
+body {height:100%; font-size:14px; line-height:1;}
+address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block; margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal;}
+img {vertical-align:middle;}
+ol, ul, li, dl, dt, dd {list-style:none;}
+table {width:100%; border-spacing:0px; border-collapse:collapse;}
+th, td {word-break:break-all; font-weight:normal;}
+fieldset, iframe {width:100%;}
+em, address {font-style:normal;}
+button, select, input, label {vertical-align:middle; font-family:"NSR";}
+hr {display:none;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+caption {visibility:hidden; height:0; line-height:0; font-size:0;}
+strong {font-weight:normal; font-family:"NSB";}
+
+/* Fonts */
+@font-face {
+    font-family:"NSR"; src:url('../fonts/NanumGothic.eot'); src:local('※'),
+		url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'),
+	    url('../fonts/NanumGothic.woff') format('woff');}
+@font-face {
+    font-family:"NSB"; src:url('../fonts/NanumGothic-Bold.eot'); src:local('※'),
+		url('../fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+	    url('../fonts/NanumGothic-Bold.woff') format('woff');}
+@font-face {
+    font-family:"NSEB"; src:url('../fonts/NanumGothic-ExtraBold.eot'); src:local('※'),
+		url('../fonts/NanumGothic-ExtraBold.eot?#iefix') format('embedded-opentype'),
+	    url('../fonts/NanumGothic-ExtraBold.woff') format('woff');}

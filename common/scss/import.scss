@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------
+Subject : Standard UI
+Description : UI 표준화
+Date : 2018-11-04
+
+_variables   : 변수
+_reset       : 초기화
+_common      : 전역공통
+_animate     : 애니메이트
+_layout      : 레이아웃
+_ui          : UI 공통
+_content     : 컨텐츠 스타일
+-------------------------------------------------------------------*/
+
+@import '_variables';
+@import '_reset';
+@import '_plugin';
+@import '_common';
+@import '_layout';
+@import '_animate';
+@import '_ui';
+@import '_content';
+@import '_main';
