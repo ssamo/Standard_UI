@@ -1,9 +1,0 @@
-Standard UI - Plan
-
-Step 1. 기본문서 코드규칙
-Step 2. 진행범위 공유
-Step 3. 레이아웃, 메뉴리스트, 페이지구성
-Step 4. UI 구현범위 정의
-Step 5. 디자인 고도화
-	
-

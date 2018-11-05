@@ -1,5 +1,0 @@
-Standard UI - History
-
-2018-11-04
-Create Reset Files - CSS, JS, Fonts
-
