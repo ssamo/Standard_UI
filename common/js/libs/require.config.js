@@ -22,7 +22,7 @@ require.config({
     'transition'  : 'modules/transition.spec',
     'video'       : 'modules/video.spec',
 
-	// Pub Modules
+	// Init Modules
 	'variables'   : 'pub/variables',
 	'device'      : 'pub/device',
     'utility'     : 'pub/utility',
