@@ -5,7 +5,10 @@
 require.config({
   baseUrl : '/common/js/',
   paths : {
-    // Plugin Modules
+    // Library
+    'jquery'      : 'libs/jquery-3.3.1.min',
+
+	// Plugin Modules
     'accordion'   : 'modules/accordion.spec',
     'checkbox'    : 'modules/checkbox.spec',
     'dropdown'    : 'modules/dropdown.spec',
@@ -18,6 +21,16 @@ require.config({
     'tab'         : 'modules/tab.spec',
     'transition'  : 'modules/transition.spec',
     'video'       : 'modules/video.spec',
+
+	// Pub Modules
+	'variables'   : 'pub/variables',
+	'device'      : 'pub/device',
+    'utility'     : 'pub/utility',
+    'common'      : 'pub/common',
+    'ui'          : 'pub/ui',
+    'content'     : 'pub/content',
+    'main'        : 'pub/main',
+    'init'        : 'pub/init',
   }
 });
 
@@ -27,12 +40,12 @@ require.config({
 	콜백함수의 인자로 첫번째 인자로 선언한 디펜던시 모듈들을 사용할 파라미터를 순서대로 정의해준다.
 	(첫번째 인자인 배열에 있는 디펜던시들이 로드 된 뒤에 두번째 인자인 콜백함수가 수행된다.)
 */
-require(['libs/jquery-3.3.1.min']);
-require(['pub/variables']);
-require(['pub/device']);
-require(['pub/utility']);
-require(['pub/common']);
-require(['pub/ui']);
-require(['pub/content']);
-require(['pub/main']);
-require(['pub/init']);
+require(['jquery']);
+require(['variables']);
+require(['device']);
+require(['utility']);
+require(['common']);
+require(['ui']);
+require(['content']);
+require(['main']);
+require(['init']);
