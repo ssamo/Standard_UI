@@ -1,20 +1,14 @@
-@charset "utf-8";
+[정규식 팁]
+    1. 스타일 값을 클래스명으로 변수만들기
+        찾을 말:([.])(.*) ([{])(.*)([:])(.*)([}])
+        바꿀 말:\1\2\3\4\5\$\2\7
+    2. 클래스명을 변수로 변환하기
+        찾을 말:([.])(.*)([{])(.*)([}])
+        바꿀 말:\$\2\:\4
 
-/* 다른 scss 임포트할때 확장자 생략가능 */
-// @import '_reset';
-// @import '_common';
-// @import '_layout';
-@import '_variables';
-// @import '_ui_style';
 
-/* 변수의 이용 */
-body {
-	font-family: $font-stack;
-	font-size: $font-size;
-	color: $primary-color;
-}
-
-/* 자식 선택자 */
+[SCSS문법 팁]
+/* 자손구조 */
 .tabs {
 	ul {
 		li {
@@ -24,7 +18,7 @@ body {
 		}
 	}
 }
-/* 자손 선택자 */
+/* 자식구조 */
 .tabs {
 	> ul {
 		> li {
@@ -36,7 +30,6 @@ body {
 }
 
 /* & 선택자 (가상 선택자, 가상 엘리먼트, 다중클래스) 부조까지의 선택자 자체를 참조한다. */
-
 .btn {
 	/* 버튼 공통 기본 속성 정의 */
 	display: inline-block;
@@ -47,8 +40,9 @@ body {
 		display: inline-block;
 		position: relative;
 	}
+
 	/* 버튼 사이즈별 정의 (.클래스를 붙이지 않고 이용할 경우 부모의 클래스에 그대로 덧붙여져서 변환된다. .btn-sm, .btn.md...) */
-	//.을 붙일경우는 .btn.sm, .btn.md 이런식으로 변환된다.
+	/* .을 붙일경우는 .btn.sm, .btn.md 이런식으로 변환된다. */
 	&-sm {
 		padding: 0 15px;
 		font-size: 12px;
@@ -64,6 +58,7 @@ body {
 		font-size: 16px;
 		line-height:36px;
 	}
+
 	/* 버튼 칼라별 정의 */
 	&-color1 {
 		color: $primary-color;
@@ -141,7 +136,7 @@ body {
 	}
 }
 
-// 미리 클래스에 스타일을 정의한 후 다른 클래스에서 @extend를 사용하여 상속받게 할 수 있다.
+/* 미리 클래스에 스타일을 정의한 후 다른 클래스에서 @extend를 사용하여 상속받게 할 수 있다. */
 .box {
 	padding: 50px;
 	border: 1px solid #333;
@@ -156,7 +151,7 @@ body {
 	background-color: #999;
 }
 
-//% 플레이스홀더는 직접 클래스를 변환하지 않고 상속만 받아서 사용할 수 있게 한다.
+/* % 플레이스홀더는 직접 클래스를 변환하지 않고 상속만 받아서 사용할 수 있게 한다. */
 %box2 {
 	padding: 100px;
 	border: 2px solid #ff6600;
@@ -170,3 +165,4 @@ body {
 	@extend %box2;
 	background-color: #999;
 }
+*/
