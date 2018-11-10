@@ -219,94 +219,94 @@ a:hover {color:#333333}
     ## Custom Color
 -------------------------------------------------------------------*/
 /* 글자색 명암 */
-.color-none {color:$c-none;}
-.color-white {color:$c-white;}
-.color-black {color:$c-black;}
-.color-gray {color:$c-gray;}
-.color-gray-2 {color:$c-gray-2;}
-.color-gray-4 {color:$c-gray-4;}
-.color-gray-6 {color:$c-gray-6;}
-.color-gray-8 {color:$c-gray-8;}
-.color-gray-9 {color:$c-gray-9;}
-.color-gray-a {color:$c-gray-a;}
-.color-gray-c {color:$c-gray-c;}
-.color-gray-e {color:$c-gray-e;}
+.color-none {color:$color-none;}
+.color-white {color:$color-white;}
+.color-black {color:$color-black;}
+.color-gray {color:$color-gray;}
+.color-gray-2 {color:$color-gray-2;}
+.color-gray-4 {color:$color-gray-4;}
+.color-gray-6 {color:$color-gray-6;}
+.color-gray-8 {color:$color-gray-8;}
+.color-gray-9 {color:$color-gray-9;}
+.color-gray-a {color:$color-gray-a;}
+.color-gray-c {color:$color-gray-c;}
+.color-gray-e {color:$color-gray-e;}
 
 /* 글자색 채도 */
-.color-orange {color:$c-orange;}
-.color-orange-dark {color:$c-orange-dark;}
-.color-orange-light {color:$c-orange-light;}
-.color-orange2 {color:$c-orange2;}
-.color-blue {color:$c-blue;}
-.color-blue-dark {color:$c-blue-dark;}
-.color-blue-light {color:$c-blue-light;}
-.color-blue2 {color:$c-blue2;}
-.color-red {color:$c-red;}
-.color-red-dark {color:$c-red-dark;}
-.color-red-light {color:$c-red-light;}
-.color-red2 {color:$c-red2;}
+.color-orange {color:$color-orange;}
+.color-orange-dark {color:$color-orange-dark;}
+.color-orange-light {color:$color-orange-light;}
+.color-orange2 {color:$color-orange2;}
+.color-blue {color:$color-blue;}
+.color-blue-dark {color:$color-blue-dark;}
+.color-blue-light {color:$color-blue-light;}
+.color-blue2 {color:$color-blue2;}
+.color-red {color:$color-red;}
+.color-red-dark {color:$color-red-dark;}
+.color-red-light {color:$color-red-light;}
+.color-red2 {color:$color-red2;}
 
 /* 글자색 의미 */
-.color-basic {color:$c-basic;}
-.color-success {color:$c-success;}
-.color-warning {color:$c-warning;}
-.color-danger {color:$c-danger;}
-.color-error {color:$c-error;}
-.color-info {color:$c-info;}
-.color-info-light {color:$c-info-light;}
-.color-info-dark {color:$c-info-dark;}
-.color-primary {color:$c-primary;}
-.color-secondary {color:$c-secondary;}
-.color-third {color:$c-third;}
-.color-main {color:$c-main;}
-.color-main-light {color:$c-main-light;}
-.color-sub {color:$c-sub;}
-.color-sub-light {color:$c-sub-light;}
+.color-basic {color:$color-basic;}
+.color-success {color:$color-success;}
+.color-warning {color:$color-warning;}
+.color-danger {color:$color-danger;}
+.color-error {color:$color-error;}
+.color-info {color:$color-info;}
+.color-info-light {color:$color-info-light;}
+.color-info-dark {color:$color-info-dark;}
+.color-primary {color:$color-primary;}
+.color-secondary {color:$color-secondary;}
+.color-third {color:$color-third;}
+.color-main {color:$color-main;}
+.color-main-light {color:$color-main-light;}
+.color-sub {color:$color-sub;}
+.color-sub-light {color:$color-sub-light;}
 
 /* 배경색 명암 */
-.bgColor-none {background-color:$c-none;}
-.bgColor-white {background-color:$c-white;}
-.bgColor-black {background-color:$c-black;}
-.bgColor-gray {background-color:$c-gray;}
-.bgColor-gray-2 {background-color:$c-gray-2;}
-.bgColor-gray-4 {background-color:$c-gray-4;}
-.bgColor-gray-6 {background-color:$c-gray-6;}
-.bgColor-gray-8 {background-color:$c-gray-8;}
-.bgColor-gray-9 {background-color:$c-gray-9;}
-.bgColor-gray-a {background-color:$c-gray-a;}
-.bgColor-gray-c {background-color:$c-gray-c;}
-.bgColor-gray-e {background-color:$c-gray-e;}
+.bgColor-none {background-color:$color-none;}
+.bgColor-white {background-color:$color-white;}
+.bgColor-black {background-color:$color-black;}
+.bgColor-gray {background-color:$color-gray;}
+.bgColor-gray-2 {background-color:$color-gray-2;}
+.bgColor-gray-4 {background-color:$color-gray-4;}
+.bgColor-gray-6 {background-color:$color-gray-6;}
+.bgColor-gray-8 {background-color:$color-gray-8;}
+.bgColor-gray-9 {background-color:$color-gray-9;}
+.bgColor-gray-a {background-color:$color-gray-a;}
+.bgColor-gray-c {background-color:$color-gray-c;}
+.bgColor-gray-e {background-color:$color-gray-e;}
 
 /* 배경색 채도 */
-.bgColor-orange {background-color:$c-orange;}
-.bgColor-orange-dark {background-color:$c-orange-dark;}
-.bgColor-orange-light {background-color:$c-orange-light;}
-.bgColor-orange2 {background-color:$c-orange2;}
-.bgColor-blue {background-color:$c-blue;}
-.bgColor-blue-dark {background-color:$c-blue-dark;}
-.bgColor-blue-light {background-color:$c-blue-light;}
-.bgColor-blue2 {background-color:$c-blue2;}
-.bgColor-red {background-color:$c-red;}
-.bgColor-red-dark {background-color:$c-red-dark;}
-.bgColor-red-light {background-color:$c-red-light;}
-.bgColor-red2 {background-color:$c-red2;}
+.bgColor-orange {background-color:$color-orange;}
+.bgColor-orange-dark {background-color:$color-orange-dark;}
+.bgColor-orange-light {background-color:$color-orange-light;}
+.bgColor-orange2 {background-color:$color-orange2;}
+.bgColor-blue {background-color:$color-blue;}
+.bgColor-blue-dark {background-color:$color-blue-dark;}
+.bgColor-blue-light {background-color:$color-blue-light;}
+.bgColor-blue2 {background-color:$color-blue2;}
+.bgColor-red {background-color:$color-red;}
+.bgColor-red-dark {background-color:$color-red-dark;}
+.bgColor-red-light {background-color:$color-red-light;}
+.bgColor-red2 {background-color:$color-red2;}
 
 /* 배경색 의미 */
-.bgColor-basic {background-color:$c-basic;}
-.bgColor-success {background-color:$c-success;}
-.bgColor-warning {background-color:$c-warning;}
-.bgColor-danger {background-color:$c-danger;}
-.bgColor-error {background-color:$c-error;}
-.bgColor-info {background-color:$c-info;}
-.bgColor-info-light {background-color:$c-info-light;}
-.bgColor-info-dark {background-color:$c-info-dark;}
-.bgColor-primary {background-color:$c-primary;}
-.bgColor-secondary {background-color:$c-secondary;}
-.bgColor-third {background-color:$c-third;}
-.bgColor-main {background-color:$c-main;}
-.bgColor-main-light {background-color:$c-main-light;}
-.bgColor-sub {background-color:$c-sub;}
-.bgColor-sub-light {background-color:$c-sub-light;}
+.bgColor-basic {background-color:$color-basic;}
+.bgColor-success {background-color:$color-success;}
+.bgColor-warning {background-color:$color-warning;}
+.bgColor-danger {background-color:$color-danger;}
+.bgColor-error {background-color:$color-error;}
+.bgColor-info {background-color:$color-info;}
+.bgColor-info-light {background-color:$color-info-light;}
+.bgColor-info-dark {background-color:$color-info-dark;}
+.bgColor-primary {background-color:$color-primary;}
+.bgColor-secondary {background-color:$color-secondary;}
+.bgColor-third {background-color:$color-third;}
+.bgColor-main {background-color:$color-main;}
+.bgColor-main-light {background-color:$color-main-light;}
+.bgColor-sub {background-color:$color-sub;}
+.bgColor-sub-light {background-color:$color-sub-light;}
 
 /*-------------------------------------------------------------------
     Fixed Size & Gutter

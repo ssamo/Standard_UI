@@ -6,14 +6,29 @@
 <meta name="keywords" content="Standard UI">
 <meta name="description" content="Standard UI">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Pages &gt; Depth1 - 더웹스타일㈜</title>
-<link rel="stylesheet" href="../common/css/import.css" type="text/css">
-<script type="text/javascript" src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<title>Standard UI</title>
+<link rel="stylesheet" href="/common/css/import.css" type="text/css">
+<script type="text/javascript" src="/common/js/guide/include.js"></script>
 <script data-main="/common/js/libs/require.config" src="/common/js/libs/require.min.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="../common/js/libs/html5shiv-printshiv.js"></script>
 <![endif]-->
 </head>
 <body>
+<div id="g-wrapper">
+	<script type="text/javascript">include.header()</script>
+	<div id="g-container">
+		<script type="text/javascript">include.aside()</script>
+
+		<!-- Content -->
+		<article id="g-content">
+			Content Area
+		</article>
+		<!-- //Content -->
+
+		<script type="text/javascript">include.quick()</script>
+	</div>
+	<script type="text/javascript">include.footer()</script>
+</div>
 </body>
 </html>

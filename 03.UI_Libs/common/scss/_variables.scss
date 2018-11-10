@@ -51,7 +51,7 @@ $color-red2:#ee4400;
 
 /* 의미 */
 $color-basic:#333;
-$color-success:#47a104
+$color-success:#47a104;
 $color-warning:#e9b500;
 $color-danger:#d45704;
 $color-error:#ff0000;
@@ -75,3 +75,24 @@ $color-sub-light:#74a75c;
 	Border
 -------------------------------------------------------------------*/
 
+
+/*-------------------------------------------------------------------
+	CSS3 - 브라우저 호환성
+-------------------------------------------------------------------*/
+@mixin borderRadius($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+}
+
+@mixin transition($value) {
+    transition: $value;
+    -webkit-transition: $value;
+}
+
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
