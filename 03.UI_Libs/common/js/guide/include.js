@@ -1,12 +1,9 @@
 var include = {
-	codeview : function(){
-		//document.write('<link href="/codeview/styles/shCoreDefaultWhite.css" rel="stylesheet" />');
-		//document.write('<script src="/codeview/scripts/shCore.js"></script>');
-		//document.write('<script src="/codeview/scripts/shAutoLoader.js"></script>');
-		//document.write('<script src="/codeview/scripts/shBrushjScript.js"></script>');
-		//document.write('<script src="/codeview/scripts/shBrushXml.js"></script>');
-		//document.write('<script src="/codeview/scripts/shBrushCss.js"></script>');
-		//document.write('<script>SyntaxHighlighter.all();</script>');
+	head : function(){
+		document.write('<link rel="stylesheet" href="/common/css/import.css" type="text/css">');
+		document.write('<script type="text/javascript" src="/common/js/libs/jquery-3.3.1.min.js"></script>');
+		document.write('<script type="text/javascript" src="/common/js/standard.js"></script>');
+		document.write('<script type="text/javascript" src="/common/js/guide/guide.js"></script>');
 	},
 	header : function(){},
 	aside : function(){

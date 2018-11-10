@@ -7,13 +7,8 @@
 <meta name="description" content="Standard UI">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Standard UI</title>
-<link rel="stylesheet" href="/common/css/import.css" type="text/css">
 <script type="text/javascript" src="/common/js/guide/include.js"></script>
-<script data-main="/common/js/libs/require.config" src="/common/js/libs/require.min.js"></script>
-<script type="text/javascript">include.codeview()</script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="../common/js/libs/html5shiv-printshiv.js"></script>
-<![endif]-->
+<script type="text/javascript">include.head()</script>
 </head>
 <body>
 <div id="g-wrapper">
@@ -28,14 +23,33 @@
 					<h2 class="g-tit-header">Codeset</h2>
 				</div>
 				<div class="g-content-body">
-					<p>HTML</p>
-					<pre class="brush:html"></pre>
+					<section class="g-section">
+						<div class="g-section-header">
+							<h3 class="g-tit-h3">Section Title</h3>
+						</div>
+						<div class="g-section-body">
+							<h4 class="g-tit-h4">Sub Title</h4>
+							<div class="g-screen">
+								HTML Markup
+							</div>
+							<div class="g-codeview">
+								<p>HTML</p>
+								<pre class="brush:html">
+									HTML Source
+								</pre>
 
-					<p>CSS</p>
-					<pre class="brush:css"></pre>
+								<p>CSS</p>
+								<pre class="brush:css">
+									CSS Source
+								</pre>
 
-					<p>JS</p>
-					<pre class="brush:js"></pre>
+								<p>JS</p>
+								<pre class="brush:js">
+									Script Source
+								</pre>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</article>

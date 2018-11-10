@@ -22,6 +22,8 @@ require.config({
     'transition'  : 'modules/transition.spec',
     'video'       : 'modules/video.spec',
 
+	'mScroll'     : 'plugins/jquery.mCustomScrollbar.min',
+
     // Pub Modules (Init Loader)
     'va'          : 'pub/variables',
     'dv'          : 'pub/device',
@@ -51,6 +53,7 @@ require(['jquery'], function(){
 	require(['ui']);
 	require(['cn']);
 	require(['mn']);
+	require(['mScroll']);
 	require(['pubInit']);
 	require(['guideInit']);
 });

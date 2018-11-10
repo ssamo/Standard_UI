@@ -2163,3 +2163,12 @@ a:hover {
 /* Common */
 /* Design */
 /* Responsive */
+/*-------------------------------------------------------------------
+	Codeview Edit
+-------------------------------------------------------------------*/
+.g-code .syntaxhighlighter .gutter,
+.syntaxhighlighter .gutter {
+  display: none !important; }
+
+.g-code .syntaxhighlighter .line.alt1 {
+  background-color: #fafafa !important; }
