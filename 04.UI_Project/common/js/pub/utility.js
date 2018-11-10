@@ -17,6 +17,12 @@ var ut = {
 		clearTimeout(setTime);
 		setTime = setTimeout(function(){$('.js-consoleLog').fadeOut('fast', function(){$(this).remove()})}, delay);
 	},
+	setScriptLoader : function(url, id, callback){
+		if ($(id).length == 0){
+			$('head').after('<script src="'+url+'"></script>');
+			if (callback){callback()}
+		}
+	},
 	// 실제값의 퍼센트 구하기 (실제값/최대값 * 100%)
 	getPercent : function(val, max){
 		var value = (val/max) * 100;

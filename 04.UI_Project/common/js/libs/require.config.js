@@ -5,10 +5,10 @@
 require.config({
   baseUrl : '/common/js/',
   paths : {
-    // Library
+    // Core Library
     'jquery'      : 'libs/jquery-3.3.1.min',
 
-	// Plugin Modules
+    // Plugin Modules (Required Loader)
     'accordion'   : 'modules/accordion.spec',
     'checkbox'    : 'modules/checkbox.spec',
     'dropdown'    : 'modules/dropdown.spec',
@@ -22,15 +22,20 @@ require.config({
     'transition'  : 'modules/transition.spec',
     'video'       : 'modules/video.spec',
 
-	// Init Modules
-	'variables'   : 'pub/variables',
-	'device'      : 'pub/device',
-    'utility'     : 'pub/utility',
-    'common'      : 'pub/common',
+	'mScroll'     : 'plugins/jquery.mCustomScrollbar.min',
+
+    // Pub Modules (Init Loader)
+    'va'          : 'pub/variables',
+    'dv'          : 'pub/device',
+    'ut'          : 'pub/utility',
+    'cm'          : 'pub/common',
     'ui'          : 'pub/ui',
-    'content'     : 'pub/content',
-    'main'        : 'pub/main',
-    'init'        : 'pub/init',
+    'cn'          : 'pub/content',
+    'mn'          : 'pub/main',
+    'pubInit'     : 'pub/init',
+
+	// Guide Modules
+    'guideInit'   : 'guide/guide',
   }
 });
 
@@ -40,12 +45,15 @@ require.config({
 	콜백함수의 인자로 첫번째 인자로 선언한 디펜던시 모듈들을 사용할 파라미터를 순서대로 정의해준다.
 	(첫번째 인자인 배열에 있는 디펜던시들이 로드 된 뒤에 두번째 인자인 콜백함수가 수행된다.)
 */
-require(['jquery']);
-require(['variables']);
-require(['device']);
-require(['utility']);
-require(['common']);
-require(['ui']);
-require(['content']);
-require(['main']);
-require(['init']);
+require(['jquery'], function(){
+	require(['va']);
+	require(['dv']);
+	require(['ut']);
+	require(['cm']);
+	require(['ui']);
+	require(['cn']);
+	require(['mn']);
+	require(['mScroll']);
+	require(['pubInit']);
+	require(['guideInit']);
+});

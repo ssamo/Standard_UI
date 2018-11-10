@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Convention &gt; 설계 가이드 | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-convention-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">설계 가이드</h1>
+				<div class="g-guideLink">
+					<a href="#sec_general" data-role="spy-scroll">General</a>
+					<a href="#sec_common" data-role="spy-scroll">Common</a>
+					<a href="#sec_layout" data-role="spy-scroll">Layout</a>
+					<a href="#sec_uiux" data-role="spy-scroll">UI/UX</a>
+					<a href="#sec_jquery" data-role="spy-scroll">Jquery</a>
+					<a href="#sec_content" data-role="spy-scroll">Content</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- sec_general -->
+			<section id="sec_general" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">General</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">단계별 구분</h3>
+					<h4 class="g-h4">레이아웃</h4>
+					<ul class="g-desc">
+						<li>레이아웃의 예약어는 -[subfix] 로 적용한다.</li>
+						<li>레이아웃의 예약어는 -[의미] 로 구분한다.</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>네이밍 규약</caption>
+							<colgroup>
+								<col style="width:7%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">단계</th>
+									<th scope="col">구분 내용</th>
+									<th scope="col">구분 단위</th>
+									<th scope="col">구분 방법</th>
+									<th scope="col">예시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="ta-c">1단계</td>
+									<td>테마<br>다국어</td>
+									<td>&lt;body&gt;</td>
+									<td>.[이름]-theme<br>.[언어]-lang</td>
+									<td>.blue-theme<br>.eng-lang</td>
+								</tr>
+								<tr>
+									<td class="ta-c">2단계</td>
+									<td>사이트 채널 구분<br>레이아웃 구분</td>
+									<td>.wrapper<br>(최상위만 wrapper로 표기한다.)</td>
+									<td>.[해외송금]-wrapper<br>.[서브메인]-wrapper</td>
+									<td>.overseas-wrapper<br>.cs-wrapper</td>
+								</tr>
+								<tr>
+									<td class="ta-c">3단계</td>
+									<td>페이지 구분</td>
+									<td>.content</td>
+									<td>.[페이지명]-page</td>
+									<td>.history-page</td>
+								</tr>
+								<tr>
+									<td class="ta-c">4단계</td>
+									<td>컨텐츠 영역 구분</td>
+									<td>.section</td>
+									<td>.[컨텐츠명]-sec</td>
+									<td>.visual-sec</td>
+								</tr>
+								<tr>
+									<td class="ta-c">5단계</td>
+									<td>UI/UX 구분</td>
+									<td>-wrap</td>
+									<td>.[탭]-wrap</td>
+									<td>.tab-wrap</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<h4 class="g-h4">UI/UX</h4>
+					<ul class="g-desc">
+						<li>UI/UX의 예약어는 [prefix]- 로 적용한다.</li>
+						<li>UI/UX의 예약어는 [형태]- 로 구분한다. (UI/UX 예약어 참고)</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>네이밍 규약</caption>
+							<colgroup>
+								<col style="width:7%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">단계</th>
+									<th scope="col">구분 내용</th>
+									<th scope="col">구분 단위</th>
+									<th scope="col">구분 방법</th>
+									<th scope="col">예시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="ta-c">6단계</td>
+									<td>형태 최상위 그룹</td>
+									<td>UI/UX 최상위 그룹</td>
+									<td>.[형태]-wrap</td>
+									<td>.tab-wrap, .tbl-wrap, .box-wrap</td>
+								</tr>
+								<tr>
+									<td class="ta-c">7단계</td>
+									<td>형태 구분<br>
+										형태 디자인 구분<br>
+										형태 기능 구분
+									</td>
+									<td>UI/UX</td>
+									<td>.[형태]<br>
+										.[형태]-[디자인]<br>
+										.[기능]-[형태]
+									</td>
+									<td>.tab, .tbl, .box<br>
+										.tab-type-a<br>
+										.js-tab
+									</td>
+								</tr>
+								<tr>
+									<td class="ta-c">8단계</td>
+									<td>자식영역 구분</td>
+									<td>-inner, -header, -body</td>
+									<td>.[형태]-[자식그룹]</td>
+									<td>.box-header, .box-body</td>
+								</tr>
+								<tr>
+									<td class="ta-c">9단계</td>
+									<td>자식요소 구분</td>
+									<td>inline 요소</td>
+									<td>.[형태]-[이름]</td>
+									<td>.txt-name, .txt-date</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_general -->
+
+			<!-- sec_common -->
+			<section id="sec_common" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">네이밍 규약</h3>
+					<ul class="g-desc">
+						<li>예약어를 제외한 함축어를 사용하지 않는다.</li>
+						<li>첫자 또는 풀네임을 사용한다.</li>
+					</ul>
+
+					<h4 class="g-h4">유형별 가이드</h4>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>네이밍 규약</caption>
+							<colgroup>
+								<col style="width:25%">
+								<col style="width:25%">
+								<col style="width:auto">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">종류</th>
+									<th scope="col">설명</th>
+									<th scope="col">예시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Case1. 구분이 없는 속성</td>
+									<td>속성의 풀네임을 사용</td>
+									<td>.<span class="g-txt-red">display</span>-b {<span class="g-txt-red">display</span>:block;}</td>
+								</tr>
+								<tr>
+									<td>Case2. 구분이 있는 속성</td>
+									<td>속성의 첫글자를 조합</td>
+									<td>.<span class="g-txt-red">va</span>-b {<span class="g-txt-red">v</span>ertical-<span class="g-txt-red">a</span>lign:bottom;}</td>
+								</tr>
+								<tr>
+									<td>Case3. 구분이 없는 값</td>
+									<td>값의 첫글자를 사용</td>
+									<td>.float-<span class="g-txt-red">l</span> {float:<span class="g-txt-red">l</span>eft;}</td>
+								</tr>
+								<tr>
+									<td>Case4. 구분이 있는 값</td>
+									<td>값의 첫글자를 조합</td>
+									<td>.display-<span class="g-txt-red">ib</span> {display:<span class="g-txt-red">i</span>nline-<span class="g-txt-red">b</span>lock;}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<h4 class="g-h4">기타</h4>
+					<ul class="g-desc">
+						<li>같은 속성의 유형이 다양한 경우 통일 한다.</li>
+					</ul>
+					<div class="g-code">
+						<pre class="brush:css">
+							/* Scroll */
+							.overflow-a {overflow:auto;}
+							.overflow-h {overflow:hidden;}
+							.overflow-x {overflow-x:scroll;} /* 네이밍 패턴 통일화 */
+							.overflow-y {overflow-y:scroll;} /* 네이밍 패턴 통일화 */
+						</pre>
+					</div>
+
+					<h3 class="g-h3">예약어</h3>
+					<ul class="g-desc">
+						<li>규약 조건과 전혀 다른 공통 유형들에 한하여 예약어를 지정한다.</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>네이밍 규약</caption>
+							<colgroup>
+								<col style="width:150px">
+								<col style="width:150px">
+								<col style="width:200px">
+								<col style="width:auto">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">분류</th>
+									<th scope="col">구분</th>
+									<th scope="col">예약어</th>
+									<th scope="col">설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="7">그리드</td>
+									<td>간격 전체</td>
+									<td>.gutter-[val]</td>
+									<td>[val] 전체여백의 공통 수치이를 적용한다.</td>
+								</tr>
+								<tr>
+									<td>간격 좌우</td>
+									<td>.gutter-h[val]</td>
+									<td>h[val] 좌 우 여백의 수치를 적용한다.</td>
+								</tr>
+								<tr>
+									<td>간격 상하</td>
+									<td>.gutter-v[val]</td>
+									<td>v[val] 상 하 여백의 수치를 적용한다.</td>
+								</tr>
+								<tr>
+									<td>간격 컨텐츠</td>
+									<td>.gutter-[name]</td>
+									<td>[name] 컨텐츠 맞춤형으로 네이밍을 추가한다.</td>
+								</tr>
+								<tr>
+									<td>열</td>
+									<td>.col</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>자신의 칸수</td>
+									<td>.col-[n]</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>자식의 칸수</td>
+									<td>.cols-[n]</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_common -->
+
+			<!-- sec_layout -->
+			<section id="sec_layout" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Layout</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //sec_layout -->
+
+			<!-- sec_uiux -->
+			<section id="sec_uiux" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">UI/UX</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //sec_uiux -->
+
+			<!-- sec_jquery -->
+			<section id="sec_jquery" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Jquery</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //sec_jquery -->
+
+			<!-- sec_content -->
+			<section id="sec_content" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Content</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //sec_content -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,18 +1,8 @@
 /*--------------------------------------------------------------
 	## 초기화
 --------------------------------------------------------------*/
-var pub = {
+var win = {
 	init : function(){
-		this.setInit();
-		dv.init(); // 기기설정
-		ut.init(); // 유틸리티
-		cm.init(); // 전체공통
-		ui.init(); // 기능공통
-		cn.init(); // 컨텐츠
-		mn.init(); // 메인
-		this.event();
-	},
-	setInit : function(){
 		win_iH = $(window).innerHeight();
 		win_H = $(window).height();
 		win_W = $(window).width();
@@ -25,7 +15,7 @@ var pub = {
 		$(window).on('scroll', function(){that.setScroll()});
 	},
 	setResize : function(){
-		this.setInit();
+		this.init();
 		dv.setScreen();
 	},
 	setScroll : function(){
@@ -66,6 +56,19 @@ var pub = {
 /*--------------------------------------------------------------
 	## Init - 초기실행
 --------------------------------------------------------------*/
+var pub = {
+	init : function(){
+		win.init();  // 기본설정
+		dv.init();   // 기기설정
+		ut.init();   // 유틸리티
+		cm.init();   // 전체공통
+		ui.init();   // 기능공통
+		cn.init();   // 채널모듈
+		mn.init();   // 메인모듈
+		win.event(); // 이벤트설정
+	}
+}
+
 $(document).ready(function(){
-	pub.init();
+	pub.init();  // 개발에서 하나만 호출하도록
 });

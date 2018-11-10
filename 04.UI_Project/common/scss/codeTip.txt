@@ -165,4 +165,8 @@
 	@extend %box2;
 	background-color: #999;
 }
-*/
+
+
+@mixin mixin-name( $arg1, $arg2, ... ) {
+  // code
+}

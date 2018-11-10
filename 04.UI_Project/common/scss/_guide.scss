@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------
+    파일정의 : Guide Style
+    참고사항 : 가이드는 g- 접두어를 사용
+    분류순서 : Layout > UI
+    속성순서 : Display > Position > Box Model > Design > Paragraph
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+    ## Variables
+-------------------------------------------------------------------*/
+$width-aside: 250px;
+$gutter-aside: 15px;
+$gutter-content: 20px;
+
+/*-------------------------------------------------------------------
+    ## Layout
+-------------------------------------------------------------------*/
+/* Wrapper */
+#g-aside, #g-content {min-height:100vh;}
+#g-aside {position:fixed; left:0; top:0; bottom:0; width:$width-aside; background-color:#222;}
+#g-aside .g-aside-scroll {height:100%; overflow:auto;}
+#g-content {padding-left:$width-aside; background-color:#f0f0f0;}
+
+/* Logo */
+.g-logo {font-size:16px; color:#fff; letter-spacing:1px; font-weight:bold;}
+.g-logo:before {content:''; display:inline-block; width:50px; height:30px; margin-right:20px; background:url('/images/guide/logo.png') no-repeat center center #007fd0; background-size:80% auto; vertical-align:middle;}
+
+/* LNB */
+.g-lnb-group, .g-logo {padding:$gutter-aside;}
+.g-lnb-group {padding:$gutter-aside; border-top:1px solid #333;}
+.g-lnb-group .g-lnb-tit {color:#eee; font-weight:bold;}
+.g-lnb-group .g-depth1 {margin-top:10px;}
+.g-lnb-group .g-depth1 > li + li {margin-top:5px;}
+.g-lnb-group .g-depth1 > li > a {display:inline-block; line-height:1.5; color:#999; @include transition(color 0.3s)}
+.g-lnb-group .g-depth1 > li > a:focus,
+.g-lnb-group .g-depth1 > li > a:active,
+.g-lnb-group .g-depth1 > li > a:hover {color:#fff;}
+
+/* Content */
+.g-content-header {padding:$gutter-content;}
+.g-content-body {padding:$gutter-content;}
+
+
+/*-------------------------------------------------------------------
+    ## UI
+-------------------------------------------------------------------*/
+/* Default */
+
+/* Common */
+
+/* Design */
+
+/* Responsive */
+
+/*-------------------------------------------------------------------
+	Codeview Edit
+-------------------------------------------------------------------*/
+.g-code .syntaxhighlighter .gutter,
+.syntaxhighlighter .gutter {display:none !important;}
+.g-code .syntaxhighlighter .line.alt1 {background-color:#fafafa !important;}

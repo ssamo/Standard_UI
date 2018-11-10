@@ -1,0 +1,231 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Guide.css
+	Company : The Webstyle co.,ltd
+	Author : Woo Seok, Shin 2017-11
+
+	Color Theme - Blue
+	Dark   - #4084aa (Border, Point BG)
+	Normal - #278df5 (Bullet, Text)
+	Light  - #e4f1fa (BG)
+-------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+	Layout
+-------------------------------------------------------------------*/
+/* Wrapper */
+.g-body {min-width:320px;}
+.g-in-sec {position:relative; max-width:1200px; margin:auto; padding:0 20px;}
+.g-out-sec {min-width:1200px;}
+.g-gutter {min-width:320px; padding-left:20px; padding-right:20px;}
+.g-content-header {position:fixed; z-index:100; width:100%; background-color:#000;}
+.g-content-header > .g-in-sec {position:relative; padding-top:30px; padding-bottom:30px;}
+.g-content-header .g-guideLink {display:inline-block; position:absolute; right:20px; top:24px; padding:5px 15px; margin-top:10px; border:1px solid #fff; border-radius:20px;}
+.g-content-header .g-guideLink a {color:#fff;}
+.g-content-header .g-guideLink a + a:before {content:''; display:inline-block; position:relative; top:-4px; width:2px; height:2px; margin:0 13px 0 10px; background-color:#ccc;}
+.g-content-body {padding-top:100px; padding-bottom:50px;}
+@media screen and (max-width:639px) {
+	.g-content-header > .g-in-sec {padding-top:10px; padding-bottom:10px;}
+	.g-content-header .g-guideLink {position:relative; top:7px; margin-top:0; margin-left:5px; border-color:#000;}
+	.g-content-header .g-guideLink a + a:before {margin:0 5px 0 2px;}
+	.g-content-body {padding-top:50px;}
+	.g-h1 {font-size:20px;}
+	.is-scrolled .g-content-header .g-guideLink {font-size:12px;}
+}
+
+/*-------------------------------------------------------------------
+	is-scrolled
+-------------------------------------------------------------------*/
+.g-content-header > .g-in-sec,.g-guideLink,.g-h1 {transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out 0s; -moz-transition:all 0.3s ease-out 0s; -o-transition:all 0.3s ease-out 0s;}
+.is-scrolled .g-content-header > .g-in-sec {padding-top:10px; padding-bottom:10px;}
+.is-scrolled .g-content-header .g-guideLink {position:absolute; top:7px; margin-top:0; border-color:#000;}
+.is-scrolled .g-h1 {font-size:20px;}
+
+/*-------------------------------------------------------------------
+	UI
+-------------------------------------------------------------------*/
+/* Section */
+.g-section {padding-top:20px; line-height:1.8;}
+.g-section + .g-section {padding-top:60px;}
+.g-section-header {position:relative;}
+.g-section-body {margin-top:30px;}
+.g-section-tab {margin-top:20px;}
+.g-section-tab + .g-section-body {margin-top:30px;}
+
+/* 목차 */
+.g-h1 {font-size:30px; font-weight:normal; color:#fff;}
+.g-h2 {font-size:20px; font-weight:normal;}
+.g-h2:before {display:block; width:20px; height:1px; margin-bottom:5px; background-color:#222;}
+.g-h3 {margin-top:25px; margin-bottom:10px; font-size:16px; font-family:'NSB';}
+.g-h3:first-child {margin-top:0;}
+.g-h4 {margin-top:25px; color:#278df5; font-family:'NSB';}
+.g-h3 + .g-h4 {margin-top:10px;}
+.g-h4:before {content:''; display:inline-block; position:relative; top:-1px; width:3px; height:13px; margin-right:5px; background-color:#278df5; vertical-align:middle;}
+
+/* 컬러 */
+.g-txt-red {color:red;}
+
+/* 설명 */
+ul.g-desc {margin:5px 0;}
+ul.g-desc:last-child {margin-bottom:0;}
+p.g-desc, ul.g-desc > li {position:relative; padding:0 0 0 10px; font-size:14px;}
+p.g-desc:before, ul.g-desc > li:before {content:''; position:absolute; left:0; top:13px; display:block; width:2px; height:2px; background:#000; border-radius:50%;}
+.g-desc-guide {margin-top:10px; font-size:12px; color:#666;}
+.g-desc-guide a {color:#666; border-bottom:1px solid #666;}
+.g-desc-guide a:hover, .g-desc-guide a:focus {color:#333;}
+.g-desc-guide + .g-desc-guide {margin-top:5px;}
+.g-code {border:1px solid #ccc; margin:10px 0;}
+
+/* 박스 */
+.g-box-color {margin:-5px 0;}
+.g-box-color:after {content:''; clear:both; display:block;}
+.g-box-color .g-box-inner {float:left; width:130px; padding:5px 0; margin-right:-1px;}
+.g-box-color .g-box-header {height:80px;}
+.g-box-color .g-box-body {padding:5px 0; text-align:center; color:#333; background-color:#fff; border:1px solid #eee;}
+
+/* 표 type1 - 일반컨텐츠 */
+.g-tbl-type1 {overflow:hidden; border:1px solid #333; border-width:1px 0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.g-tbl-type1 table {width:calc(100% + 2px); table-layout:fixed; margin:0 -1px -1px;}
+.g-tbl-type1 table th, .g-tbl-type1 table td {height:30px; vertical-align:middle; text-align:left; line-height:13px; font-size:12px; background:#fff; line-height:1.5;}
+.g-tbl-type1 table th {padding:0 15px; border-bottom:1px solid #666; background-color:#f8f8f8; text-align:center; font-family:'NSB'; font-size:12px; line-height:13px;}
+.g-tbl-type1 table td {padding:3px 15px; border:1px solid #eee; border-bottom:0;}
+.g-tbl-type1 table tbody tr:first-child td {border-top:0;}
+.g-tbl-type1 table tbody + tbody tr:first-child td {border-top:1px solid #666;}
+.g-tbl-type1 table tbody th {border-bottom:1px solid #eee; border-right:1px solid #eee;}
+.col > .g-tbl-type1 {margin-top:0;}
+
+/* 표 type2 - 강조리스트 */
+.g-tbl-type2 {overflow:hidden; border-bottom:1px solid #333; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.g-tbl-type2 table {width:calc(100% + 2px); table-layout:fixed; margin:0 -1px -1px;}
+.g-tbl-type2 table th, .g-tbl-type2 table td {height:30px; vertical-align:middle; text-align:left; line-height:13px; font-size:12px; background:#fff; line-height:1.5;}
+.g-tbl-type2 table th {padding:0 15px; background-color:#333; text-align:center; font-family:'NSB'; font-size:12px; color:#fff;}
+.g-tbl-type2 table td {padding:3px 15px; border-top:1px solid #eee; border-bottom:0;}
+.g-tbl-type2 table tbody tr:first-child td {border-top:0;}
+.g-tbl-type2 table tbody + tbody tr:first-child td {border-top:1px solid #666;}
+
+/* Tab Codeview */
+.g-tab-codeview {position:relative;}
+.g-tab-codeview .g-tab-body {overflow:hidden;}
+.g-tab-codeview .g-tab-nav {background-color:#eee;}
+.g-tab-codeview .g-tab-nav ul::after {content:''; display:block; clear:both;}
+.g-tab-codeview .g-tab-nav li {float:left; line-height:1;}
+.g-tab-codeview .g-tab-nav li + li {margin-left:-1px;}
+.g-tab-codeview .g-tab-nav li > a {display:block; padding:5px 10px; font-size:12px; line-height:1; border:1px solid #eee; background-color:#fff;}
+.g-tab-codeview .g-tab-nav li.is-active > a {background-color:#1e90e5; color:#fff; border:1px solid #1e90e5; border-bottom-color:transparent;}
+.g-tab-codeview .g-tab-content {display:none; padding:5px; border:1px solid #eee; border-top:0; color:#333; font-size:12px; border-radius:0 0 5px 5px; max-height:80vh; overflow:auto;}
+.g-tab-codeview .g-tab-content.is-active {display:block;}
+.g-tab-codeview .g-tab-content .brush-guide {padding:0 5px; line-height:2;}
+.g-tab-codeview .g-tab-display {position:absolute; right:0; top:0; display:block; height:24px; padding:0 10px; font-size:11px; line-height:24px; color:#f33413;}
+
+/* Layout Frame */
+.g-frame-wrap {position:relative;}
+.g-frame-wrap .g-frame {position:relative; margin-top:15px; padding:15px; border:1px solid #ddd;}
+.g-frame-wrap .g-frame .g-frame-title {padding:0; line-height:1; background-color:#fff; color:#aaa;}
+.g-frame-wrap .g-frame .g-frame-cont {margin-top:10px; line-height:1; color:#f33413;}
+.g-frame-wrap .g-frame-outer {padding:0 15px;}
+.g-frame-wrap .g-frame-section {border:1px solid #f33413;}
+.g-frame-wrap .g-frame-section > .g-frame-title {color:#333;}
+
+/* Comonent Item */
+.g-item + .g-item {margin-top:20px;}
+
+/* Top */
+a.g-top {display:block; position:fixed; right:20px; bottom:20px; width:50px; height:50px; background-color:#000; line-height:50px; color:#fff; border-radius:50%; text-align:center;}
+
+/*-------------------------------------------------------------------
+	IA
+-------------------------------------------------------------------*/
+/* IA Title */
+.g-ia-wrap .g-in-sec {max-width:100%;}
+.g-ia-wrap .g-content-body {padding-top:120px;}
+.g-ia-wrap #gTotal {padding-top:0;}
+.g-ia-wrap #gTotal .g-section-body {margin-top:0;}
+.g-ia-wrap .g-section {padding-top:30px;}
+.g-ia-wrap .g-section-body {margin-top:10px;}
+.g-ia-wrap .g-h2 {font-size:20px;}
+.g-ia-wrap .g-h2:before {display:none;}
+
+/* Graph */
+.g-ia-graph li {margin:3px 0;}
+.g-ia-graph a {display:block; position:relative; line-height:20px;}
+.g-ia-graph span {display:inline-block;}
+.g-ia-graph .tit {position:absolute; left:0; top:0; z-index:2; width:inline-block; width:150px; height:100%; padding:0 10px; border-radius:10px 0 0 10px; background-color:rgba(0,0,0,0.4); color:#fff;}
+.g-ia-graph .bar {display:block; position:relative; z-index:1; height:21px; overflow:hidden; background-color:rgba(0,0,0,0.2); border-radius:10px;}
+.g-ia-graph .bar:before {content:attr(data-process); position:absolute; right:0; top:0; z-index:2; display:inline-block; width:120px; text-align:right; color:#fff;}
+.g-ia-graph .bar .active {position:absolute; left:0; top:0; z-index:1; display:block; width:0; height:100%; transition:width 0.6s ease-out; -webkit-transition:width 0.6s ease-out 0s; -moz-transition:width 0.6s ease-out 0s; -o-transition:width 0.6s ease-out 0s; opacity:1;}
+.g-ia-graph .pages {position:absolute; left:150px; top:0; z-index:3; padding-left:10px; width:65px; text-align:left; color:#fff;}
+.g-ia-graph .bar:before, .g-ia-graph .pages {padding:0 15px;}
+
+/* Note */
+.g-ia-note {padding:10px; border:2px solid #333; border-width:2px 0 1px 0;}
+
+/* Legend */
+.g-ia-legend {position:absolute; right:0; top:5px;}
+.g-ia-legend .item {margin-left:20px;}
+.g-ia-legend .item .tit {}
+.g-ia-legend .item .tit.true {}
+.g-ia-legend .item .tit.false {}
+.g-ia-legend .item .count {}
+
+/* Table */
+.g-ia-tbl {border-top:2px solid #444; border-bottom:1px solid #444;}
+.g-ia-tbl table th,
+.g-ia-tbl table td {height:30px; padding:3px 10px; text-align:center; font-size:12px; border-left:1px solid #eee;}
+.g-ia-tbl table th {border-bottom:1px solid #444; font-family:'NSB'; font-size:14px;}
+.g-ia-tbl table td {border-top:1px solid #eee; color:#555;}
+.g-ia-tbl table tr:first-child td {border-top:0;}
+.g-ia-tbl table tr th:first-child,
+.g-ia-tbl table tr td:first-child {border-left:0;}
+.g-ia-tbl table tbody + tbody tr:first-child td {border-top:1px solid #ccc;}
+.g-ia-tbl table td.col-url,
+.g-ia-tbl table td.col-memo,
+.g-ia-tbl table td.col-1depth,
+.g-ia-tbl table td.col-2depth,
+.g-ia-tbl table td.col-3depth,
+.g-ia-tbl table td.col-4depth,
+.g-ia-tbl table td.col-5depth {text-align:left;}
+.g-ia-tbl table td.col-1depth {color:#333; font-family:'NSB'; font-size:14px;}
+
+/* Colgroup */
+.g-ia-tbl table .col-num {width:60px;}
+.g-ia-tbl table .col-1depth,
+.g-ia-tbl table .col-2depth,
+.g-ia-tbl table .col-3depth,
+.g-ia-tbl table .col-4depth,
+.g-ia-tbl table .col-5depth {width:10%;}
+.g-ia-tbl table .col-type {width:60px;}
+.g-ia-tbl table .col-url {width:400px;}
+.g-ia-tbl table .col-date {width:100px;}
+.g-ia-tbl table .col-complete {width:60px;}
+.g-ia-tbl table .col-worker {width:100px;}
+.g-ia-tbl table .col-memo {width:auto;}
+@media (max-width:1366px){
+.g-ia-tbl table .col-url {width:auto;}
+.g-ia-tbl table .col-date,
+.g-ia-tbl table .col-worker {width:100px;}
+.g-ia-tbl table .col-memo {width:10%;}
+}
+
+/* Setting */
+.c-done {color:#005aff;}
+td.col-complete[data-complete=wait] {color:#e52c1e;}
+td.col-complete[data-complete=done] {color:#005aff;}
+td.col-complete[data-complete]:after {content:attr(data-complete)}
+td.col-complete[data-complete=wait]:after {content:''}
+td.col-complete[data-complete=done]:after {content:'완료'}
+td.col-complete[data-complete=del]:after {content:'삭제'}
+td.col-complete[data-complete=except]:after {content:'제외'}
+td.col-type[data-type]:after {content:attr(data-type);}
+td.col-url a {border-bottom:1px solid #333;}
+
+.g-ia-tbl table tr.row-done td {background-color:#f2f8fc;}
+.g-ia-tbl table tr.row-del td {background-color:#f0f0f0; color:#bbb;}
+.g-ia-tbl table tr.row-del td a {color:#bbb; border-bottom:1px solid #bbb;}
+.g-ia-tbl table tr.row-except td {background-color:#f0f0f0;}
+
+/*-------------------------------------------------------------------
+	Codeview Edit
+-------------------------------------------------------------------*/
+.g-code .syntaxhighlighter .gutter,
+.syntaxhighlighter .gutter {display:none !important;}
+.g-code .syntaxhighlighter .line.alt1 {background-color:#fafafa !important;}
