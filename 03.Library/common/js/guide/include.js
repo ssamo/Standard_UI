@@ -6,7 +6,12 @@ var include = {
 		document.write('<script type="text/javascript" src="/common/js/guide/guide.js"></script>');
 	},
 	header : function(){
-
+		document.write('	<header id="g-header">');
+		document.write('		<div class="g-header-inner">');
+		document.write('			<button type="button" class="g-btn-anb"><span>전체메뉴</span></button>');
+		document.write('			<span class="g-location">Pages</span>');
+		document.write('		</div>');
+		document.write('	</header>');
 	},
 	aside : function(){
 		document.write('	<aside id="g-aside">');
