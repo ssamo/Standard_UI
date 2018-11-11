@@ -2260,10 +2260,12 @@ a:hover {
 
 /* Content */
 .g-content-header {
+  height: 60px;
   padding: 20px; }
 
 .g-content-body {
-  padding: 20px; }
+  padding: 20px;
+  border-top: 1px solid #ccc; }
 
 /* Responsive */
 @media screen and (max-width: 1024px) {
@@ -2287,16 +2289,108 @@ a:hover {
 /*-------------------------------------------------------------------
     ## UI
 -------------------------------------------------------------------*/
-/* Default */
-/* Common */
-/* Design */
-/* Responsive */
+/* Heading Text */
+.g-tit-h2 {
+  font-size: 20px; }
+
+.g-tit-h3 {
+  font-size: 16px; }
+
+.g-tit-h4 {
+  font-size: 14px;
+  margin-bottom: 10px; }
+
+/* Section */
+.g-section {
+  display: block; }
+
+.g-section + .g-section {
+  margin-top: 40px; }
+
+.g-section-header {
+  margin-bottom: 20px; }
+
+.g-section-body {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+/* Tab */
+.g-tab-codeview {
+  margin-top: 10px;
+  position: relative; }
+
+.g-tab-codeview .g-tab-body {
+  overflow: hidden; }
+
+.g-tab-codeview .g-tab-nav {
+  background-color: #eee; }
+
+.g-tab-codeview .g-tab-nav ul::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.g-tab-codeview .g-tab-nav li {
+  float: left;
+  line-height: 1; }
+
+.g-tab-codeview .g-tab-nav li + li {
+  margin-left: -1px; }
+
+.g-tab-codeview .g-tab-nav li > a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid #eee;
+  background-color: #fff; }
+
+.g-tab-codeview .g-tab-nav li.is-active > a {
+  background-color: #1e90e5;
+  color: #fff;
+  border: 1px solid #1e90e5;
+  border-bottom-color: transparent; }
+
+.g-tab-codeview .g-tab-content {
+  display: none;
+  padding: 5px;
+  border: 1px solid #eee;
+  border-top: 0;
+  color: #333;
+  font-size: 12px;
+  border-radius: 0 0 5px 5px;
+  max-height: 80vh;
+  overflow: auto; }
+
+.g-tab-codeview .g-tab-content.is-active {
+  display: block; }
+
+.g-tab-codeview .g-tab-content .g-source-guide {
+  padding: 0.3em 1em;
+  font-size: 12px;
+  vertical-align: baseline;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  line-height: 1.1em; }
+
+.g-tab-codeview .g-tab-display {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 24px;
+  padding: 0 10px;
+  font-size: 11px;
+  line-height: 24px;
+  color: #f33413; }
+
 /*-------------------------------------------------------------------
 	Codeview Edit
 -------------------------------------------------------------------*/
-.g-code .syntaxhighlighter .gutter,
-.syntaxhighlighter .gutter {
+.g-tab-codeview .syntaxhighlighter .gutter {
   display: none !important; }
 
-.g-code .syntaxhighlighter .line.alt1 {
+.g-tab-codeview .syntaxhighlighter .line.alt1 {
   background-color: #fafafa !important; }

@@ -9,57 +9,36 @@ document.write('<script>SyntaxHighlighter.all();</script>');
 var gCom = {
 	init : function(){
 		console.log('gCom.init()');
-		this.gHeader.init();
 		this.gAside.init();
-	},
-	gHeader : {
-		init : function(){
-			this.event();
-		},
-		event : function(){
-			$('.g-btn-anb').on('click', function(e){
-				if (!$('body').hasClass('is-aside-opened')){
-					$('body').addClass('is-aside-opened');
-				} else if ($('body').hasClass('is-aside-opened')){
-					$('body').removeClass('is-aside-opened');
-				}
-				e.preventDefault();
-				e.stopPropagation();
-			})
-		},
 	},
 	gAside : {
 		asideEl : '#g-aside',
+		anbBtnEl : '.g-btn-anb',
+		maskEl : '.g-mask',
 		asideWid : null,
 		init : function(){
 			this.asideWid = $(this.asideEl).width();
-			this.event();
+
+			//펼치기
+			$(this.anbBtnEl).not('.is-clickEvent').on('click', function(e){
+				$('body').toggleClass('is-aside-opened');
+			}).addClass('is-clickEvent');
+
+			//숨기기
+			$(this.maskEl).not('.is-clickEvent').on('click', function(e){
+				$('body').removeClass('is-aside-opened');
+			}).addClass('is-clickEvent');
 		},
-		event : function(){
-			var _self = this;
-			$(document).on('click focusin', function(e){
-				if ($('body').hasClass('is-aside-opened')){
-					if ($(_self.asideEl).has(e.target).length == 0 && $('.g-btn-anb').has(e.target).length == 0){
-						$('body').removeClass('is-aside-opened');
-					}
-				}
-			});
-		},
-		show : function(){
-			var calComplete = function(){$('body').addClass('is-aside-opened')}
-			//TweenMax.set($(this.asideEl), {x:this.asideWid*-1});
-			TweenMax.to($(this.asideEl), 0.3, {x:0, ease:Power2.easeOut, onComplete:calComplete});
-		},
-		hide : function(){
-			var calComplete = function(){$('body').removeClass('is-aside-opened')}
-			TweenMax.to($(gCom.gAside.asideEl), 0.5, {x:gCom.gAside.asideWid*-1, ease:Power2.easeOut,  onComplete:calComplete});
-		}
 	}
 }
 
 var gUI = {
 	init : function(){
 		console.log('gUI.init()');
+
+		if ($('.g-tab-codeview').length){
+			gUI.tabCodeview.init();
+		}
 
 		//mScroll
 		if ($('.g-js-scroll').length){
@@ -74,7 +53,35 @@ var gUI = {
 				$(this).mCustomScrollbar();
 			})
 		}
-	}
+	},
+	tabCodeview : {
+		tabNav : '.g-tab-codeview',
+		tabLink : '.g-tab-codeview .g-tab-nav a',
+		target : null,
+
+		init : function(){
+			if ($(this.tabNav).length > 0){
+				this.event();
+			}
+		},
+		event : function(){
+			//현재페이지의 탭 활성화
+			$(this.tabLink).on('click', function(){
+				gUI.tabCodeview.action($(this));return false;
+			});
+		},
+		action : function($this){
+			this.target = $this.attr('href');
+			if ($this.parent().is('.is-active')){
+				$this.parent().removeClass('is-active');
+				$(this.target).removeClass('is-active');
+			} else {
+				$this.parent().addClass('is-active').siblings().removeClass('is-active');
+				$(this.target).addClass('is-active').siblings().removeClass('is-active');
+			}
+		}
+	},
+
 }
 
 $(document).ready(function(){

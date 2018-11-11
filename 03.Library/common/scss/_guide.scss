@@ -24,10 +24,12 @@ $color-basic-bg: #222;
 $width-aside: 250px;
 $height-logo: 30px;
 $height-header: 40px;
+$height-contentHeader: 60px;
 $duration-layout: 0.3s;
 $ease-layout: ease-out;
 $gutter-aside: 15px;
 $gutter-content: 20px;
+$gutter-section: 20px;
 $opacity-mask: 0.5;
 
 /*-------------------------------------------------------------------
@@ -67,8 +69,8 @@ $opacity-mask: 0.5;
 .g-lnb-group .g-depth1 > li > a:hover {color:#fff;}
 
 /* Content */
-.g-content-header {padding:$gutter-content;}
-.g-content-body {padding:$gutter-content;}
+.g-content-header {height:$height-contentHeader; padding:$gutter-content;}
+.g-content-body {padding:$gutter-content; border-top:1px solid #ccc;}
 
 /* Responsive */
 @media screen and (max-width: $width-responsive-xl) {
@@ -81,17 +83,34 @@ $opacity-mask: 0.5;
 /*-------------------------------------------------------------------
     ## UI
 -------------------------------------------------------------------*/
-/* Default */
+/* Heading Text */
+.g-tit-h2 {font-size:20px;}
+.g-tit-h3 {font-size:16px;}
+.g-tit-h4 {font-size:14px; margin-bottom:10px;}
 
-/* Common */
+/* Section */
+.g-section {display:block;}
+.g-section + .g-section {margin-top:40px;}
+.g-section-header {margin-bottom:20px;}
+.g-section-body {margin-top:20px; padding:$gutter-section; background-color:#fff; @include mixBorderRadius(5px)}
 
-/* Design */
+/* Tab */
+.g-tab-codeview {margin-top:10px; position:relative;}
+.g-tab-codeview .g-tab-body {overflow:hidden;}
+.g-tab-codeview .g-tab-nav {background-color:#eee;}
+.g-tab-codeview .g-tab-nav ul::after {content:''; display:block; clear:both;}
+.g-tab-codeview .g-tab-nav li {float:left; line-height:1;}
+.g-tab-codeview .g-tab-nav li + li {margin-left:-1px;}
+.g-tab-codeview .g-tab-nav li > a {display:block; padding:5px 10px; font-size:12px; line-height:1; border:1px solid #eee; background-color:#fff;}
+.g-tab-codeview .g-tab-nav li.is-active > a {background-color:#1e90e5; color:#fff; border:1px solid #1e90e5; border-bottom-color:transparent;}
+.g-tab-codeview .g-tab-content {display:none; padding:5px; border:1px solid #eee; border-top:0; color:#333; font-size:12px; border-radius:0 0 5px 5px; max-height:80vh; overflow:auto;}
+.g-tab-codeview .g-tab-content.is-active {display:block;}
+.g-tab-codeview .g-tab-content .g-source-guide {padding:0.3em 1em; font-size:12px; vertical-align:baseline; font-family:"Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; line-height:1.1em;}
+.g-tab-codeview .g-tab-display {position:absolute; right:0; top:0; display:block; height:24px; padding:0 10px; font-size:11px; line-height:24px; color:#f33413;}
 
-/* Responsive */
 
 /*-------------------------------------------------------------------
 	Codeview Edit
 -------------------------------------------------------------------*/
-.g-code .syntaxhighlighter .gutter,
-.syntaxhighlighter .gutter {display:none !important;}
-.g-code .syntaxhighlighter .line.alt1 {background-color:#fafafa !important;}
+.g-tab-codeview .syntaxhighlighter .gutter {display:none !important;}
+.g-tab-codeview .syntaxhighlighter .line.alt1 {background-color:#fafafa !important;}
