@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Canvas | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Drawing shapes</h1>
+				<div class="g-guideLink">
+					<a href="#gCanvas01" data-role="spy-scroll">직사각형 그리기</a>
+					<a href="#gCanvas02" data-role="spy-scroll">Path 그리기</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- 직사각형 그리기 -->
+			<section id="gCanvas01" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">직사각형 그리기</h2>
+				</div>
+				<div class="g-section-body">
+					<canvas id="canvas01"><canvas>
+					<script type="text/javascript">
+					<!--
+						function draw1(){
+							var canvas = document.getElementById('canvas01');
+							if (canvas.getContext){
+								var ctx = canvas.getContext('2d');
+
+								ctx.fillRect(25,25,100,100);
+								ctx.clearRect(45,45,60,60);
+								ctx.strokeRect(50,50,50,50);
+							}
+						}
+						draw1();
+					//-->
+					</script>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>fillRect(x, y, width, height) : 색칠된 직사각형을 그립니다.</li>
+										<li>strokeRect(x, y, width, height) : 직사각형 윤곽선을 그립니다.</li>
+										<li>clearRect(x, y, width, height) : 특정 부분을 지우는 직사각형이며, 이 지워진 부분은 완전히 투명해집니다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;canvas id="canvas01">&lt;canvas>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									function draw2(){
+										var canvas = document.getElementById('canvas01');
+										if (canvas.getContext){
+											var ctx = canvas.getContext('2d');
+
+											ctx.fillRect(25,25,100,100);
+											ctx.clearRect(45,45,60,60);
+											ctx.strokeRect(50,50,50,50);
+										}
+									}
+									draw2();
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //직사각형 그리기 -->
+
+			<!-- Path 그리기 -->
+			<section id="gCanvas02" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Path 그리기</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">삼각형 그리기</h3>
+					<canvas id="canvas02_1"></canvas>
+					<script type="text/javascript">
+					<!--
+						//삼각형 그리기
+						function draw2(){
+							var canvas = document.getElementById('canvas02_1');
+							if (canvas.getContext) {
+								var ctx = canvas.getContext('2d');
+
+								ctx.beginPath();
+								ctx.moveTo(75, 50);
+								ctx.lineTo(100, 75);
+								ctx.lineTo(100, 25);
+								ctx.fill();
+							}
+						}
+						draw2();
+					//-->
+					</script>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>beginPath() : 새로운 path를 만듭니다.</li>
+										<li>Path 메소드 : 여러 path를 설정합니다.</li>
+										<li>closePath() : path를 닫습니다.</li>
+										<li>stroke() : Path의 선을 설정합니다.</li>
+										<li>fill() : Path의 내부를 채웁니다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source Javascript
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Path 그리기 -->
+
+			<!-- Sample -->
+			<section id="gCanvas03" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Sample</h2>
+				</div>
+				<div class="g-section-body">
+					g-section-body
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source Javascript
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Sample -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core - Icons | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Icon</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li class="is-active"><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>HTML : 구조화 및 선택자의 "기본규칙"을 정의한다.</li>
+										<li>CSS : 공통유형 및 디자인의 "기본특성"을 정의한다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content is-active">
+								<pre class="brush:html">
+									&lt;!-- Icon Only -->
+									&lt;i class="ico ico_이름">&lt;/i>
+
+									&lt;!-- Icon Outer -->
+									&lt;span class="ico-outer 이름">&lt;i class="ico ico_이름">&lt;/i>&lt;/span>
+
+									&lt;!-- Icon Outer Round -->
+									&lt;span class="ico-outer ico-round 이름">&lt;i class="ico ico_이름">&lt;/i>&lt;/span>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										Icon
+									-------------------------------------------------------------------*/
+									/* Default */
+									.ico {display:inline-block; background:url(../../images/common/icon_sprite.png) no-repeat -999em -999em; vertical-align:middle; text-indent:-9999em;}
+									.ico-outer {display:inline-block; vertical-align:middle; text-align:center;}
+									.ico-outer::before {content:''; display:inline-block; position:relative; top:-1px; width:0; height:100%; vertical-align:middle;}
+									.ico-round {border-radius:50%;}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design</h2>
+				</div>
+				<div class="g-section-body" style="background-color:#fa8; padding:10px;">
+					<h3 class="g-h3">Outer</h3>
+					<div>
+						<span class="ico-outer type-bg1"><i class="ico ico-srch-black"></i></span>
+						<span class="ico-outer ico-round type-ol1"><i class="ico ico-srch-black"></i></span>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-6">
+							<h3 class="g-h3">Search</h3>
+							<div>
+								<i class="ico ico-srch-black"></i>
+								<i class="ico ico-srch-gray"></i>
+								<i class="ico ico-srch-white"></i>
+								<i class="ico ico-srch-people"></i>
+							</div>
+						</div>
+						<div class="col col-6">
+							<h3 class="g-h3">Calcuration</h3>
+							<div>
+								<i class="ico ico-cal"></i>
+								<i class="ico ico-cal2"></i>
+								<i class="ico ico-cal3"></i>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-6">
+							<h3 class="g-h3">SNS</h3>
+							<div>
+								<i class="ico ico-facebook"></i>
+								<i class="ico ico-post"></i>
+								<i class="ico ico-instar"></i>
+								<i class="ico ico-blog"></i>
+							</div>
+						</div>
+						<div class="col col-6">
+							<h3 class="g-h3">기타</h3>
+							<div>
+								<i class="ico ico-more"></i>
+								<i class="ico ico-indang"></i>
+								<i class="ico ico-fund"></i>
+								<i class="ico ico-eirb2"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>스프라이트는 분류별로 나누는 것을 권장한다. (예 : 레이아웃, 메인, 서브, 컨텐츠별 등)</li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- Search -->
+									&lt;i class="ico ico-srch-black">&lt;/i>
+									&lt;i class="ico ico-srch-gray">&lt;/i>
+									&lt;i class="ico ico-srch-white">&lt;/i>
+									&lt;i class="ico ico-srch-people">&lt;/i>
+
+									&lt;!-- Calcuration -->
+									&lt;i class="ico ico-cal">&lt;/i>
+									&lt;i class="ico ico-cal2">&lt;/i>
+									&lt;i class="ico ico-cal3">&lt;/i>
+
+									&lt;!-- SNS -->
+									&lt;i class="ico ico-facebook">&lt;/i>
+									&lt;i class="ico ico-post">&lt;/i>
+									&lt;i class="ico ico-instar">&lt;/i>
+									&lt;i class="ico ico-blog">&lt;/i>
+
+									&lt;!-- 기타 -->
+									&lt;i class="ico ico-more">&lt;/i>
+									&lt;i class="ico ico-indang">&lt;/i>
+									&lt;i class="ico ico-fund">&lt;/i>
+									&lt;i class="ico ico-eirb2">&lt;/i>
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									.ico-srch-black {width:22px; height:22px; background-position:-55px 0;}
+									.ico-srch-gray {width:22px; height:22px; background-position:-165px 0;}
+									.ico-srch-white {width:20px; height:19px; background-position:-272px -194px;}
+									.ico-srch-people {width:44px; height:44px; background-position:0 -400px;}
+									.ico-cal {width:22px; height:22px; background-position:-230px -125px;}
+									.ico-cal2 {width:26px; height:22px; background-position:-230px -150px;}
+									.ico-cal3 {width:44px; height:44px; background-position:-45px -400px;}
+									.ico-facebook {width:45px; height:45px; background-position:0 -90px;}
+									.ico-post {width:45px; height:45px; background-position:-45px -90px;}
+									.ico-instar {width:45px; height:45px; background-position:-90px -90px;}
+									.ico-blog {width:45px; height:45px; background-position:-135px -90px;}
+									.ico-more {width:13px; height:13px; background-position:-34px -16px;}
+									.ico-indang {width:35px; height:35px; background-position:0 -145px;}
+									.ico-fund {width:35px; height:35px; background-position:-35px -145px;}
+									.ico-eirb2 {width:35px; height:35px; background-position:-215px -332px;}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

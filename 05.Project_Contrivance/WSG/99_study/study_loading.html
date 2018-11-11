@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Infinite Scroll | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+<style type="text/css">
+.inf-wrap .inf-tit {font-size:30px;}
+.inf-wrap .inf-list + .inf-list {margin-top:30px;}
+</style>
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Infinite Scroll</h1>
+				<!--
+				<div class="g-guideLink">
+					<a href="#gStep1" data-role="spy-scroll">Step1</a>
+					<a href="#gStep2" data-role="spy-scroll">Step2</a>
+					<a href="#gStep3" data-role="spy-scroll">Step3</a>
+					<a href="#gStep4" data-role="spy-scroll">Step4</a>
+				</div>
+				-->
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Step1 -->
+			<section id="gStep1" class="g-section g-in-sec">
+				<div class="g-section-body">
+					<!-- Infinite JS -->
+					<script type="text/javascript">
+					<!--
+						function iOSversion() {
+							if (/iP(hone|od|ad)/.test(navigator.platform)) {
+								// supports iOS 2.0 and later: <https://bit.ly/TJjs1V>
+								var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+								return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+							}
+						}
+
+						$(document).ready(function(){
+							if ($('.js-infinite-wrap').length){
+								//개발팀 실행함수를 callback함수로 처리
+								infiniteScroll(infiniteTest);
+							}
+						})
+
+						//Infinite Check
+						var infiniteScroll = function(callback){
+							var objGroup = $('.js-infinite-wrap');
+							var objMore = $('.js-infinite-more');
+							var objScroll = $('.'+objGroup.attr('data-scroll'));
+							if (objScroll.length == 0){
+								objScroll = $(window);
+							}
+
+							if ($('.js-infinite-more').length){
+								$('.js-infinite-more').remove();
+							}
+
+							objScroll.on('scroll', function(){
+								if (objScroll.scrollTop() == $(document).height() - objScroll.height()) {
+									objScroll.off('scroll');
+									callback();
+								}
+							})
+						}
+
+						//Infinite Loading
+						var infiniteLoading = function(){
+							var objGroup = $('.js-infinite-wrap');
+							var moreHTML = null;
+							if ($('.js-infinite-more').length == 0){
+								moreHTML = '<div class="js-infinite-more">더보기</div>';
+								objGroup.after(moreHTML);
+							}
+						}
+
+						//Infinite Dev
+						var infiniteTest = function(){
+							//퍼블리싱 샘플링
+							var setRepeat = 5;
+							var setMax = 30;
+							var setTime = 500;
+							var setMore = true;
+							var listLen = parseInt($('.inf-list').length);
+							var listHtml =
+								'<div class="inf-list">'
+								+'	<h2 class="inf-tit">List'+ (listLen + 1) +'</h2>'
+								+'	<p>Contents</p>'
+								+'</div>'
+								+'<div class="inf-list">'
+								+'	<h2 class="inf-tit">List'+ (listLen + 2) +'</h2>'
+								+'	<p>Contents</p>'
+								+'</div>'
+								+'<div class="inf-list">'
+								+'	<h2 class="inf-tit">List'+ (listLen + 3) +'</h2>'
+								+'	<p>Contents</p>'
+								+'</div>'
+								+'<div class="inf-list">'
+								+'	<h2 class="inf-tit">List'+ (listLen + 4) +'</h2>'
+								+'	<p>Contents</p>'
+								+'</div>'
+								+'<div class="inf-list">'
+								+'	<h2 class="inf-tit">List'+ (listLen + 5) +'</h2>'
+								+'	<p>Contents</p>'
+								+'</div>';
+
+							//데이터가 있는 경우
+							if ($('.inf-list').length < setMax){
+								infiniteLoading();
+
+								setTimeout(function(){
+									$('.js-infinite-wrap').append(listHtml);
+									infiniteScroll(infiniteTest);
+								}, setTime);
+							}
+						}
+					//-->
+					</script>
+					<!-- //Infinite JS -->
+
+					<!-- Infinite CSS  -->
+					<style type="text/css">
+					.js-infinite-more {width:100%; border:1px solid #eee; padding:5px; text-align:center; font-size:16px; color:#000}
+					</style>
+					<!-- //Infinite CSS  -->
+
+					<!-- Infinite HTML -->
+					<div class="inf-wrap js-infinite-wrap" data-scroll="body" data-inner="">
+						<div class="inf-list">
+							<h2 class="inf-tit">List1</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List2</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List3</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List4</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List5</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List6</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List7</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List8</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List9</h2>
+							<p>Contents</p>
+						</div>
+						<div class="inf-list">
+							<h2 class="inf-tit">List10</h2>
+							<p>Contents</p>
+						</div>
+					</div>
+					<!-- Infinite HTML -->
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									<div class="inf-wrap js-infinite-wrap" data-scroll="body" data-inner="">
+										<div class="inf-list">
+											<h2 class="inf-tit">List1</h2>
+											<p>Contents</p>
+										</div>
+									</div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									$(document).ready(function(){
+										if ($('.js-infinite-wrap').length){
+											//개발팀 실행함수를 callback함수로 처리
+											infiniteScroll(infiniteTest);
+										}
+									})
+
+									//Infinite Check
+									var infiniteScroll = function(callback){
+										var objGroup = $('.js-infinite-wrap');
+										var objMore = $('.js-infinite-more');
+										var objScroll = $('.'+objGroup.attr('data-scroll'));
+										if (objScroll.length == 0){
+											objScroll = $(window);
+										}
+
+										if ($('.js-infinite-more').length){
+											$('.js-infinite-more').remove();
+										}
+
+										objScroll.on('scroll', function(){
+											if (objScroll.scrollTop() == $(document).height() - objScroll.height()) {
+												objScroll.off('scroll');
+												callback();
+											}
+										})
+									}
+
+									//Infinite Loading
+									var infiniteLoading = function(){
+										var objGroup = $('.js-infinite-wrap');
+										var moreHTML = null;
+										if ($('.js-infinite-more').length == 0){
+											moreHTML = '<div class="js-infinite-more">더보기</div>';
+											objGroup.after(moreHTML);
+										}
+									}
+
+									//Infinite Dev
+									var infiniteTest = function(){
+										//퍼블리싱 샘플링
+										var setRepeat = 5;
+										var setMax = 30;
+										var setTime = 500;
+										var setMore = true;
+										var listLen = parseInt($('.inf-list').length);
+										var listHtml =
+											'<div class="inf-list">'
+											+'	<h2 class="inf-tit">List'+ (listLen + 1) +'</h2>'
+											+'	<p>Contents</p>'
+											+'</div>'
+											+'<div class="inf-list">'
+											+'	<h2 class="inf-tit">List'+ (listLen + 2) +'</h2>'
+											+'	<p>Contents</p>'
+											+'</div>'
+											+'<div class="inf-list">'
+											+'	<h2 class="inf-tit">List'+ (listLen + 3) +'</h2>'
+											+'	<p>Contents</p>'
+											+'</div>'
+											+'<div class="inf-list">'
+											+'	<h2 class="inf-tit">List'+ (listLen + 4) +'</h2>'
+											+'	<p>Contents</p>'
+											+'</div>'
+											+'<div class="inf-list">'
+											+'	<h2 class="inf-tit">List'+ (listLen + 5) +'</h2>'
+											+'	<p>Contents</p>'
+											+'</div>';
+
+										//데이터가 있는 경우
+										if ($('.inf-list').length < setMax){
+											infiniteLoading();
+
+											setTimeout(function(){
+												$('.js-infinite-wrap').append(listHtml);
+												infiniteScroll(infiniteTest);
+											}, setTime);
+										}
+
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step1 -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

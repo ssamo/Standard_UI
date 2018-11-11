@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core - Tabs | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Tabs</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li class="is-active"><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content is-active">
+								<pre class="brush:html">
+									&lt;!-- 탭 기본구조 -->
+									&lt;div class="tab-wrap">
+										&lt;div class="tab-nav">
+											&lt;ul>
+												&lt;li>&lt;a href="#none">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목3&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+										&lt;div class="tab-body">
+											&lt;div class="g-tab-content">
+												탭내용1
+											&lt;/div>
+											&lt;div class="g-tab-content">
+												탭내용2
+											&lt;/div>
+											&lt;div class="g-tab-content">
+												탭내용3
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<!-- 탭기능 -->
+				<div class="g-section-body">
+					<h3 class="g-h3">탭 기능</h3>
+
+					<!-- 링크 탭 -->
+					<h4 class="g-h4">링크 탭</h4>
+					<div class="link-tabs tab-wrap tab-basic">
+						<div class="tab-nav">
+							<ul>
+								<li class="is-active" aria-controls="tabContent1"><a href="http://localhost:7879/WSG/02_core/wsg_module_tab.html">탭제목1</a></li>
+								<li aria-controls="tabContent1"><a href="http://localhost:7879/WSG/02_core/wsg_module_tab.html">탭제목2</a></li>
+								<li aria-controls="tabContent1"><a href="http://localhost:7879/WSG/02_core/wsg_module_tab.html">탭제목3</a></li>
+							</ul>
+						</div>
+						<div class="tab-body">
+							<div id="tabContent1" class="tab-content is-active">
+								탭내용1
+							</div>
+						</div>
+					</div>
+					<!-- //링크 탭 -->
+
+					<!-- 전환 탭 -->
+					<h4 class="g-h4">전환 탭</h4>
+					<div class="js-tab tab-wrap tab-basic">
+						<div class="tab-nav">
+							<ul>
+								<li class="is-active" aria-controls="tabContent2_1"><a href="#tabContent2_1">탭제목1</a></li>
+								<li aria-controls="tabContent2_2"><a href="#tabContent2_2">탭제목2</a></li>
+								<li aria-controls="tabContent2_3"><a href="#tabContent2_3">탭제목3</a></li>
+							</ul>
+						</div>
+						<div class="tab-body">
+							<div id="tabContent2_1" class="tab-content is-active">
+								탭내용1
+							</div>
+							<div id="tabContent2_2" class="tab-content">
+								탭내용2
+							</div>
+							<div id="tabContent2_3" class="tab-content">
+								탭내용3
+							</div>
+						</div>
+					</div>
+					<!-- //전환 탭 -->
+
+					<!-- Ajax 탭 -->
+					<h4 class="g-h4">Ajax 탭</h4>
+					<div class="ajax-tab tab-wrap tab-basic">
+						<div class="tab-nav">
+							<ul>
+								<li class="is-active" aria-controls="tabContent3"><a href="tabPage1.html">탭제목1</a></li>
+								<li aria-controls="tabContent3"><a href="tabPage2.html">탭제목2</a></li>
+								<li aria-controls="tabContent3"><a href="tabPage3.html">탭제목3</a></li>
+							</ul>
+						</div>
+						<div class="tab-body">
+							<div class="tab-content is-active" id="tabContent3">
+								탭내용1
+							</div>
+						</div>
+					</div>
+					<!-- //Ajax 탭 -->
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample021-1">GUIDE</a></li>
+								<li><a href="#tabContentSample021-2">HTML</a></li>
+								<li><a href="#tabContentSample021-3">CSS</a></li>
+								<li><a href="#tabContentSample021-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample021-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample021-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- 링크 탭 -->
+									&lt;h4 class="g-h4">링크 탭&lt;/h4>
+									&lt;div class="link-tabs tab-wrap tab-basic">
+										&lt;div class="tab-nav">
+											&lt;ul>
+												&lt;li class="is-active">&lt;a href="wsg_module_tab.html">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="wsg_module_tab.html">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="wsg_module_tab.html">탭제목3&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+										&lt;div class="tab-body">
+											&lt;div id="tabContent1" class="g-tab-content is-active">
+												탭내용1
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //링크 탭 -->
+
+									&lt;!-- 전환 탭 -->
+									&lt;h4 class="g-h4">전환 탭&lt;/h4>
+									&lt;div class="js-tab tab-wrap tab-basic">
+										&lt;div class="tab-nav">
+											&lt;ul>
+												&lt;li class="is-active">&lt;a href="#tabContent2_1">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#tabContent2_2">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#tabContent2_3">탭제목3&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+										&lt;div class="tab-body">
+											&lt;div class="g-tab-content is-active">
+												탭내용1
+											&lt;/div>
+											&lt;div class="g-tab-content">
+												탭내용2
+											&lt;/div>
+											&lt;div class="g-tab-content">
+												탭내용3
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //전환 탭 -->
+
+									&lt;!-- Ajax 탭 -->
+									&lt;h4 class="g-h4">Ajax 탭&lt;/h4>
+									&lt;div class="ajax-tabs tab-wrap tab-basic">
+										&lt;div class="tab-nav">
+											&lt;ul>
+												&lt;li class="is-active">&lt;a href="tabPage1.html">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="tabPage2.html">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="tabPage3.html">탭제목3&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+										&lt;div class="tab-body">
+											&lt;div class="g-tab-content is-active">
+												탭내용1
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //Ajax 탭 -->
+								</pre>
+							</div>
+							<div id="tabContentSample021-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample021-4" class="g-tab-content">
+								<pre class="brush:js">
+									var ui = {
+										init : function(){
+											// Tab JS
+											if ($('.js-tab .tab-nav a').length > 0){
+												ui.tabs.init($('.js-tab .tab-nav a'));
+											}
+											// Tab Ajax
+											if ($('.ajax-tab .tab-nav a').length > 0){
+												ui.tabAjax.init($('.ajax-tab .tab-nav a'));
+											}
+										},
+										// Tab JS
+										tabs : {
+											init : function($this){
+												this.event($this);
+											},
+											event : function($this){
+												// 현재페이지 탭 활성화
+												$this.on('click', function(){
+													ui.tabs.action($(this)); return false;
+												});
+
+												// 다른페이지 탭 활성화
+												var tabPara = util.paramiter('tabId');
+												if (tabPara != null){
+													$this.each(function(){if ($(this).attr('href') == '#'+tabPara) ui.tabs.action($(this))})
+												}
+											},
+											action : function($this){
+												var target = $this.attr('href');
+												$this.parent().addClass(setClass.active).siblings().removeClass(setClass.active);
+												$(target).addClass(setClass.active).siblings().removeClass(setClass.active);
+											},
+										},
+										// Tab Ajax
+										tabAjax : {
+											obj : '.ajax-tab',
+											objActive : '.ajax-tab .tab-nav li'+ setClass.active +' a',
+											objCont : '.tab-content',
+
+											init : function($this){
+												if ($(this.objActive).length > 0){this.action($(this.objActive))}
+												this.event($this);
+											},
+											event : function($this){
+												//현재페이지의 탭 활성화
+												$this.on('click', function(){
+													ui.tabAjax.action($(this)); return false;
+												});
+
+												//다른페이지의 탭 활성화
+												var tabPara = util.paramiter('tabId');
+												$this.each(function(){if ($(this).attr('href') == '#'+tabPara) ui.tabAjax.action($(this))})
+											},
+											action : function($this){
+												var callTarget = $this.attr('href');
+												var targetArea = $this.parents(this.obj).find(this.objCont);
+												$this.parent().addClass(setClass.active).siblings().removeClass(setClass.active);
+												targetArea.load(callTarget);
+											},
+										},
+									}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //탭기능 -->
+
+				<!-- 탭레이아웃 -->
+				<div class="g-section-body">
+					<h3 class="g-h3">탭 레이아웃</h3>
+
+					<!-- Default -->
+					<h4 class="g-h4">Default (Flexsible)</h4>
+					<div class="js-tab tab-wrap tab-basic">
+						<div class="tab-nav">
+							<ul>
+								<li class="is-active"><a href="#none">탭제목1</a></li>
+								<li><a href="#none">탭제목2</a></li>
+								<li><a href="#none">탭제목3</a></li>
+								<li><a href="#none">탭제목4</a></li>
+								<li><a href="#none">탭제목5</a></li>
+								<li><a href="#none">탭제목6</a></li>
+								<li><a href="#none">탭제목7</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //Default -->
+
+					<!-- Grid Layout -->
+					<h4 class="g-h4">Grid Layout</h4>
+					<div class="js-tab tab-wrap tab-basic">
+						<div class="tab-nav">
+							<ul class="row">
+								<li class="col col-3 is-active"><a href="#none">탭제목1</a></li>
+								<li class="col col-3"><a href="#none">탭제목2</a></li>
+								<li class="col col-3"><a href="#none">탭제목3</a></li>
+								<li class="col col-3"><a href="#none">탭제목4</a></li>
+								<li class="col col-3"><a href="#none">탭제목5</a></li>
+								<li class="col col-3"><a href="#none">탭제목6</a></li>
+								<li class="col col-3"><a href="#none">탭제목7</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //Grid Layout -->
+
+					<!-- Table Layout -->
+					<h4 class="g-h4">Table Layout</h4>
+					<div class="js-tab tab-wrap tab-basic">
+						<div class="tab-nav tab-table">
+							<ul>
+								<li class="is-active"><a href="#none">탭제목1</a></li>
+								<li><a href="#none">탭제목2</a></li>
+								<li><a href="#none">탭제목3</a></li>
+								<li><a href="#none">탭제목4</a></li>
+								<li><a href="#none">탭제목5</a></li>
+								<li><a href="#none">탭제목6</a></li>
+								<li><a href="#none">탭제목7</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //Table Layout -->
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample022-1">GUIDE</a></li>
+								<li><a href="#tabContentSample022-2">HTML</a></li>
+								<li><a href="#tabContentSample022-3">CSS</a></li>
+								<li><a href="#tabContentSample022-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample022-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample022-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- Default -->
+									&lt;h4 class="g-h4">Default (Flexsible)&lt;/h4>
+									&lt;div class="js-tab tab-wrap tab-basic">
+										&lt;div class="tab-nav">
+											&lt;ul>
+												&lt;li class="is-active">&lt;a href="#none">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목3&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목4&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목5&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목6&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목7&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //Default -->
+
+									&lt;!-- Grid Layout -->
+									&lt;h4 class="g-h4">Grid Layout&lt;/h4>
+									&lt;div class="js-tab tab-wrap tab-basic">
+										&lt;div class="tab-nav">
+											&lt;ul class="row">
+												&lt;li class="col col-3 is-active">&lt;a href="#none">탭제목1&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목2&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목3&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목4&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목5&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목6&lt;/a>&lt;/li>
+												&lt;li class="col col-3">&lt;a href="#none">탭제목7&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //Grid Layout -->
+
+									&lt;!-- Table Layout -->
+									&lt;h4 class="g-h4">Table Layout&lt;/h4>
+									&lt;div class="js-tab tab-wrap tab-basic">
+										&lt;div class="tab-nav tab-table">
+											&lt;ul>
+												&lt;li class="is-active">&lt;a href="#none">탭제목1&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목2&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목3&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목4&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목5&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목6&lt;/a>&lt;/li>
+												&lt;li>&lt;a href="#none">탭제목7&lt;/a>&lt;/li>
+											&lt;/ul>
+										&lt;/div>
+									&lt;/div>
+									&lt;!-- //Table Layout -->
+								</pre>
+							</div>
+							<div id="tabContentSample022-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample022-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- //탭레이아웃 -->
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

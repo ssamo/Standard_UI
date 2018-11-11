@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Study - Touch Part1  | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<script type="text/javascript">
+	var isAndroid_ver4 = false;
+	 if (navigator.userAgent.toLowerCase().indexOf("android 4") > -1)
+		isAndroid_ver4 = true;
+	function touchStartHandler(event) {
+		if (isAndroid_ver4)
+			event.preventDefault();
+	}
+
+	//또는
+	function touchMoveHandler(event) {
+		if (isAndroid_ver4)
+			event.preventDefault();
+	}
+
+
+	function touchLock(){
+		$(window).bind('touchmove', function(event){
+			event.preventDefault();
+		});
+		$(document).bind('touchmove', function(event){
+			event.preventDefault();
+		});
+		$('html').bind('touchmove', function(event){
+			event.preventDefault();
+		});
+		$('body').bind('touchmove', function(event){
+			event.preventDefault();
+		});
+	}
+	function touchUnLock(){
+		$(window).unbind('touchmove');
+		$(document).unbind('touchmove');
+		$('html').unbind('touchmove');
+		$('body').unbind('touchmove');
+	}
+</script>
+
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Touch Part1</h1>
+				<div class="g-guideLink">
+					<a href="#gTouch" data-role="spy-scroll">Touch</a>
+					<a href="#gStart" data-role="spy-scroll">Start</a>
+					<a href="#gEnd" data-role="spy-scroll">End</a>
+					<a href="#gMove" data-role="spy-scroll">Move</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Touch -->
+			<section id="gTouch" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Touch</h2>
+				</div>
+				<div class="g-section-body">
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li class="is-active"><a href="#tabContentSample01-1">GUIDE</a></li>
+								<!--
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+								-->
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content is-active">
+								<div class="brush-guide">
+									<p><strong>좌표</strong></p>
+									<ul class="g-desc">
+										<li><span class="display-ib w-80">identifier</span> 인식 점을 구분하기 위한 인식 점 번호</li>
+										<li><span class="display-ib w-80">screenX</span> 디바이스 화면을 기준으로 한 X 좌표</li>
+										<li><span class="display-ib w-80">screenY</span> 디바이스 화면을 기준으로 한 Y 좌표</li>
+										<li><span class="display-ib w-80">clientX</span> 브라우저 화면을 기준으로 한 X 좌표 (스크롤 미포함)</li>
+										<li><span class="display-ib w-80">clientY</span> 브라우저 화면을 기준으로 한 Y 좌표 (스크롤 미포함)</li>
+										<li><span class="display-ib w-80">pageX</span> 가로 스크롤을 포함한 브라우저 화면을 기준으로 한 X 좌표</li>
+										<li><span class="display-ib w-80">pageY</span> 세로 스크롤을 포함한 브라우저 화면을 기준으로 한 Y 좌표</li>
+										<li><span class="display-ib w-80">target</span> 터치된 DOM 객체</li>
+									</ul>
+									<br>
+									<p><strong>안드로이드 4.0 이상 버그</strong></p>
+									<ul class="g-desc">
+										<li>위와 같이 TouchMove Event 이후 브라우져 스크롤이 발생되어 더이상의 이벤트가 발생되지 않습니다.</li>
+										<li>따라서 슬라이드 등의 Touch Event를 사용하는 스크립트 제작시 TouchMove에서 받는 이동 포지션값과 TouchEnd 이벤트를 잡아낼 수 없습니다.</li>
+										<li>위와 같은 현상을 처리하기 위해서는 Android 4.0 이상 버젼에서 TouchStart 또는 첫 TouchMove 이벤트 발생시 이벤트 전파를 방지 시켜야 합니다.
+											<p>출처: http://cometkorea.tistory.com/156 [Comet's library]</p>
+										</li>
+									</ul>
+									<div style="background:#f6f6f6; padding:5px 10px;">
+										TouchStart<br>
+										TouchMove<br>
+										---------------------------------------- 이벤트 죽고 화면 스크롤 발생
+									</div>
+								</div>
+							</div>
+							<!--
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+							-->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Touch -->
+
+			<!-- Start -->
+			<section id="gStart" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Start</h2>
+				</div>
+				<div class="g-section-body">
+					<button type="button" class="btn btn-basic" onclick="touchLock()"><span>Touch Move Lock</span></button>
+					<button type="button" class="btn btn-basic" onclick="touchUnLock()"><span>Touch Move unLock</span></button>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li><span class="display-ib w-80">touchstart</span> 스크린에 손가락이 닿을 때 발생한다</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									var isAndroid_ver4 = false;
+									 if (navigator.userAgent.toLowerCase().indexOf("android 4") > -1)
+										isAndroid_ver4 = true;
+									function touchStartHandler(event) {
+										if (isAndroid_ver4)
+											event.preventDefault();
+									}
+
+									//또는
+									function touchMoveHandler(event) {
+										if (isAndroid_ver4)
+											event.preventDefault();
+									}
+
+									function touchLock(){
+										$(window).bind('touchmove', function(event){
+											event.preventDefault();
+										});
+										$(document).bind('touchmove', function(event){
+											event.preventDefault();
+										});
+										$('html').bind('touchmove', function(event){
+											event.preventDefault();
+										});
+										$('body').bind('touchmove', function(event){
+											event.preventDefault();
+										});
+									}
+									function touchUnLock(){
+										$(window).unbind('touchmove');
+										$(document).unbind('touchmove');
+										$('html').unbind('touchmove');
+										$('body').unbind('touchmove');
+									}
+
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Start -->
+
+			<!-- End -->
+			<section id="gEnd" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">End</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									touchend 스크린에서 손가락을 뗄 때 발생한다
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //End -->
+
+			<!-- Move -->
+			<section id="gMove" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Move</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									touchmove 스크린에 손가락이 닿은 채로 움직일 때 발생한다
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Move -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

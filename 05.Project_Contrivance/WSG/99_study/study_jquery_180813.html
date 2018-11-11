@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Study &gt; Module eventLibs | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script data-main="../../common/js/libs/require.config" src="../../common/js/libs/require.min.js"></script>
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Module eventLibs</h1>
+				<div class="g-guideLink">
+					<a href="#gModule0" data-role="spy-scroll">Generator</a>
+					<a href="#gModule1" data-role="spy-scroll">Tab</a>
+					<a href="#gModule2" data-role="spy-scroll">Collapse</a>
+					<a href="#gModule3" data-role="spy-scroll">Accordion</a>
+					<a href="#gModule4" data-role="spy-scroll">Tooltip</a>
+					<a href="#gModule5" data-role="spy-scroll">Dropdown</a>
+					<a href="#gModule6" data-role="spy-scroll">Modeless</a>
+					<a href="#gModule7" data-role="spy-scroll">Modal</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- ScriptCommon -->
+			<section id="gModule0" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Generator</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="g-tbl-type1">
+						<table>
+							<thead>
+							<tr>
+								<th scope="col" rowspan="2">구분</th>
+								<th scope="col" colspan="3">Multiple</th>
+								<th scope="col" colspan="3">Modeless</th>
+								<th scope="col">Modal</th>
+							</tr>
+							<tr>
+								<th scope="col">Tab</th>
+								<th scope="col">Collapse</th>
+								<th scope="col">Accordion</th>
+								<th scope="col">Tooltip</th>
+								<th scope="col">Dropdown</th>
+								<th scope="col">Layer Popup</th>
+								<th scope="col">Dialog</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td class="align-c">Target Value</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+								<td class="align-c">href</td>
+							</tr>
+							<tr>
+								<td class="align-c">Target Selector</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+								<td class="align-c">id</td>
+							</tr>
+							<tr>
+								<td class="align-c">Active Type</td>
+								<td class="align-c">Open</td>
+								<td class="align-c">Toggle</td>
+								<td class="align-c">Toggle</td>
+								<td class="align-c">All</td>
+								<td class="align-c">Toggle, Hover,<br>Dismiss</td>
+								<td class="align-c">Open, Close</td>
+								<td class="align-c">Open, Close</td>
+							</tr>
+							<tr>
+								<td class="align-c">Effect Type</td>
+								<td class="align-c">Show/Hide</td>
+								<td class="align-c">SlideUp/SlidDown</td>
+								<td class="align-c">SlideUp/SlidDown</td>
+								<td class="align-c">FadeIn/FadeOut</td>
+								<td class="align-c">SlideUp/SlidDown</td>
+								<td class="align-c">FadeIn/FadeOut<br>Animate Position</td>
+								<td class="align-c">FadeIn/FadeOut<br>Animate Position</td>
+							</tr>
+							<tr>
+								<td class="align-c">Layer Type</td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c">absolute</td>
+								<td class="align-c">absolute</td>
+								<td class="align-c">absolute, fixed</td>
+								<td class="align-c">fixed</td>
+							</tr>
+							<tr>
+								<td class="align-c">Direction</td>
+								<td class="align-c">가로, 세로</td>
+								<td class="align-c">가로, 세로</td>
+								<td class="align-c">가로, 세로</td>
+								<td class="align-c">상,하,좌,우</td>
+								<td class="align-c">상,하,좌,우</td>
+								<td class="align-c">중앙</td>
+								<td class="align-c">중앙</td>
+							</tr>
+							<tr>
+								<td class="align-c">Multiple</td>
+								<td class="align-c">Default</td>
+								<td class="align-c">Default</td>
+								<td class="align-c">Default</td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+							</tr>
+							<tr>
+								<td class="align-c">Syncronize</td>
+								<td class="align-c">Default</td>
+								<td class="align-c">true, false</td>
+								<td class="align-c">true, false</td>
+								<td class="align-c">true, false</td>
+								<td class="align-c">true, false</td>
+								<td class="align-c">true, false</td>
+								<td class="align-c">true, false</td>
+							</tr>
+							<tr>
+								<td class="align-c">Dim Layer</td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c"><span class="c-info-light">None</span></td>
+								<td class="align-c">Default</td>
+							</tr>
+							</tbody>
+							<tbody>
+							<tr>
+								<td class="align-c" rowspan="2">고려사항</td>
+								<td colspan="7">
+									<div class="row">
+										<div class="col col-6">
+											<p>- 내부 호출(실행 함수의 분리)</p>
+											<p>- 웹접근성 준수사항 (포커스 이동, 논리적인 순서, 목차순서 등)</p>
+											<p>- 효과 및 이벤트 변경 요구사항</p>
+											<p>- 디자인에 의한 마크업 구조의 유연성</p>
+										</div>
+										<div class="col col-6">
+											<p>* 1단계 : 컨텐츠 분리 (난이도는 쉽지만 손이 많이감.)</p>
+											<p>* 2단계 : 컨텐츠 통합 (한 곳에서 관리하지만 읽을게 많음.)</p>
+											<p>* 3단계 : 모듈별 통합 (같은 모듈끼리 돌려쓰지만, 설계 난이도가 높아짐.)</p>
+											<p>* 4단계 : 모듈전체 통합 (중복코드가 줄어들지만, 전체 난이도가 높아짐.)</p>
+											<p>* 5단계 : 라이브러리 (준비과정이 길지만 구현 및 유지보수 사용성이 높아짐.)</p>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>- 외부 접근방법</p>
+									<p>- 파라미터 호출</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+								<td>
+									<p>- 동기화 설정</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+								<td>
+									<p>- 파라미터 호출</p>
+									<p>- 토글 개별 </p>
+									<p>- 토글 동기화 </p>
+									<p>- 토글 전체반전</p>
+									<p>- 토글 전체동기화</p>
+								</td>
+								<td>
+									<p>- 동기화 설정</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+								<td>
+									<p>- 동기화 설정</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+								<td>
+									<p>- 동기화 설정</p>
+									<p>- 외부 접근방법</p>
+									<p>- 팝업 위치의 다양성</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+								<td>
+									<p>- 외부 접근방법</p>
+									<p>- Multi Modal 예외</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample00-1">GUIDE</a></li>
+								<li><a href="#tabContentSample00-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample00-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample00-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //ScriptCommon -->
+
+			<!-- Tab -->
+			<section id="gModule2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Tab</h2>
+				</div>
+				<div class="g-section-body">
+					<style type="text/css">
+					</style>
+					<div class="tab-wrap tab-basic _js-tab">
+						<div class="tab-nav">
+							<ul>
+								<li><a href="#tabContent01-1">탭제목1</a></li>
+								<li><a href="#tabContent01-2">탭제목2</a></li>
+								<li><a href="#tabContent01-3">탭제목3</a></li>
+								<li><a href="#tabContent01-4">탭제목4</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<!-- 탭내용1 -->
+							<div id="tabContent01-1" class="g-tab-content">
+								탭내용1
+							</div>
+							<!-- //탭내용1 -->
+							<!-- 탭내용2 -->
+							<div id="tabContent01-2" class="g-tab-content">
+								탭내용2
+							</div>
+							<!-- //탭내용2 -->
+							<!-- 탭내용3 -->
+							<div id="tabContent01-3" class="g-tab-content">
+								탭내용3
+							</div>
+							<!-- //탭내용3 -->
+							<!-- 탭내용4 -->
+							<div id="tabContent01-4" class="g-tab-content">
+								탭내용4
+							</div>
+							<!-- //탭내용4 -->
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Tab -->
+
+			<!-- Collapse -->
+			<section id="gModule2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Collapse</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="collapse-wrap">
+						<a href="#collapseContent1" class="btn btn-basic _js-toggle">Collapse1_1</a>
+						<a href="#collapseContent2" class="btn btn-basic _js-toggle">Collapse1_2</a>
+						<a href="#collapseContent3" class="btn btn-basic _js-toggle">Collapse1_3</a>
+						<div class="scroll-h mt-10">
+							<div class="row gutter-h20">
+								<div class="col col-4">
+									<div id="collapseContent1" class="box box-basic collapse">
+										<div class="box-inner">
+											<div class="box-body">
+												Collapse1<br>
+												아침 일찍 출근해 늦은 밤까지 일하는 장시간 근로 문화는 그동안 ‘근면 성실’이라는 이름으로 포장돼 직장인들의 건강과 가정을 앗아 갔다.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col col-4">
+									<div id="collapseContent2" class="box box-basic collapse">
+										<div class="box-inner">
+											<div class="box-body">
+												Collapse2<br>
+												아침 일찍 출근해 늦은 밤까지 일하는 장시간 근로 문화는 그동안 ‘근면 성실’이라는 이름으로 포장돼 직장인들의 건강과 가정을 앗아 갔다.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col col-4">
+									<div id="collapseContent3" class="box box-basic collapse">
+										<div class="box-inner">
+											<div class="box-body">
+												Collapse3<br>
+												아침 일찍 출근해 늦은 밤까지 일하는 장시간 근로 문화는 그동안 ‘근면 성실’이라는 이름으로 포장돼 직장인들의 건강과 가정을 앗아 갔다.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Collapse -->
+
+			<!-- Accordion -->
+			<section id="gModule3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Accordion</h2>
+				</div>
+				<div class="g-section-body">
+					<style type="text/css">
+						/*-------------------------------------------------------------------
+							Accordion
+						-------------------------------------------------------------------*/
+						/* Default */
+						.accordion-body {display:none;}
+						.accordion-body.active {display:block;}
+
+						/* Design */
+						.accordion-basic {border:1px solid #ddd; border-radius:6px;}
+						.accordion-basic .accordion-header {border-top:1px solid #ddd;}
+						.accordion-basic .accordion-body {border-top:1px solid #ddd;}
+						.accordion-basic .accordion-header:first-child {border-top:0;}
+						.accordion-basic .accordion-inner {display:block; padding:5px 20px;}
+					</style>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-4">
+								<p>accordion data-sync="" (기본값 true)</p>
+								<div class="accordion accordion-basic _js-sync="">
+									<div class="accordion-header">
+										<a href="#accor11" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor11" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor12" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor12" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor13" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor13" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor14" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor14" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col col-4">
+								<p>accordion data-sync="false"</p>
+								<div class="accordion accordion-basic" data-sync="false">
+									<div class="accordion-header">
+										<a href="#accor21" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor21" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor22" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor22" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor23" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor23" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor24" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor24" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col col-4">
+								<p>accordion data-sync="true"</p>
+								<div class="accordion accordion-basic _js-sync="true">
+									<div class="accordion-header">
+										<a href="#accor31" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor31" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor32" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor32" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor33" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor33" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+									<div class="accordion-header">
+										<a href="#accor34" class="accordion-inner _js-toggle">accordion</a>
+									</div>
+									<div id="accor34" class="accordion-body">
+										<div class="accordion-inner">
+											accordion-body<br>
+											accordion mode="each"
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="accordion accordion-basic _js-accordion">
+										&lt;div class="accordion-header">
+											&lt;a href="#accor31" class="accordion-inner _js-toggle">accordion&lt;/a>
+										&lt;/div>
+										&lt;div id="accor31" class="accordion-body">
+											&lt;div class="accordion-inner">
+												accordion-body&lt;br>
+												accordion mode="each"
+											&lt;/div>
+										&lt;/div>
+										&lt;div class="accordion-header">
+											&lt;a href="#accor32" class="accordion-inner _js-toggle">accordion&lt;/a>
+										&lt;/div>
+										&lt;div id="accor32" class="accordion-body">
+											&lt;div class="accordion-inner">
+												accordion-body&lt;br>
+												accordion mode="each"
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										Accordion
+									-------------------------------------------------------------------*/
+									/* Default */
+									.accordion-body {display:none;}
+									.accordion-body.is-active {display:block;}
+
+									/* Design */
+									.accordion-basic {border:1px solid #ddd; border-radius:6px;}
+									.accordion-basic .accordion-header {border-top:1px solid #ddd;}
+									.accordion-basic .accordion-header:first-child {border-top:0;}
+									.accordion-basic .accordion-inner {display:block; padding:5px 20px;}
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Accordion -->
+
+			<!-- Tooltip -->
+			<section id="gModule4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Tooltip</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="row">
+						<div class="col col-3">
+							Tooltip Open/Close
+							<div class="tooltip-wrap tooltip-basic" data-sync="false">
+								<a href="#Tooltip1" class="btn btn-basic _js-open"><i class="ico ico-facebook2"></i></a>
+								<div id="Tooltip1" class="tooltip tooltip-right">
+									<i class="arw arw-shape"></i>
+									<div class="tooltip-inner">
+										<div class="tooltip-body">
+											홍길동 페이스북입니다.<br>
+											환영합니다.
+										</div>
+										<div class="tooltip-close">
+											<button type="button" class="btn btn-tooltip-close _js-close" data-target="Tooltip1"><span>닫기</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-3">
+							Tooltip Toggle
+							<div class="tooltip-wrap tooltip-basic">
+								<a href="#Tooltip2" class="btn btn-basic _js-toggle"><i class="ico ico-facebook2"></i></a>
+								<div id="Tooltip2" class="tooltip tooltip-right">
+									<i class="arw arw-shape"></i>
+									<div class="tooltip-inner">
+										<div class="tooltip-body">
+											홍길동 페이스북입니다.<br>
+											환영합니다.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-3">
+							Tooltip Hover
+							<div class="tooltip-wrap tooltip-basic">
+								<a href="#Tooltip3" class="btn btn-basic _js-hover"><i class="ico ico-facebook2"></i></a>
+								<div id="Tooltip3" class="tooltip tooltip-right">
+									<i class="arw arw-shape"></i>
+									<div class="tooltip-inner">
+										<div class="tooltip-body">
+											홍길동 페이스북입니다.<br>
+											환영합니다.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-3">
+							Tooltip Dismiss
+							<div class="tooltip-wrap tooltip-basic">
+								<a href="#Tooltip4" class="btn btn-basic _js-dismiss"><i class="ico ico-facebook2"></i></a>
+								<div id="Tooltip4" class="tooltip tooltip-right">
+									<i class="arw arw-shape"></i>
+									<div class="tooltip-inner">
+										<div class="tooltip-body">
+											홍길동 페이스북입니다.<br>
+											환영합니다.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Tooltip Toggle
+									&lt;div class="tooltip-wrap tooltip-basic">
+										&lt;a href="#Tooltip1" class="btn _js-facebook2">&lt;/i>&lt;/a>
+										&lt;div class="tooltip tooltip-right">
+											&lt;i class="arw arw-shape">&lt;/i>
+											&lt;div class="tooltip-inner">
+												&lt;div class="tooltip-body">
+													홍길동 페이스북입니다.&lt;br>
+													환영합니다.
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* ------------------------------------------------------------------------------------------
+										Tooltip
+									------------------------------------------------------------------------------------------ */
+									/* Default */
+									.tooltip-wrap {display:inline-block; position:relative; z-index:100;}
+									.tooltip {display:none;}
+									.tooltip.is-active {display:block;}
+									.tooltip,.tooltip > .arw {position:absolute;}
+
+									/* Common - Position */
+									.tooltip-top {left:50%; bottom:100%;}
+									.tooltip-right {left:100%; top:50%;}
+									.tooltip-bottom {left:50%; top:100%;}
+									.tooltip-left {right:100%; top:50%;}
+									.tooltip-top > .arw {left:50%; top:0;}
+									.tooltip-right > .arw {left:0; top:50%;}
+									.tooltip-bottom > .arw {left:50%; bottom:0;}
+									.tooltip-left > .arw {right:0; top:50%;}
+									.tooltip-top,.tooltip-top > .arw {transform:translate(-50%, 0);}
+									.tooltip-bottom,.tooltip-bottom > .arw {transform:translate(-50%, 0);}
+									.tooltip-right,.tooltip-right > .arw {transform:translate(0, -50%);}
+									.tooltip-left,.tooltip-left > .arw {transform:translate(0, -50%);}
+
+									/* Design - Type A (툴팁설명) */
+									.tooltip-basic {padding:10px;}
+									.tooltip-basic .tooltip-inner {position:relative; width:200px; padding:10px 15px; background-color:#fff; border:1px solid #ddd; border-radius:6px;}
+									.tooltip-basic .tooltip-close {position:absolute; right:5px; top:5px; font-size:11px;}
+									.tooltip-basic .btn-tooltip-close span {position:absolute; left:-999px; top:-999px;}
+									.tooltip-basic .btn-tooltip-close:before {content:'X'; display:inline-block; width:20px; height:20px; border-radius:50%; border:1px solid #ddd; line-height:18px; text-align:center; color:#999;}
+									.tooltip-basic .tooltip > .arw-shape {border-color:transparent; border-style:solid;}
+									.tooltip-basic .tooltip-top > .arw-shape {bottom:-9px; border-top:10px solid #ddd; border-right-width:5px; border-left-width:5px;}
+									.tooltip-basic .tooltip-right > .arw-shape {left:-9px; border-right:10px solid #ddd; border-top-width:5px; border-bottom-width:5px;}
+									.tooltip-basic .tooltip-bottom > .arw-shape {top:-9px; border-bottom:10px solid #fff; border-right-width:5px; border-left-width:5px;}
+									.tooltip-basic .tooltip-left > .arw-shape {right:-9px; border-left:10px solid #fff; border-top-width:5px; border-bottom-width:5px;}
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Tooltip -->
+
+			<!-- Dropdown -->
+			<section id="gModule5" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Dropdown</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="row">
+						<div class="col col-4">
+							<div class="dropdown-wrap dropdown-basic">
+								<a href="#Dropdown1" class="btn btn-basic _js-toggle">Dropdown Toggle</a>
+								<div id="Dropdown1" class="dropdown dropdown-bottom">
+									<div class="dropdown-inner">
+										<ul>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<div class="dropdown-wrap dropdown-basic">
+								<a href="#Dropdown2" class="btn btn-basic _js-hover">Dropdown Hover</a>
+								<div id="Dropdown2" class="dropdown dropdown-top">
+									<div class="dropdown-inner">
+										<ul>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<div class="dropdown-wrap dropdown-basic">
+								<a href="#Dropdown3" class="btn btn-basic _js-dismiss">Dropdown Dismiss</a>
+								<div id="Dropdown3" class="dropdown dropdown-right">
+									<div class="dropdown-inner">
+										<ul>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+											<li class="item"><a href="#">Dropdown Item</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample05-1">GUIDE</a></li>
+								<li><a href="#tabContentSample05-2">HTML</a></li>
+								<li><a href="#tabContentSample05-3">CSS</a></li>
+								<li><a href="#tabContentSample05-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample05-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample05-2" class="g-tab-content">
+								<pre class="brush:html">
+									dropdown Toggle
+									&lt;div class="dropdown-wrap dropdown-basic">
+										&lt;a href="#Dropdown2" class="btn btn-basic _js-shape">&lt;/i>&lt;/a>
+										&lt;div id="Dropdown2" class="dropdown dropdown-bottom">
+											&lt;div class="dropdown-inner">
+												&lt;ul>
+													&lt;li class="item">&lt;a href="#">Dropdown Item&lt;/a>&lt;/li>
+													&lt;li class="item">&lt;a href="#">Dropdown Item&lt;/a>&lt;/li>
+													&lt;li class="item">&lt;a href="#">Dropdown Item&lt;/a>&lt;/li>
+													&lt;li class="item">&lt;a href="#">Dropdown Item&lt;/a>&lt;/li>
+												&lt;/ul>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample05-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										Dropdown
+									-------------------------------------------------------------------*/
+									/* Default */
+									.dropdown-wrap {position:relative; display:inline-block; font-size:17px; color:#999;}
+									.dropdown {display:none; position:absolute; width:100%; z-index:10; background-color:#fff;}
+									.dropdown.is-active {display:block;}
+
+									/* Common */
+									.dropdown-top {bottom:100%; left:0;}
+									.dropdown-right {left:100%; top:0;}
+									.dropdown-left {right:100%; top:0;}
+
+									/* Design */
+									.dropdown-basic {font-size:14px;}
+									.dropdown-basic .btn-basic {font-size:14px;}
+									.dropdown-basic .dropdown {border:1px solid #ddd; border-radius:3px;}
+									.dropdown-basic .dropdown-inner {padding:5px 10px;}
+								</pre>
+							</div>
+							<div id="tabContentSample05-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Dropdown -->
+
+			<!-- Modeless -->
+			<section id="gModule6" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Modeless</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="row">
+						<div class="col col-4">
+							<div class="modeless-wrap">
+								<a href="#Modeless1" class="btn btn-basic _js-open"><span>Modeless Open</span></a>
+								<div id="Modeless1" class="modeless">
+									<div class="modeless-header">
+										modeless-header
+									</div>
+									<div class="modeless-body">
+										modeless-body
+									</div>
+									<div class="modeless-footer">
+										modeless-footer
+									</div>
+									<div class="modeless-close">
+										<button type="button" class="btn btn-basic _js-close" data-target="Modeless1"><span>Modeless Close</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<div class="modeless-wrap">
+								<a href="#Modeless2" class="btn btn-basic _js-toggle"><span>Modeless Toggle</span></a>
+								<div id="Modeless2" class="modeless">
+									<div class="modeless-header">
+										modeless-header
+									</div>
+									<div class="modeless-body">
+										modeless-body
+									</div>
+									<div class="modeless-footer">
+										modeless-footer
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample06-1">GUIDE</a></li>
+								<li><a href="#tabContentSample06-2">HTML</a></li>
+								<li><a href="#tabContentSample06-3">CSS</a></li>
+								<li><a href="#tabContentSample06-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample06-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample06-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample06-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample06-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Modeless -->
+
+			<!-- Modal -->
+			<section id="gModule7" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Modal</h2>
+				</div>
+				<div class="g-section-body">
+					<a href="#Modal1" class="btn btn-basic _js-open"><span>Modal Open</span></a>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample07-1">GUIDE</a></li>
+								<li><a href="#tabContentSample07-2">HTML</a></li>
+								<li><a href="#tabContentSample07-3">CSS</a></li>
+								<li><a href="#tabContentSample07-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Modal -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+
+	<!-- Modal Area -->
+	<div id="Modal1" class="modal-wrap">
+		<div class="modal">
+			<div class="modal-header">
+				modal-header
+			</div>
+			<div class="modal-body">
+				modal-body
+			</div>
+			<div class="modal-footer">
+				modal-footer
+			</div>
+			<div class="modal-close">
+				<button type="button" class="btn btn-basic btn-min _js-close" data-target="Modal1"><span>닫기</span></button>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Area -->
+
+</div>
+</body>
+</html>

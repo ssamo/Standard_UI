@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core Dropdown | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Dropdown</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li class="is-active"><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content is-active">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>레이아웃 - .dropdown-wrap .js-dropdown-btn .dropdown .dropdown-scroll .dropdown-inner</li>
+										<li>기능속성 - aria-controls, aria-hidden 속성을 사용하여 제어한다.</li>
+										<li>옵션속성 - data- 속성으로 옵션설정을 적용한다.
+											<br>data-rows="4" (스크롤라인수)
+											<br>data-select="true" (셀렉트설정)
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- 앵커인 경우 -->
+									&lt;div class="dropdown-wrap dropdown-이름">
+										&lt;a href="#dropdown01" aria-controls="dropdown01" class="js-dropdown-btn">Dropdown Basic &lt;i class="arw arw-fold white">&lt;/i>&lt;/a>
+										&lt;div id="dropdown01" class="dropdown" aria-hidden="true">
+											&lt;div class="dropdown-scroll">
+												&lt;div class="dropdown-inner">
+													&lt;a href="#">Dropdown Active&lt;/a>
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+
+									&lt;!-- 버튼인 경우 -->
+									&lt;div class="dropdown-wrap dropdown-이름">
+										&lt;button type="button" aria-controls="dropdown02" class="js-dropdown-btn">Dropdown Basic &lt;i class="arw arw-fold white">&lt;/i>&lt;/button>
+										&lt;div id="dropdown02" class="dropdown" aria-hidden="true">
+											&lt;div class="dropdown-scroll">
+												&lt;div class="dropdown-inner">
+													&lt;a href="#">Dropdown Active&lt;/a>
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										## Dropdown
+									-------------------------------------------------------------------*/
+									/* Default */
+									.dropdown-wrap {position:relative; z-index:10; display:inline-block;}
+									.dropdown-wrap.is-active {z-index:11;}
+									.js-dropdown-btn {position:relative; z-index:2;}
+									.dropdown {position:absolute; z-index:1; width:100%;}
+									.dropdown[aria-hidden=true] {display:none;}
+									.dropdown[aria-hidden=false] {display:block;}
+									.dropdown-scroll {overflow-y:auto;}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									var ui = {
+										init : function(){
+											// Dropdown
+											if ($('.dropdown-wrap .js-dropdown-btn').length > 0){
+												ui.dropdown.init($('.dropdown-wrap .js-dropdown-btn'));
+											}
+										},
+										dropdown : {
+											objWrap : '.dropdown-wrap',
+											objTarget : null,
+											state : true,
+											init : function($this){
+												this.event($this);
+											},
+											event : function($this){
+												var that = this;
+												var $that = null;
+												$this.on('click', function(e){
+													that.objTarget = '#' + $(this).attr('aria-controls');
+													if (that.state == true){
+														that.state = false;
+														that.reset($(this), $('.dropdown').not(that.objTarget));
+														if ($(that.objTarget).is(':visible')){
+															that.hide($(this), $(that.objTarget));
+														} else {
+															that.show($(this), $(that.objTarget));
+														}
+													}
+													e.preventDefault();
+													e.stopPropagation();
+												});
+												var callback = function(){ui.dropdown.reset($this, $('.dropdown'))}
+												util.callThisTarget($(that.objWrap), callback);
+											},
+											// 초기화
+											reset : function($this, $target){
+												var that = this;
+												var onCompleteFunc = function(){$target.attr({'aria-hidden':'true'})}
+												$target.closest(that.objWrap).removeClass(clsActive)
+												TweenMax.to($target, 0.2, {scaleY:'0', y:'-50%', opacity:0, onComplete:onCompleteFunc}, {ease:Power4.easeOut});
+											},
+											// 활성
+											show : function($this, $target){
+												var that = this;
+												var onCompleteFunc = function(){
+													that.state = true;
+													that.choice($this, $target);
+												};
+												$target.attr({'aria-hidden':'false'}).closest(that.objWrap).addClass(clsActive);
+												TweenMax.set($target, {scaleY:'0', y:'-50%', opacity:0});
+												TweenMax.to($target, 0.2, {scaleY:'1', y:'0%', opacity:1, onComplete:onCompleteFunc}, {ease:Power4.easeOut});
+											},
+											// 비활성
+											hide : function($this, $target){
+												var that = this;
+												var onCompleteFunc = function(){$target.attr({'aria-hidden':'true'});that.state = true;}
+												$target.closest(that.objWrap).removeClass(clsActive);
+												TweenMax.to($target, 0.2, {scaleY:'0', y:'-50%', opacity:0, onComplete:onCompleteFunc}, {ease:Power4.easeOut});
+											},
+											// 목록선택
+											choice : function($this, $target){
+												var that = this;
+												if ($target.attr('data-select') == 'true'){
+													$target.find('.item a').on('click', function(e){
+														$this.text($(this).text());
+														that.hide($this, $target);
+														e.preventDefault();
+														e.stopPropagation();
+														e.stopImmediatePropagation();
+													})
+												}
+											},
+										}
+									}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Basic</h3>
+					<div class="dropdown-wrap dropdown-basic">
+						<a href="#dropdown01" aria-controls="dropdown01" class="btn btn-basic btn-primary w-180 js-dropdown-btn">Dropdown Basic <i class="arw arw-fold white"></i></a>
+						<div id="dropdown01" aria-hidden="true" tabindex="0" class="dropdown">
+							<div class="dropdown-scroll">
+								<div class="dropdown-inner">
+									<p class="item"><a href="#">Dropdown Item1</a></p>
+									<p class="item"><a href="#">Dropdown Item2</a></p>
+									<p class="item"><a href="#">Dropdown Item3</a></p>
+									<p class="item"><a href="#">Dropdown Item4</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Scrolling</h3>
+					<div class="dropdown-wrap dropdown-basic">
+						<a href="#dropdown02" aria-controls="dropdown02" class="btn btn-basic btn-primary w-180 js-dropdown-btn">Dropdown Scrolling <i class="arw arw-fold white"></i></a>
+						<div id="dropdown02" class="dropdown" aria-hidden="true" data-rows="5">
+							<div class="dropdown-scroll">
+								<div class="dropdown-inner">
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Scroll Plugin</h3>
+					<div class="dropdown-wrap dropdown-basic">
+						<a href="#dropdown03" aria-controls="dropdown03" class="btn btn-basic btn-primary w-180 js-dropdown-btn">Dropdown Plugin <i class="arw arw-fold white"></i></a>
+						<div id="dropdown03" class="dropdown" aria-hidden="true" data-rows="5">
+							<div class="dropdown-scroll js-scroll">
+								<div class="dropdown-inner">
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+									<p class="item"><a href="#">Dropdown Item</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Select</h3>
+					<div class="dropdown-wrap dropdown-basic">
+						<a href="#dropdown04" aria-controls="dropdown04" class="btn btn-basic btn-primary w-180 js-dropdown-btn"><span class="dropdown-label">Dropdown Select</span> <i class="arw arw-fold white"></i></a>
+						<div id="dropdown04" class="dropdown" aria-hidden="true" data-select="true">
+							<div class="dropdown-scroll">
+								<div class="dropdown-inner">
+									<p class="item"><a href="#">Dropdown Item1</a></p>
+									<p class="item"><a href="#">Dropdown Item2</a></p>
+									<p class="item"><a href="#">Dropdown Item3</a></p>
+									<p class="item"><a href="#">Dropdown Item4</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>드롭다운 토글 타이밍과 블릿의 회전 타이밍 맞추기</li>
+										<li>펼쳐지는 효과가 종료된 후 접기 가능</li>
+										<li>드롭다운 바깥을 클릭하는경우 초기화</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- Basic :  aria-hidden="true" -->
+									&lt;div id="dropdown01" class="dropdown" aria-hidden="true">
+										&lt;div class="dropdown-scroll">
+											(생략)
+										&lt;/div>
+									&lt;/div>
+
+									&lt;!-- Scrolling : data-rows="5" -->
+									&lt;div id="dropdown02" class="dropdown" aria-hidden="true" data-rows="5">
+										&lt;div class="dropdown-scroll">
+											(생략)
+										&lt;/div>
+									&lt;/div>
+
+									&lt;!-- Scroll Plugin : js-scroll -->
+									&lt;div id="dropdown03" class="dropdown" aria-hidden="true" data-rows="5">
+										&lt;div class="dropdown-scroll js-scroll">
+											(생략)
+										&lt;/div>
+									&lt;/div>
+
+									&lt;!-- Select : data-select="true" -->
+									&lt;a href="#dropdown01" aria-controls="dropdown01" class="js-dropdown-btn">&lt;span class="dropdown-label">Dropdown Select&lt;/span> &lt;i class="arw arw-fold white">&lt;/i>&lt;/a>
+									&lt;div id="dropdown04" class="dropdown" aria-hidden="true" data-select="true">
+										&lt;div class="dropdown-scroll">
+											(생략)
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Design */
+									.dropdown-basic {font-size:14px;}
+									.dropdown-basic .btn-basic {font-size:14px;}
+									.dropdown-basic .dropdown {height:0; background-color:#fff; border:1px solid #2c3952; border-radius:3px; margin-top:-5px; line-height:24px; outline:0;}
+									.dropdown-basic .dropdown-scroll {transform:translateY(-20px);}
+									.dropdown-basic .dropdown-scroll[data-scroll=true] {overflow-y:scroll;}
+									.dropdown-basic .dropdown-scroll[data-scroll-row='5'] {height:138px;}
+									.dropdown-basic .dropdown-inner {padding:10px 10px 5px;}
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

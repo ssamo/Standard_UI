@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Libs &gt; Forms | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<label class="form-switch"><input type="checkbox" /><i></i></label>
+			<label class="form-switch"><input type="checkbox" /><i class="round"></i></label>
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-body">
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li class="active"><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content active">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>Placeholder : IE기준으로 포커스되는 순간 텍스트가 사라지도록 크로스브라우징 적용</li>
+										<li>Select : 사용자정의 화살표를 적용 하기위해 기본화살표 숨김처리 및 크로스브라우징 적용</li>
+										<li>속성 선언 : 타입(type) &gt; 요소정보(name, id) &gt; 데이터정보(value, title) &gt; 디자인(class, style) &gt; 기타(상태, 기능)</li>
+										<li>속성 선언의 우선순위는 참고하되 필요한 속성에 대해서만 엘리먼트에 적용한다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- 속성 선언순서를 적용한 예 -->
+									&lt;input type="text" name="" id="" value="" title="" class="" style="" readonly /&gt;
+									&lt;input type="radio" name="" id="" value="" title="" class="" style="" checked /&gt;
+									&lt;input type="checkbox" name="" id="" value="" title="" class="" style="" checked /&gt;
+									&lt;textarea name="" id="" rows="" cols="" class="">&lt;/textarea>
+									&lt;select name="" id="" value="" title="" class="" style="" multiple disabled />&lt;/select>
+
+
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Default */
+									input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#999;}/* IE 10 + */
+									input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color:#999;}/* Webkit Browser */
+									input:-moz-placeholder, textarea:-moz-placeholder {color:#999;}/* Mozilla Firefox 4 to 18 */
+									input::-moz-placeholder, textarea::-moz-placeholder {color:#999;}/* Mozilla Firefox 19+ */
+									input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color:transparent;}/* IE 10 + */
+									input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {color:transparent;}/* Webkit Browser */
+									input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {color:transparent;}/* Mozilla Firefox 4 to 18 */
+									input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {color:transparent;}/* Mozilla Firefox 19+ */
+									input {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; border:0px; vertical-align:middle;}
+									textarea {width:100%; vertical-align:middle; resize:none;}
+									select {appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none;}
+									select::-ms-expand {display:none;}
+									:root select {padding:0px 30px 0px 5px;}
+									.ie9 select {padding:5px 35px 4px 5px;background:none;}
+									.ie9 :root select {padding:0; font-size:0;}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+								/* Placeholders.js v4.0.1 */
+								/*!
+								 * The MIT License
+								 * Copyright (c) 2012 James Allardice
+								 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+								 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+								 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+								 */
+								!function(a){"use strict";function b(){}function c(){try{return document.activeElement}catch(a){}}function d(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return!0;return!1}function e(a,b,c){return a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent?a.attachEvent("on"+b,c):void 0}function f(a,b){var c;a.createTextRange?(c=a.createTextRange(),c.move("character",b),c.select()):a.selectionStart&&(a.focus(),a.setSelectionRange(b,b))}function g(a,b){try{return a.type=b,!0}catch(c){return!1}}function h(a,b){if(a&&a.getAttribute(B))b(a);else for(var c,d=a?a.getElementsByTagName("input"):N,e=a?a.getElementsByTagName("textarea"):O,f=d?d.length:0,g=e?e.length:0,h=f+g,i=0;h>i;i++)c=f>i?d[i]:e[i-f],b(c)}function i(a){h(a,k)}function j(a){h(a,l)}function k(a,b){var c=!!b&&a.value!==b,d=a.value===a.getAttribute(B);if((c||d)&&"true"===a.getAttribute(C)){a.removeAttribute(C),a.value=a.value.replace(a.getAttribute(B),""),a.className=a.className.replace(A,"");var e=a.getAttribute(I);parseInt(e,10)>=0&&(a.setAttribute("maxLength",e),a.removeAttribute(I));var f=a.getAttribute(D);return f&&(a.type=f),!0}return!1}function l(a){var b=a.getAttribute(B);if(""===a.value&&b){a.setAttribute(C,"true"),a.value=b,a.className+=" "+z;var c=a.getAttribute(I);c||(a.setAttribute(I,a.maxLength),a.removeAttribute("maxLength"));var d=a.getAttribute(D);return d?a.type="text":"password"===a.type&&g(a,"text")&&a.setAttribute(D,"password"),!0}return!1}function m(a){return function(){P&&a.value===a.getAttribute(B)&&"true"===a.getAttribute(C)?f(a,0):k(a)}}function n(a){return function(){l(a)}}function o(a){return function(){i(a)}}function p(a){return function(b){return v=a.value,"true"===a.getAttribute(C)&&v===a.getAttribute(B)&&d(x,b.keyCode)?(b.preventDefault&&b.preventDefault(),!1):void 0}}function q(a){return function(){k(a,v),""===a.value&&(a.blur(),f(a,0))}}function r(a){return function(){a===c()&&a.value===a.getAttribute(B)&&"true"===a.getAttribute(C)&&f(a,0)}}function s(a){var b=a.form;b&&"string"==typeof b&&(b=document.getElementById(b),b.getAttribute(E)||(e(b,"submit",o(b)),b.setAttribute(E,"true"))),e(a,"focus",m(a)),e(a,"blur",n(a)),P&&(e(a,"keydown",p(a)),e(a,"keyup",q(a)),e(a,"click",r(a))),a.setAttribute(F,"true"),a.setAttribute(B,T),(P||a!==c())&&l(a)}var t=document.createElement("input"),u=void 0!==t.placeholder;if(a.Placeholders={nativeSupport:u,disable:u?b:i,enable:u?b:j},!u){var v,w=["text","search","url","tel","email","password","number","textarea"],x=[27,33,34,35,36,37,38,39,40,8,46],y="#ccc",z="placeholdersjs",A=new RegExp("(?:^|\\s)"+z+"(?!\\S)"),B="data-placeholder-value",C="data-placeholder-active",D="data-placeholder-type",E="data-placeholder-submit",F="data-placeholder-bound",G="data-placeholder-focus",H="data-placeholder-live",I="data-placeholder-maxlength",J=100,K=document.getElementsByTagName("head")[0],L=document.documentElement,M=a.Placeholders,N=document.getElementsByTagName("input"),O=document.getElementsByTagName("textarea"),P="false"===L.getAttribute(G),Q="false"!==L.getAttribute(H),R=document.createElement("style");R.type="text/css";var S=document.createTextNode("."+z+" {color:"+y+";}");R.styleSheet?R.styleSheet.cssText=S.nodeValue:R.appendChild(S),K.insertBefore(R,K.firstChild);for(var T,U,V=0,W=N.length+O.length;W>V;V++)U=V&lt;N.length?N[V]:O[V-N.length],T=U.attributes.placeholder,T&&(T=T.nodeValue,T&&d(w,U.type)&&s(U));var X=setInterval(function(){for(var a=0,b=N.length+O.length;b>a;a++)U=a&lt;N.length?N[a]:O[a-N.length],T=U.attributes.placeholder,T?(T=T.nodeValue,T&&d(w,U.type)&&(U.getAttribute(F)||s(U),(T!==U.getAttribute(B)||"password"===U.type&&!U.getAttribute(D))&&("password"===U.type&&!U.getAttribute(D)&&g(U,"text")&&U.setAttribute(D,"password"),U.value===U.getAttribute(B)&&(U.value=T),U.setAttribute(B,T)))):U.getAttribute(C)&&(k(U),U.removeAttribute(B));Q||clearInterval(X)},J);e(a,"beforeunload",function(){M.disable()})}}(this),function(a,b){"use strict";var c=a.fn.val,d=a.fn.prop;b.Placeholders.nativeSupport||(a.fn.val=function(a){var b=c.apply(this,arguments),d=this.eq(0).data("placeholder-value");return void 0===a&&this.eq(0).data("placeholder-active")&&b===d?"":b},a.fn.prop=function(a,b){return void 0===b&&this.eq(0).data("placeholder-active")&&"value"===a?"":d.apply(this,arguments)})}(jQuery,this);
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">INPUT</h3>
+					<div class="row g-form-component">
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">속성 구분</h4>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder="default placeholder" title="" class="form-basic" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=":hover" title="" class="form-basic hover" /></p>
+							<p class="g-item"><input type="text" name="" id="" value=":focus" placeholder=":focus" title="" class="form-basic focus" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=":readonly" title="" class="form-basic" readonly /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=":disabled" title="" class="form-basic" disabled /></p>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">강조 구분</h4>
+							<p class="g-item"><input type="text" name="" id="" value="default value" placeholder="default" title="" class="form-basic" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".emphasis" title="" class="form-basic emphasis" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".security" title="" class="form-basic security" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".error placeholder" title="" class="form-basic error" /></p>
+							<p class="g-item"><input type="text" name="" id="" value=".error value" placeholder=".error placeholder" title="" class="form-basic error" /></p>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">조합 구분</h4>
+							<p class="g-item">
+								<input type="text" name="" id="" value="" placeholder="outer button" title="" class="form-basic" />
+								<button type="button" class="btn btn-basic btn-xs"><span>버튼</span></button>
+							</p>
+							<p class="g-item">
+								<input type="text" name="" id="" value="" placeholder="outer button" title="" class="form-basic">
+								<span class="form-txt txt-time">[Text]</span>
+							</p>
+							<p class="g-item">
+								<span class="form-addon type-btn right">
+									<input type="text" name="" id="" value="" placeholder="add-on button" title="" class="form-basic">
+									<button type="button" class="addon btn"><span><i class="ico ico-srch">Search</i></span></button>
+								</span>
+							</p>
+							<p class="g-item">
+								<span class="form-addon type-txt right">
+									<input type="text" name="" id="" value="" placeholder="add-on text" title="" class="form-basic">
+									<span class="addon txt">[Text]</span>
+								</span>
+							</p>
+							<p class="g-item">
+								<span class="form-addon type-ico left">
+									<input type="text" name="" id="" value="" placeholder="add-on icon" title="" class="form-basic">
+									<i class="addon ico ico-20-20"></i>
+								</span>
+							</p>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">크기/사이즈 구분</h4>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".xs" title="" class="form-basic xs" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".xl" title="" class="form-basic xl" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".w-[의미]" title="" class="form-basic w-basic" /></p>
+							<p class="g-item"><input type="text" name="" id="" value="" placeholder=".w-[수치]" title="" class="form-basic w-100p" /></p>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Select</h3>
+					<div class="row g-form-component">
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">속성 구분</h4>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="select2" value="" title="" class="form-basic">
+										<option value="">default</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic hover">
+										<option value="">:hover</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic focus">
+										<option value="">:focus</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic" readonly>
+										<option value="">:readonly</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic" disabled />
+										<option value="">:disabled</option>
+									</select>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">강조 구분</h4>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="select2" value="" title="" class="form-basic">
+										<option value="">선택하세요.</option>
+										<option value="">.selected</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="select2" value="" title="" class="form-basic selected">
+										<option value="">.selected</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic emphasis">
+										<option value="">.emphasis</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic security">
+										<option value="">.security</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic error">
+										<option value="">.error</option>
+									</select>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">조합 구분</h4>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic">
+										<option value="">outer button</option>
+									</select>
+								</span>
+								<button type="button" class="btn btn-basic btn-xs"><span>버튼</span></button>
+							</div>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic">
+										<option value="">outer text</option>
+									</select>
+								</span>
+								<span class="form-txt txt-time">[Text]</span>
+							</div>
+							<div class="g-item">
+								<span class="form-addon left">
+									<span class="ui-select">
+										<select name="" id="" value="" title="" class="form-basic">
+											<option value="">add-on select</option>
+										</select>
+									</span>
+									<i class="addon ico ico-20-20"></i>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="form-addon left">
+									<span class="ui-button">
+										<button type="button" class="form-basic"><span>add-on button</span></button>
+									</span>
+									<i class="addon ico ico-20-20"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">종류 구분</h4>
+							<div class="g-item">
+								<span class="ui-select">
+									<select name="" id="" value="" title="" class="form-basic">
+										<option value="">selectbox</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="ui-button">
+									<button type="button" class="form-basic"><span>button</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Checkbox, Radio</h3>
+					<div class="row g-form-component">
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">텍스트노출 구분</h4>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" /><span class="simple">전체</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="radio1" /><span class="simple">전체</span></label>
+								</span>
+							</div>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" checked /><span>선택</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="radio1" checked /><span>선택</span></label>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">속성/강조 구분</h4>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" name="" class="hover" /><span>:hover</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="" class="hover" /><span>:hover</span></label>
+								</span>
+							</div>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" name="" disabled /><span>:disabled</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="" disabled /><span>:disabled</span></label>
+								</span>
+							</div>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" name="" class="error" /><span class="simple">전체</span></label>
+									<label class="form-check"><input type="checkbox" name="" class="error" /><span>.error</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="radioError" class="error" /><span class="simple">전체</span></label>
+									<label class="form-check"><input type="radio" name="radioError" class="error" /><span>.error</span></label>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">형태 종류</h4>
+							<div class="g-item">
+								<p>
+									<label class="form-switch"><input type="checkbox" /><i></i></label>
+									<label class="form-switch"><input type="checkbox" /><i class="round"></i></label>
+								</p>
+							</div>
+							<div class="g-item">
+								<p class="ui-button-toggle">
+									<label class="btn btn-basic"><input type="checkbox" name="test1" data-check="all" checked />전체</label>
+									<label class="btn btn-basic"><input type="checkbox" name="test1" />체크1</label>
+									<label class="btn btn-basic"><input type="checkbox" name="test1" />체크2</label>
+								</p>
+							</div>
+							<div class="g-item">
+								<p class="ui-button-toggle">
+									<label class="btn btn-basic"><input type="radio" name="radioRadio" />라디오1</label>
+									<label class="btn btn-basic"><input type="radio" name="radioRadio" />라디오2</label>
+									<label class="btn btn-basic"><input type="radio" name="radioRadio" />라디오3</label>
+								</p>
+							</div>
+						</div>
+						<div class="col col-3">
+							<h4 class="g-h4 mt-0">형태 종류 - 탭</h4>
+							<div class="g-item">
+								<div class="ui-tab-toggle tab-wrap tab-basic">
+									<div class="tab-nav tab-check tab-table">
+										<ul>
+											<li class="active"><label><input type="checkbox" name="test2" data-check="all" checked />전체</label></li>
+											<li><label><input type="checkbox" name="test2" />체크1</label></li>
+											<li><label><input type="checkbox" name="test2" />체크2</label></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="g-item">
+								<div class="ui-tab-toggle tab-wrap tab-basic">
+									<div class="tab-nav tab-check tab-table">
+										<ul>
+											<li class="active"><label><input type="radio" name="radioTab" checked />라디오1</label></li>
+											<li><label><input type="radio" name="radioTab" />라디오2</label></li>
+											<li><label><input type="radio" name="radioTab" />라디오3</label></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="g-item">
+								<div class="ui-tab-toggle tab-wrap tab-basic">
+									<div class="tab-nav tab-check tab-table">
+										<ul>
+											<li class="active"><label class="form-check"><input type="checkbox" /><span>선택</span></label></li>
+											<li><label class="form-check"><input type="checkbox" /><span>선택</span></label></li>
+											<li><label class="form-check"><input type="checkbox" /><span>선택</span></label></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="g-item">
+								<div class="ui-tab-toggle tab-wrap tab-basic">
+									<div class="tab-nav tab-check tab-table">
+										<ul>
+											<li class="active"><label class="form-check"><input type="radio" name="radioTab2" checked /><span>선택</span></label></li>
+											<li><label class="form-check"><input type="radio" name="radioTab2" /><span>선택</span></label></li>
+											<li><label class="form-check"><input type="radio" name="radioTab2" checked /><span>선택</span></label></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>WA Aria | WSG MASTER</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gAria1" data-role="spy-scroll">Aria1</a>
+					<a href="#gAria2" data-role="spy-scroll">Aria2</a>
+					<a href="#gAria3" data-role="spy-scroll">Aria3</a>
+					<a href="#gAria4" data-role="spy-scroll">Aria4</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Aria 1 -->
+			<section id="gAria1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Aria 1</h2>
+				</div>
+				<div class="g-section-body">
+					<style type="text/css">
+
+					body.is-fixed {position:fixed; left:0; top:0; width:100wh; height:100vh; overflow:hidden; background-color:rgba(0,0,0,0.5);}
+					body.is-fixed .js-remove-fixed {position:fixed; left:50%; top:50%; transform:translate(-50%, -50%)}
+
+					/*#g-wrap {height:100vh; overflow-y:auto; -webkit-overflow-scrolling:touch;}*/
+					.modal-wrap {-webkit-transform:translate(0, 0); transform:translate(0, 0);}
+					#textModal1 {width:100%; height:100vh;}
+					#textModal1 .modal {border-radius:0;}
+					#textModal2 .modal {padding:50px}
+					</style>
+					<script type="text/javascript">
+					<!--
+						function iOSversion() {
+							if (/iP(hone|od|ad)/.test(navigator.platform)) {
+								// supports iOS 2.0 and later: <https://bit.ly/TJjs1V>
+								var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+								return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+							}
+						}
+
+						$(document).ready(function(){
+							$('.js-add-fixed').on('click', function(){
+								$('body').addClass('is-fixed');
+							})
+							$('.js-remove-fixed').on('click', function(){
+								$('body').removeClass('is-fixed');
+							})
+							$('.js-version').on('click', function(){
+								var ver = iOSversion();
+								if (typeof ver == 'undefined'){
+									//alert('android');
+								} else {
+									//alert(ver[0]);
+								}
+							})
+							var modal = {
+								modalWrap : '.modal:visible',
+								dismiss : '.modal-mask',
+								targetH : null,
+								targetW : null,
+								targetT : null,
+								targetL : null,
+								animateT : 50,
+								speed : 300,
+								scrTop : null,
+
+								init : function(){
+									this.event();
+								},
+								event : function(){
+									$('.js-modal-open').on('click',function(){
+										modal.open($(this), $(this).attr('data-target'));
+									})
+									$('.js-modal-close').on('click', function(){
+										modal.close($(this), $(this).attr('data-target'));
+									})
+								},
+								open : function(opener, target){
+									$('#'+target).height(document.body.offsetHeight);
+
+									//Modal Position,Size
+									this.targetH = $('#'+target).height();
+									this.targetW = $('#'+target).width();
+									this.targetT = -this.targetH/2;
+									this.targetL = -this.targetW/2;
+
+									//Active Dismiss (여러개의 모달을 띄우게 되는 경우)
+									if ($(this.modalWrap).length < 1){
+										$('body').append('<div class="modal-mask"></div>');
+										$(this.dismiss).fadeIn();
+									}
+
+									//Animate Modal
+									$('#'+target).css({'margin-left' : this.targetL, 'margin-top' : this.targetT + this.animateT}).show().stop().animate({'margin-top' : this.targetT}, this.speed, 'easeOutQuad');
+									this.scrTop = $('body').scrollTop();
+									//$('body').addClass('is-fixed');
+									//$('html,body').css({overflow:'hidden'});
+									//$('body').scrollTop(this.scrTop);
+									//$('#g-wrap').addClass('is-fixed').scrollTop(this.scrTop);
+									//$('#g-wrap').css({overflow:'hidden'});
+									$('html, body').on('scroll touchmove mousewheel', function(event) { event.preventDefault();     event.stopPropagation();     return false; });
+
+									//Modal Opner, Closer setAttribute
+									$(opener).attr('data-opener', target);
+									$('#'+target).attr('tabIndex', '-1').focus();
+									$('#'+target).find('.modal-close').each(function(){$(this).attr('data-target',target)});
+
+									//Dismiss Modal Close
+									$(this.dismiss).on('click', function(){
+										modal.close(opener, target);
+									})
+								},
+								close : function(opener, target){
+									//Active Modal 2개 미만인 경우
+									if ($(this.modalWrap).length < 2){
+										$('#'+target).stop().fadeOut(this.speed, 'easeOutQuad', function(){$('[data-opener='+target+']').focus()});
+										$(this.dismiss).fadeOut(this.speed,function(){
+											$(this).remove();
+										});
+
+										//$('body').removeClass('is-fixed');
+										//$('body, html').css({overflow:''});
+										//$('#g-wrap').removeClass('is-fixed');
+										//$('body').scrollTop(this.scrTop);
+										//$('#g-wrap').css({overflow:''});
+										$('html, body').off('scroll touchmove mousewheel');
+									}
+
+									//Active Modal 2개 이상인 경우
+									else {
+										$('#'+target).stop().fadeOut(this.speed, 'easeOutQuad', function(){$('[data-opener='+target+']').focus()});
+									}
+								}
+							}
+							modal.init();
+						})
+					//-->
+					</script>
+					<div class="form-group">
+						<label for="sInput" class="display-b">인풋텍스트</label>
+						<input type="text" name="" id="sInput" value="" placeholder="" title="" class="form-basic">
+					</div>
+					<button type="button" class="btn btn-basic js-add-fixed"><span>Body Fixed 설정</span></button>
+					<button type="button" class="btn btn-basic js-remove-fixed"><span>Body Fixed 해제</span></button>
+					<br>
+					<button type="button" class="btn btn-basic js-version"><span>Version Test</span></button>
+
+					<div class="modal-wrap" id="textModal1">
+						<div class="modal">
+							<button type="button" class="btn btn-basic js-modal-close" data-target="textModal1"><span>팝업닫기</span></button>
+						</div>
+					</div>
+					<div class="modal-wrap" id="textModal2">
+						<div class="modal">
+							<button type="button" class="btn btn-basic js-modal-close" data-target="textModal2"><span>팝업닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">IOS</a></li>
+								<li><a href="#tabContentSample01-4">Android</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Aria Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									<!-- Generator -->
+									Generator HTML
+
+									<!-- Alternate -->
+									Alternate HTML
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<div class="brush-guide">
+									IOS Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<div class="brush-guide">
+									Android Guide
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Aria 1 -->
+
+			<!-- Aria 2 -->
+			<section id="gAria2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Aria 2</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Generator</h3>
+					<div>
+						Content
+					</div>
+					<h3 class="g-h3">Alternate</h3>
+					<div>
+						Content
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">IOS</a></li>
+								<li><a href="#tabContentSample02-4">Android</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Aria Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									<!-- Generator -->
+									Generator HTML
+
+									<!-- Alternate -->
+									Alternate HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<div class="brush-guide">
+									IOS Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<div class="brush-guide">
+									Android Guide
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Aria 2 -->
+
+			<!-- Aria 3 -->
+			<section id="gAria3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Aria 3</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Generator</h3>
+					<div>
+						Content
+					</div>
+					<h3 class="g-h3">Alternate</h3>
+					<div>
+						Content
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">IOS</a></li>
+								<li><a href="#tabContentSample03-4">Android</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Aria Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									<!-- Generator -->
+									Generator HTML
+
+									<!-- Alternate -->
+									Alternate HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<div class="brush-guide">
+									IOS Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<div class="brush-guide">
+									Android Guide
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Aria 3 -->
+
+			<!-- Aria 4 -->
+			<section id="gAria4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Aria 4</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Generator</h3>
+					<div>
+						Content
+					</div>
+					<h3 class="g-h3">Alternate</h3>
+					<div>
+						Content
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">IOS</a></li>
+								<li><a href="#tabContentSample04-4">Android</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Aria Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									<!-- Generator -->
+									Generator HTML
+
+									<!-- Alternate -->
+									Alternate HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<div class="brush-guide">
+									IOS Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<div class="brush-guide">
+									Android Guide
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Aria 4 -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

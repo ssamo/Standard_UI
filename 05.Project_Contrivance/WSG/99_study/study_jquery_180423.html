@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Free Test &gt; jQuery | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gStep1" data-role="spy-scroll">Step1</a>
+					<a href="#gStep2" data-role="spy-scroll">Step2</a>
+					<a href="#gStep3" data-role="spy-scroll">Step3</a>
+					<a href="#gStep4" data-role="spy-scroll">Step4</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Step1 -->
+			<section id="gStep1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step1</h2>
+				</div>
+				<div class="g-section-body">
+					<script type="text/javascript">
+					<!--
+						(function($){
+							$.defaultOptions = {
+							   duration:500,
+							   easing:"easeInQuint",
+							   delayTime:1000
+							}
+							// removeAni 플러그인 정의
+							$.fn.removeAni=function(options){
+				                options = $.extend(null, $.defaultOptions, options);
+								// 요소 개수만큼 루프 실행
+								this.each(function(index){
+									// 현재 요소 얻기
+									var $target= $(this);
+									// 딜레이(index*1000) 후 애니메이션 실행
+									$target.delay(index*options.delayTime).animate({height:0},options.duration,options.easing,function(){
+										// 애니 종료 후 현재 요소 제거
+										$target.remove();
+									})
+								})
+								return this;
+							}
+						})(jQuery)
+
+						$(document).ready(function(){
+							$('.object').removeAni();
+						})
+					//-->
+					</script>
+					<style type="text/css">
+						.object {width:100%; height:100px; background-color:#f0f0f0;}
+					</style>
+					<div class="object"></div>
+					<div class="object not"></div>
+					<div class="object"></div>
+					<div class="object"></div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step1 -->
+
+			<!-- Step2 -->
+			<section id="gStep2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step2</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step2 -->
+
+			<!-- Step3 -->
+			<section id="gStep3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step3</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step3 -->
+
+			<!-- Step4 -->
+			<section id="gStep4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step4</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step4 -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

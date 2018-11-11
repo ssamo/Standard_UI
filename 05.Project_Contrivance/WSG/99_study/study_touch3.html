@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>잇(it)딴주머니</title>
+	<meta http-equiv="X-UA-Campatible" content="chrome=1" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="http://mtest.suhyup-bank.com/easybank/resources/css/sh_common.css" />
+	<script type="text/javascript" src="http://mtest.suhyup-bank.com/easybank/resources/js/jquery/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://mtest.suhyup-bank.com/easybank/resources/js/jquery/TweenMax.min.js"></script>
+	<script type="text/javascript" src="http://mtest.suhyup-bank.com/easybank/resources/js/jquery/EasePack.min.js"></script>
+	<script type="text/javascript" src="http://mtest.suhyup-bank.com/easybank/resources/js/ui/common.js"></script>
+	<script type="text/javascript" src="sh_common.js?time=00"></script>
+	<style type="text/css">
+		body {-webkit-overflow-scrolling: touch;}
+		.account-history-new.scroll-wrap {overflow:auto;}
+	</style>
+	<script type="text/javascript">
+	<!--
+		//잇딴주머니 페이지내에서 호출
+		$(document).ready(function(){
+			setItMoney.init();
+			//setHeaderBg('bgBlue', 'btn-back');
+		})
+	//-->
+	</script>
+</head>
+<body class="bgBlue">
+	<div id="wrapper">
+		<!-- .header -->
+		<div id="header">
+			<div class="bgBlue"><!-- 호출방법 : setHeaderBg('bgBlue', 'btn-back') -->
+				<button type="button" class="btn-back btn-back-white" onclick="btn_back();">뒤로</button>
+				<button type="button" class="btn-anb btn-anb-white" onclick="btn_allMenu();"><span>전체메뉴</span></button>
+			</div>
+		</div>
+
+		<!-- .contents -->
+		<div id="container">
+			<div class="inq-contents inq010100 bottom-gap color-grey h100p">
+				<!-- .contents-header -->
+				<div class="contents-header accountTop-Style2 in-sec pdbt50">
+					<div class="contents-header-title">
+						<h1>잇(it)딴주머니 <span id="valued"></span></h1>
+						<!-- <button type="button" class="btn-view">펼치기</button> -->
+					</div>
+				</div>
+				<!-- //.contents-header -->
+
+				<!-- .section -->
+				<div class="section">
+					<!-- 잇딴주머니 -->
+					<div class="itMoney-wrap">
+						<!-- 잇딴금리 -->
+						<div class="itMoney-to itMoney-item">
+							<dl class="itMoney-define">
+								<!-- 2018-08-30 최소값설정(삭제) data-min="" -->
+								<dt class="tit"><button type="button"><strong class="num">100</strong>만원</button></dt>
+								<dd class="txt"><i class="ico-lock-white"></i> 잇딴금리 연 1.7%</dd>
+							</dl>
+						</div>
+						<!-- //잇딴금리 -->
+						<!-- 잇딴보관기능 -->
+						<div class="itMoney-move-wrap">
+							<div class="itMoney-move is-moveSet">
+								<!-- 드래그 -->
+								<!-- 2018-08-30 is-move is-notFocus 추가 -->
+								<button type="button" class="is-move is-notFocus" aria-label="설정하는 보관금리 영역">
+									<span class="bg"></span>
+									<!-- 툴팁 -->
+									<!-- 2018-08-30 툴팁 버튼안쪽으로 이동 -->
+									<span class="itMoney-tooltip-wrap">
+										<span class="target"><span class="bg1"></span><span class="bg2"></span><span class="bg3"></span></span>
+										<span class="itMoney-tooltip" aria-hidden="false">
+											<i class="cursor"></i>
+											<em>아래로 당겨 잇딴주머니 금액을 조절하세요.</em>
+										</span>
+									</span>
+									<!-- //툴팁 -->
+								</button>
+								<!-- //드래그 -->
+							</div>
+							<div class="itMoney-move is-moveGet">
+								<!-- 드래그 -->
+								<!-- 2018-08-30 div class="is-move" 변경 -->
+								<div class="is-move" aria-label="설정된 보관금리 영역">
+									<span class="bg"></span>
+								</div>
+								<!-- //드래그 -->
+							</div>
+						</div>
+						<!-- //잇딴보관기능 -->
+						<!-- 적용금리 -->
+						<div class="itMoney-from itMoney-item">
+							<dl class="itMoney-define">
+								<!-- 2018-08-30 최소값설정(추가) data-min="" -->
+								<dt class="tit"><strong class="num" data-min="-300">200</strong>만원</button></dt>
+								<dd class="txt">적용금리 연 0.10%</dd>
+							</dl>
+						</div>
+						<!-- //적용금리 -->
+						<!-- 확인 -->
+						<!-- 2018-08-30 is-notFocus 추가 -->
+						<div class="itMoney-confirm-wrap" aria-hidden="true">
+							<ul class="itMoney-confirm">
+								<li><button type="button" class="btn-itConfirm is-notFocus">확인</button></li>
+								<li><button type="button" class="btn-itCancel is-notFocus">취소</button></li>
+							</ul>
+						</div>
+						<div class="itMoney-mask"></div>
+						<!-- //확인 -->
+					</div>
+					<!-- //잇딴주머니 -->
+
+					<!-- 거래내역조회 -->
+					<div class="account-history-new in-sec pdtp50 scroll-wrap">
+						<div class="title-area account-title-area">
+							<div class="title no-bar">거래내역</div>
+							<button type="button" class="btn-small outline">상세정보보기</button>
+						</div>
+						<div class="account-history-cover">
+							<div class="no-data bottom-gap dpn">
+								조회하신 기간 내 거래내역이<br>
+								존재하지 않습니다.
+							</div>
+
+							<!-- 2018-08-27 리스트 title 추가하기-->
+							<!--//history-lists//-->
+							<div class="history-lists normal js-infinite-wrap">
+								<!--//.list-info-->
+								<ul class="list-info">
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount plus"><strong>+ 5,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount"><strong>0</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 1,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="remain-amount"><strong>100,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="name" title="받는사람">천지현</dt>
+											<dd class="money-cover" title="거래금액"><span class="amount minus"><strong>- 150,000</strong>원</span></dd>
+										</dl>
+										<dl>
+											<dt class="date-cover" title="거래날짜">
+												<span class="date">18.06.12</span>
+												<span class="time">00:00</span>
+											</dt>
+											<dd class="remain-cover" title="잔액"><span class="remain-amount"><strong>0</strong>원</span></dd>
+										</dl>
+									</li>
+								</ul>
+								<!--//.list-info-->
+							</div>
+							<!--//history-lists//-->
+							<!--// 2018-08-27 리스트 title 추가하기-->
+						</div>
+					</div>
+				</div>
+				<!-- //.section -->
+			</div>
+		</div>
+		<!-- // .contents -->
+	</div>
+</body>
+</html>

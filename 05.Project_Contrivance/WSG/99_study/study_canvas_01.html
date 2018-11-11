@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Canvas | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Basic usage</h1>
+				<div class="g-guideLink">
+					<a href="#gCanvas01" data-role="spy-scroll">공식사이트</a>
+					<a href="#gCanvas02" data-role="spy-scroll">Basic Sample</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- 공식사이트 -->
+			<section id="gCanvasGuide" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">공식사이트</h2>
+				</div>
+				<div class="g-section-body">
+					<a href="https://developer.mozilla.org/ko/docs/Web" target="_blank" title="새창">공식사이트 : https://developer.mozilla.org/ko/docs/Web</a>
+				</div>
+			</section>
+			<!-- //공식사이트 -->
+
+			<!-- Basic usage -->
+			<section id="gCanvas01" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Basic Sample</h2>
+				</div>
+				<div class="g-section-body">
+					<canvas id="tutorial" width="150" height="150"></canvas>
+					<script type="text/javascript">
+					<!--
+						function draw(){
+							var canvas = document.getElementById('tutorial');
+							if (canvas.getContext){
+								var ctx = canvas.getContext('2d');
+
+								ctx.fillStyle = 'rgb(200,0,0)';
+								ctx.fillRect (10, 10, 50, 50);
+
+								ctx.fillStyle = 'rgba(0,0,200,0.5)';
+								ctx.fillRect (30,30,50,50);
+							}
+						}
+						draw();
+					//-->
+					</script>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;canvas id="tutorial" width="150" height="150">&lt;/canvas>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									function draw(){
+										var canvas = document.getElementById('tutorial');
+										if (canvas.getContext){
+											var ctx = canvas.getContext('2d');
+
+											ctx.fillStyle = 'rgb(200,0,0)';
+											ctx.fillRect (10, 10, 50, 50);
+
+											ctx.fillStyle = 'rgba(0,0,200,0.5)';
+											ctx.fillRect (30,30,50,50);
+										}
+									}
+									draw();
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Basic usage -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

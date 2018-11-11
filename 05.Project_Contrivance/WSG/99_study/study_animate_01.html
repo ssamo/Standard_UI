@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Animate &gt; 순서대로움직이기 | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Animate</h1>
+				<div class="g-guideLink">
+					Guide :
+					<a href="#gGuide1" data-role="spy-scroll">로딩시 순서대로 적용하기</a>
+					<a href="#gGuide2" data-role="spy-scroll">더보기 순서대로 적용하기</a> <!-- |
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a> -->
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gGuide1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">로딩시 순서대로 적용하기 (개발 고려하지 않은 퍼블리싱용)</h2>
+				</div>
+				<div class="g-section-body">
+					<script type="text/javascript">
+					<!--
+						$(document).ready(function(){
+							$('.thumb-list > li').each(function(i){
+								var $this = $(this);
+								var sec = 200;
+								var cls = $this.hasClass("fadeInUp");
+								if(cls == false){
+									setTimeout(function(){
+										$this.addClass("animated fadeInUp");
+									}, sec * i)
+								}
+							})
+						})
+					//-->
+					</script>
+					<style type="text/css">
+						.thumb-list li {width:100%; height:100px; margin:20px 0; background:#f0f0f0;}
+					</style>
+					<ul class="thumb-list">
+						<li class="to-animate"></li>
+						<li class="to-animate"></li>
+						<li class="to-animate"></li>
+						<li class="to-animate"></li>
+					</ul>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul>
+										<li>- delay()는 수치를 다루는 jQuery에만 적용된다. (예 : animate(), fadeIn())</li>
+										<li>- setTimeout()로 수치가 아닌 jQuery에 적용한다. (예 : addClass(), attr())</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;ul class="thumb-list">
+										&lt;li class="to-animate">&lt;/li>
+										&lt;li class="to-animate">&lt;/li>
+										&lt;li class="to-animate">&lt;/li>
+										&lt;li class="to-animate">&lt;/li>
+									&lt;/ul>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									.to-animate {opacity:0;}
+									.to-animate.animated {opacity:1;}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									$(document).ready(function(){
+										$('.thumb-list > li').each(function(i){
+											var $this = $(this);
+											var sec = 200;
+											var cls = $this.hasClass("fadeInUp");
+											if(cls == false){
+												setTimeout(function(){
+													$this.addClass("animated fadeInUp");
+												}, sec * i)
+											}
+										})
+									})
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gGuide2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">더보기 순서대로 적용하기 (개발 고려한 함수처리)</h2>
+				</div>
+				<div class="g-section-body">
+					<script type="text/javascript">
+					<!--
+						//페이지로딩시
+						$(window).on('load', function(){
+							//thumbAnimate(); //애니메이트
+						})
+
+						//더보기버튼(동적으로 생성되는 버튼은 $(document).on() 방식으로 처리한다.)
+						$(document).on('click', '.thumb-more', function(){
+							thumbAppend();  //더보기
+							thumbAnimate(); //애니메이트
+						})
+
+						//더보기 실행
+						function thumbAppend(){
+							//퍼블리싱 테스트용입니다.
+							var itemLen = 4;
+							var itemObj = '<li class="to-animate"></li>';
+							for (var i=0;i < itemLen;i++){
+								$('.thumb-list2').append(itemObj);
+							}
+						}
+
+						//애니메이트 실행
+						function thumbAnimate(){
+							$('.thumb-list2 > li').not('.fadeInUp').each(function(i){
+								var $this = $(this);
+								var sec = 200;
+								setTimeout(function(){
+									$this.addClass("animated fadeInUp");
+								}, sec * i)
+							})
+						}
+					//-->
+					</script>
+					<style type="text/css">
+						.thumb-list2 li {position:relative; top:0; width:100%; height:100px; margin:20px 0; background:#f0f0f0; transition:all 0.2s;}
+						.thumb-list2 > li:hover {box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.26); top:-2px;}
+						.btn {width:100%; margin:5px 0; padding:10px; text-align:center; border:1px solid #f0f0f0;}
+					</style>
+					<div class="thumb-list2-wrap">
+						<ul class="thumb-list2">
+							<li class="to-animate"></li>
+							<li class="to-animate"></li>
+							<li class="to-animate"></li>
+							<li class="to-animate"></li>
+						</ul>
+						<button type="button" class="btn thumb-more">더보기 (스크립트 분리방식)</button>
+						<button type="button" class="btn" onclick="thumbAppend();thumbAnimate()">더보기 (인라인 호출방식)</button>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul>
+										<li>- 외부에서의 함수호출이 가능하도록 function화 한다.</li>
+										<li>- 더보기의 경우 추가되는 목록의 each의 번호만큼 기다려야 하는 이슈가 발생</li>
+										<li>- each의 대상에 처음부터 .not('.fadeInUp') 조건처리 한다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="thumb-list2-wrap">
+										&lt;ul class="thumb-list2">
+											&lt;li class="to-animate">&lt;/li>
+											&lt;li class="to-animate">&lt;/li>
+											&lt;li class="to-animate">&lt;/li>
+											&lt;li class="to-animate">&lt;/li>
+										&lt;/ul>
+										&lt;button type="button" class="btn thumb-more">더보기 (스크립트 분리방식)&lt;/button>
+										&lt;button type="button" class="btn" onclick="thumbAppend();thumbAnimate()">더보기 (인라인 호출방식)&lt;/button>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									.thumb-list2 li {width:100%; height:100px; margin:20px 0; background:#f0f0f0;}
+									.thumb-more {width:100%; padding:10px; text-align:center; border:1px solid #f0f0f0;}
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									//페이지로딩시
+									$(window).on('load', function(){
+										thumbAnimate(); //애니메이트
+									})
+
+									//더보기버튼(동적으로 생성되는 버튼은 $(document).on() 방식으로 처리한다.)
+									$(document).on('click', '.thumb-more', function(){
+										thumbAppend();  //더보기
+										thumbAnimate(); //애니메이트
+									})
+
+									//더보기 실행
+									function thumbAppend(){
+										//퍼블리싱 테스트용입니다.
+										var itemLen = 4;
+										var itemObj = '<li class="to-animate"></li>';
+										for (var i=0;i < itemLen;i++){
+											$('.thumb-list2').append(itemObj);
+										}
+									}
+
+									//애니메이트 실행
+									function thumbAnimate(){
+										$('.thumb-list2 > li').not('.fadeInUp').each(function(i){
+											var $this = $(this);
+											var sec = 200;
+											setTimeout(function(){
+												$this.addClass("animated fadeInUp");
+											}, sec * i)
+										})
+									}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core - Tables | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Tables</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li class="is-active"><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content is-active">
+								<pre class="brush:html">
+									&lt;div class="tbl-wrap">
+										&lt;div class="tbl-이름">
+											&lt;table class="tbl">
+												&lt;caption>표제목에 대해 제목1, 제목2, 제목3 으로 구성됨&lt;/caption>
+												&lt;colgroup>
+													&lt;col style="width:33%">
+													&lt;col style="width:33%">
+													&lt;col>
+												&lt;/colgroup>
+												&lt;thead>
+												&lt;tr>
+													&lt;th scope="col">제목&lt;/th>
+													&lt;th scope="col">제목&lt;/th>
+													&lt;th scope="col">제목&lt;/th>
+												&lt;/tr>
+												&lt;/thead>
+												&lt;tbody>
+												&lt;tr>
+													&lt;th scope="row">제목&lt;/th>
+													&lt;td>내용&lt;/td>
+													&lt;td>내용&lt;/td>
+												&lt;/tr>
+												&lt;/tbody>
+											&lt;/table>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">표 머리글, 바닥글</h3>
+					<div class="tbl-wrap overflow-h">
+						<div class="tbl-header">
+							<div class="float-l">
+								표 기본정보
+							</div>
+							<div class="float-r">
+								(단위 : 원)
+							</div>
+						</div>
+						<div class="tbl-basic">
+							<table class="tbl">
+								<caption>표제목</caption>
+								<colgroup>
+									<col style="width:33%">
+									<col style="width:33%">
+									<col>
+								</colgroup>
+								<thead>
+								<tr>
+									<th scope="col">제목</th>
+									<th scope="col">제목</th>
+									<th scope="col">제목</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th scope="row">제목</th>
+									<td>내용</td>
+									<td>내용</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tbl-footer">
+							<div class="bul bul-bill">
+								<p>표 부연설명</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample021-1">GUIDE</a></li>
+								<li><a href="#tabContentSample021-2">HTML</a></li>
+								<li><a href="#tabContentSample021-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample021-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample021-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="tbl-wrap overflow-h">
+										&lt;div class="tbl-header">
+											&lt;div class="float-l">
+												표 기본정보
+											&lt;/div>
+											&lt;div class="float-r">
+												(단위 : 원)
+											&lt;/div>
+										&lt;/div>
+										&lt;div class="tbl-basic">
+											&lt;table class="tbl">
+												(생략)
+											&lt;/table>
+										&lt;/div>
+										&lt;div class="tbl-footer">
+											&lt;div class="bul bul-bill">
+												&lt;p>표 부연설명&lt;/p>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample021-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">정렬 기준</h3>
+					<div class="tbl-wrap overflow-h">
+						<div class="tbl-basic">
+							<table class="tbl tbl-centered">
+								<caption></caption>
+								<colgroup>
+									<col style="width:33.3%">
+									<col style="width:33.3%">
+									<col>
+								</colgroup>
+								<thead>
+								<tr>
+									<th scope="col">제목</th>
+									<th scope="col">제목</th>
+									<th scope="col">제목</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th scope="row">제목</th>
+									<td>내용</td>
+									<td>내용</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample022-1">GUIDE</a></li>
+								<li><a href="#tabContentSample022-2">HTML</a></li>
+								<li><a href="#tabContentSample022-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample022-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample022-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="tbl-wrap overflow-h">
+										&lt;div class="tbl-basic">
+											&lt;table class="tbl tbl-centered">
+												(생략)
+											&lt;/table>
+										&lt;/div>
+									&lt;/div>
+
+								</pre>
+							</div>
+							<div id="tabContentSample022-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">셀 강조</h3>
+					<div class="tbl-wrap overflow-h">
+						<div class="tbl-basic">
+							<table class="tbl">
+								<caption>표제목</caption>
+								<colgroup>
+									<col style="width:25%">
+									<col style="width:25%">
+									<col style="width:25%">
+									<col>
+								</colgroup>
+								<thead>
+								<tr>
+									<th scope="colgroup" colspan="2">제목</th>
+									<th scope="col">제목</th>
+									<th scope="col">제목</th>
+								</tr>
+								<tr>
+									<th scope="col" class="depth2">제목</th>
+									<th scope="col" class="depth2">제목</th>
+									<th scope="colgroup" colspan="2" class="depth2">제목</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th scope="row">제목</th>
+									<th scope="row" class="depth2">제목</th>
+									<td>내용</td>
+									<td>내용</td>
+								</tr>
+								<tr>
+									<th scope="row">제목</th>
+									<th scope="row" class="depth2">제목</th>
+									<td colspan="2">내용</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample023-1">GUIDE</a></li>
+								<li><a href="#tabContentSample023-2">HTML</a></li>
+								<li><a href="#tabContentSample023-3">CSS</a></li>
+								<li><a href="#tabContentSample023-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample023-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample023-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample023-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample023-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

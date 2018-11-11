@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Test &gt; Jquery Plugin 0421 | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+<script type="text/javascript">
+<!--
+	//Step1
+	if (!$.fn.radioClass) {
+		$.fn.radioClass = function(name) {
+			this.addClass(name);
+			var $siblings = this.siblings();
+			$.each($siblings, function(index, item) {
+				var $item = $siblings.eq(index);
+				if ($item.hasClass(name)) {$item.removeClass(name)}
+			});
+			return this;
+		}
+	}
+	$(function() {
+		$('.list1 .item').on('click', function (){
+			$(this).radioClass('on');
+		})
+	});
+
+	//Step2
+	(function($){
+		$.fn.radioClass2 = function(name) {
+			this.parent().addClass(name);
+			var $siblings = this.parent().siblings();
+			$.each($siblings, function(index, item) {
+				var $item = $siblings.eq(index);
+				if ($item.hasClass(name)) {$item.removeClass(name)}
+			});
+			return this;
+		}
+	}(jQuery))
+	$(function(){
+		$('.list2 .item a').on('click', function (){
+			$(this).radioClass2('on');
+		})
+	});
+
+	//Step3
+	(function($){
+		$.defaultOptions = {
+		   duration:500,
+		   easing:"easeInQuint",
+		   delayTime:1000
+		}
+		// removeAni 플러그인 정의
+		$.fn.removeAni=function(options){
+			options = $.extend(null, $.defaultOptions, options);
+			// 요소 개수만큼 루프 실행
+			this.each(function(index){
+				// 현재 요소 얻기
+				var $target= $(this);
+				// 딜레이(index*1000) 후 애니메이션 실행
+				$target.delay(index*options.delayTime).animate({height:0},options.duration,options.easing,function(){
+					// 애니 종료 후 현재 요소 제거
+					$target.remove();
+				})
+			})
+			return this;
+		}
+	}(jQuery))
+	$(function(){
+		$('.object').removeAni();
+	});
+
+	//Step4
+	(function($){
+		$.fn.highlight = function(options){
+			var settings = $.extend({
+				color: "red",
+				backgroundColor: "yellow"
+			}, options );
+
+			return this.css({
+				color: settings.color,
+				backgroundColor: settings.backgroundColor
+			});
+		}
+	}(jQuery))
+	$(function(){
+		$('.box1').highlight();
+		$('.box2').highlight({
+			backgroundColor: 'white'
+		});
+		$('.box3').highlight({
+			color: 'yellow',
+			backgroundColor: 'green'
+		});
+	});
+
+	//Step5
+	(function($){
+		//옵션 기본값  정의
+		$.defaultVar = {
+			active : 0,
+			toggle : false,
+			navLink : '.tab-nav a',
+			navContent : '.tab-body .tab-content'
+		}
+		$.fn.tabs = function(options){
+			options = $.extend(null, $.defaultVar, options);
+			return this.each(function(){
+				var $this = $(this);
+
+				var init = function(){
+					var $Link = $this.find(options.navLink).eq(options.active);
+					action($Link);
+					event();
+				}
+				var event = function(){
+					$this.find(options.navLink).on('click', function(){
+						action($(this));
+					})
+				}
+				var action = function($Link){
+					var objTarget = $Link.attr('href');
+					$Link.parent().addClass('active').siblings('.active').removeClass('active');
+					$(objTarget).addClass('active').siblings('.active').removeClass('active');
+				}
+				init();
+			})
+		}
+	}(jQuery))
+	$(function(){
+		$('.plugin-tabs').tabs();
+	});
+//-->
+</script>
+<style type="text/css">
+.list1 .item.on {color:red;}
+.list2 .item.on a {color:red;}
+</style>
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gStep1" data-role="spy-scroll">Step1</a>
+					<a href="#gStep2" data-role="spy-scroll">Step2</a>
+					<a href="#gStep3" data-role="spy-scroll">Step3</a>
+					<a href="#gStep4" data-role="spy-scroll">Step4</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Step1 -->
+			<section id="gStep1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step1</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="g-cont-wrap">
+						<p>기본 문법</p>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul>
+										<li>플러그인 기본문법</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									(function($){
+										$.fn.redColor=function(){
+											this.each(function(index){
+												//실행문
+											})
+											return this;
+										}
+									})(jQuery)
+
+									$(document).ready(function(){
+										$("p").redColor();
+									})
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step1 -->
+
+			<!-- Step2 -->
+			<section id="gStep2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step2</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="g-cont-wrap">
+						<p>기초 예시</p>
+					</div>
+					<br>
+					<ul class="list2">
+						<li class="item"><a href="#">item1</a></li>
+						<li class="item"><a href="#">item2</a></li>
+						<li class="item"><a href="#">item3</a></li>
+						<li class="item"><a href="#">item4</a></li>
+					</ul>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									출처 :
+									<a href="http://webclub.tistory.com/143?category=500543" title="새창" target="_blank">http://webclub.tistory.com/143?category=500543</a>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;ul class="list2">
+										&lt;li class="item">item1&lt;/li>
+										&lt;li class="item">item2&lt;/li>
+										&lt;li class="item">item3&lt;/li>
+										&lt;li class="item">item4&lt;/li>
+									&lt;/ul>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									.list .item.on {color:red;}
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									(function($){
+										$.fn.radioClass2 = function(name) {
+											this.parent().addClass(name);
+											var $siblings = this.parent().siblings();
+											$.each($siblings, function(index, item) {
+												var $item = $siblings.eq(index);
+												if ($item.hasClass(name)) {$item.removeClass(name)}
+											});
+											return this;
+										}
+									})(jQuery)
+
+									$(function() {
+										$('.list2 .item a').on('click', function (){
+											$(this).radioClass2('on');
+										})
+									});
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step2 -->
+
+			<!-- Step3 -->
+			<section id="gStep3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step3</h2>
+				</div>
+				<div class="g-section-body">
+					<style type="text/css">
+						.object {width:100%; height:100px; background-color:#f0f0f0;}
+					</style>
+					<div class="object"></div>
+					<div class="object"></div>
+					<div class="object"></div>
+					<div class="object"></div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul>
+										<li>- $.defaultOptions{}</li>
+										<li>- options</li>
+										<li>- $.extend()</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="object">&lt;/div>
+									&lt;div class="object not">&lt;/div>
+									&lt;div class="object">&lt;/div>
+									&lt;div class="object">&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									.object {width:100%; height:100px; background-color:#f0f0f0;}
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									(function($){
+										$.defaultOptions = {
+										   duration:500,
+										   easing:"easeInQuint",
+										   delayTime:1000
+										}
+										// removeAni 플러그인 정의
+										$.fn.removeAni=function(options){
+											options = $.extend(null, $.defaultOptions, options);
+											// 요소 개수만큼 루프 실행
+											this.each(function(index){
+												// 현재 요소 얻기
+												var $target= $(this);
+												// 딜레이(index*1000) 후 애니메이션 실행
+												$target.delay(index*options.delayTime).animate({height:0},options.duration,options.easing,function(){
+													// 애니 종료 후 현재 요소 제거
+													$target.remove();
+												})
+											})
+											return this;
+										}
+									})(jQuery)
+
+									$(document).ready(function(){
+										$('.object').removeAni();
+									})
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step3 -->
+
+			<!-- Step4 -->
+			<section id="gStep4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step4</h2>
+				</div>
+				<div class="g-section-body">
+					<div class='box1'>한놈</div>
+					<div class='box2'>두시기</div>
+					<div class='box3'>석삼</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class='box1'>한놈&lt;/div>
+									&lt;div class='box2'>두시기&lt;/div>
+									&lt;div class='box3'>석삼&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									//Step4
+									(function($){
+										$.fn.highlight = function(options) {
+											var settings = $.extend({
+												color: "red",
+												backgroundColor: "yellow"
+											}, options );
+
+											return this.css({
+												color: settings.color,
+												backgroundColor: settings.backgroundColor
+											});
+										};
+									}(jQuery));
+									$(function() {
+										$('.box1').highlight();
+										$('.box2').highlight({
+											backgroundColor: 'white'
+										});
+										$('.box3').highlight({
+											color: 'yellow',
+											backgroundColor: 'green'
+										});
+									});
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step4 -->
+
+			<!-- Step5 -->
+			<section id="gStep5" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Step5</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="plugin-tabs tab-wrap">
+						<div class="tab-nav">
+							<ul>
+								<li><a href="#tabContent1">Tab1</a></li>
+								<li><a href="#tabContent2">Tab2</a></li>
+								<li><a href="#tabContent3">Tab3</a></li>
+							</ul>
+						</div>
+						<div class="tab-body">
+							<div id="tabContent1" class="tab-content">
+								tabContent1
+							</div>
+							<div id="tabContent2" class="tab-content">
+								tabContent2
+							</div>
+							<div id="tabContent3" class="tab-content">
+								tabContent3
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample05-1">GUIDE</a></li>
+								<li><a href="#tabContentSample05-2">HTML</a></li>
+								<li><a href="#tabContentSample05-3">CSS</a></li>
+								<li><a href="#tabContentSample05-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample05-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample05-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample05-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample05-4" class="g-tab-content">
+								<pre class="brush:js">
+
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step4 -->
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

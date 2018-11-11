@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Prototype &gt; Sub Title | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="accordion accordion-basic">
+										&lt;div class="accordion-header">
+											&lt;a href="#accor11" aria-controls="accor11" class="js-acco-btn">&lt;span class="acco-label">accordion-header1&lt;/span>&lt;i class="arw arw-fold black">&lt;/i>&lt;/a>
+										&lt;/div>
+										&lt;div id="accor11" class="accordion-body" aria-hidden="true">
+											accordion-body1
+										&lt;/div>
+										&lt;div class="accordion-header">
+											&lt;a href="#accor12" aria-controls="accor12" class="js-acco-btn">&lt;span class="acco-label">accordion-header2&lt;/span>&lt;i class="arw arw-fold black">&lt;/i>&lt;/a>
+										&lt;/div>
+										&lt;div id="accor12" class="accordion-body" aria-hidden="true">
+											accordion-body2
+										&lt;/div>
+										&lt;div class="accordion-header">
+											&lt;a href="#accor13" aria-controls="accor11" class="js-acco-btn">&lt;span class="acco-label">accordion-header3&lt;/span>&lt;i class="arw arw-fold black">&lt;/i>&lt;/a>
+										&lt;/div>
+										&lt;div id="accor13" class="accordion-body" aria-hidden="true">
+											accordion-body3
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										Accordion
+									-------------------------------------------------------------------*/
+									/* Default */
+									.accordion[data-init=all] .accordion-body {display:block;}
+									.accordion[data-init=none] .accordion-body {display:none;}
+									.accordion[data-init=first] .accordion-body:first-child {display:block;}
+									.js-acco-btn {position:relative; z-index:2; text-align:left;}
+									.js-acco-btn .arw {position:absolute; top:50%; right:20px; transform:translateY(-75%) rotate(-135deg); transition:all 0.2s;}
+									.accordion-header.is-active .js-acco-btn .arw {transform:translateY(-25%) rotate(45deg)}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									// Accordion
+									if ($('.accordion').length > 0){
+										ui.accordion.init();
+									}
+									// Accordion
+									accordion : {
+										dataSync      : 'false',
+										dataToggle    : 'true',
+										eleAcco       : '.accordion',
+										eleAccoHeader : '.accordion-header',
+										eleAccoBody   : '.accordion-body',
+										eleAccoBtn    : '.js-acco-btn',
+										init : function(){
+											this.setInit();
+											this.event();
+										},
+										setInit : function(){
+											var that = this;
+											$(that.eleAcco).each(function(){
+												// 기본설정
+												if ($(this).is('[data-init]') == false){$(this).attr('data-init', 'none')}
+												if ($(this).is('[data-toggle]') == false){$(this).attr('data-toggle', 'true')}
+												if ($(this).is('[data-sync]') == false && $(this).attr('[data-init]') == 'first'){$(this).attr('data-sync', 'true')}
+												if ($(this).is('[data-sync]') == false && $(this).attr('[data-init]') != 'first'){$(this).attr('data-sync', 'false')}
+
+												// 설정적용
+												if ($(this).attr('data-init') == 'all'){ that.show($(this).find('>'+that.eleAccoHeader).find(that.eleAccoBtn), $(this).find('>'+that.eleAccoBody))}
+												else if ($(this).attr('data-init') == 'first'){ that.show($(this).find('>'+that.eleAccoHeader).eq(0).find(that.eleAccoBtn), $(this).find('>'+that.eleAccoBody).eq(0))}
+												else if ($(this).attr('data-init') == 'none' || $(this).is('[data-init]') == false){ that.hide($(this).find('>'+that.eleAccoHeader).find(that.eleAccoBtn), $(this).find('>'+that.eleAccoBody))}
+											})
+										},
+										event : function(){
+											var that = this;
+											$(that.eleAccoBtn).not('.is-clicked').on('click', function(e){
+												that.dataSync = $(this).closest(that.eleAcco).attr('data-sync');
+												that.dataToggle = $(this).closest(that.eleAcco).attr('data-toggle');
+												that.eleTarget = '#' + $(this).attr('aria-controls');
+												that.action($(this), $(that.eleTarget));
+
+												e.preventDefault();
+												e.stopPropagation();
+											}).addClass('is-clicked');
+										},
+										action : function($this, $target){
+											var that = this;
+											// 펼치기 기본
+											if (this.dataSync == 'true'){
+												$target.siblings(that.eleAccoBody).stop().slideUp('fast');
+												that.hide($this.parent().siblings().children(that.eleAccoBtn), $target.siblings(that.eleAccoBody));
+											}
+
+											// 펴진것을 클릭한경우 토글이면 접기
+											if (this.dataToggle == 'true' && $this.parent().hasClass(clsIsActive)){
+												$target.stop().slideUp('fast');
+												that.hide($this, $target);
+											}
+
+											// 접힌것을 클릭한경우
+											else {
+												$target.stop().slideDown('fast');
+												that.show($this, $target);
+											}
+										},
+										show : function($this, $target){
+											$this.addClass(clsIsActive);
+											$this.closest(this.eleAccoHeader).addClass(clsIsActive);
+											$target.addClass(clsIsActive).attr('aria-hidden', 'false');
+										},
+										hide : function($this, $target){
+											$this.removeClass(clsIsActive);
+											$this.closest(this.eleAccoHeader).removeClass(clsIsActive);
+											$target.removeClass(clsIsActive).attr('aria-hidden', 'true');
+										}
+									},
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<!-- Basic -->
+					<h3 class="g-h3">Basic</h3>
+					<div class="accordion accordion-basic">
+						<div class="accordion-header">
+							<a href="#accor11" aria-controls="accor11" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor11" class="accordion-body" aria-hidden="true">
+							accordion-body1<br>accordion-body1
+						</div>
+						<div class="accordion-header">
+							<a href="#accor12" aria-controls="accor12" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor12" class="accordion-body" aria-hidden="true">
+							accordion-body2<br>accordion-body2
+						</div>
+						<div class="accordion-header">
+							<a href="#accor13" aria-controls="accor13" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor13" class="accordion-body" aria-hidden="true">
+							accordion-body3<br>accordion-body3
+						</div>
+					</div>
+
+					<!-- Options -->
+					<h3 class="g-h3">Options</h3>
+					<!-- data-init -->
+					<div class="row gutter-h20">
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-init="all"</h4>
+							<div class="accordion accordion-basic" data-init="all">
+								<div class="accordion-header">
+									<a href="#accor21" aria-controls="accor21" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor21" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor22" aria-controls="accor22" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor22" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor23" aria-controls="accor23" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor23" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-init="first"</h4>
+							<div class="accordion accordion-basic" data-init="first">
+								<div class="accordion-header">
+									<a href="#accor31" aria-controls="accor31" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor31" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor32" aria-controls="accor32" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor32" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor33" aria-controls="accor33" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor33" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-init="none"</h4>
+							<div class="accordion accordion-basic" data-init="none">
+								<div class="accordion-header">
+									<a href="#accor41" aria-controls="accor41" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor41" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor42" aria-controls="accor42" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor42" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor43" aria-controls="accor43" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor43" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // data-init -->
+					<br>
+					<!-- data-sync -->
+					<div class="row gutter-h20">
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-sync="true"</h4>
+							<div class="accordion accordion-basic" data-sync="true">
+								<div class="accordion-header">
+									<a href="#accor51" aria-controls="accor51" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor51" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor52" aria-controls="accor52" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor52" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor53" aria-controls="accor53" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor53" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-sync="false"</h4>
+							<div class="accordion accordion-basic" data-sync="false">
+								<div class="accordion-header">
+									<a href="#accor61" aria-controls="accor61" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor61" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor62" aria-controls="accor62" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor62" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor63" aria-controls="accor63" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor63" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // data-sync -->
+					<br>
+					<!-- data-toggle -->
+					<div class="row gutter-h20">
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-toggle="true"</h4>
+							<div class="accordion accordion-basic" data-toggle="true">
+								<div class="accordion-header">
+									<a href="#accor71" aria-controls="accor71" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor71" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor72" aria-controls="accor72" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor72" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor73" aria-controls="accor73" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor73" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+						<div class="col col-4">
+							<h4 class="g-h4 mgt-0">data-toggle="false"</h4>
+							<div class="accordion accordion-basic" data-toggle="false">
+								<div class="accordion-header">
+									<a href="#accor81" aria-controls="accor81" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor81" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor82" aria-controls="accor82" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor82" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor83" aria-controls="accor83" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor83" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+					</div>
+ 					<!-- // data-toggle -->
+
+					<!-- Layout -->
+					<h3 class="g-h3">Layout</h3>
+					<div class="accordion accordion-basic">
+						<div class="accordion-header">
+							<a href="#accor91" aria-controls="accor91" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor91" class="accordion-body" aria-hidden="true">
+							<div class="accordion accordion-basic">
+								<div class="accordion-header">
+									<a href="#accor101" aria-controls="accor101" class="js-acco-btn"><span class="acco-label">accordion-header1</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor101" class="accordion-body" aria-hidden="true">
+									accordion-body1<br>accordion-body1
+								</div>
+								<div class="accordion-header">
+									<a href="#accor102" aria-controls="accor102" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor102" class="accordion-body" aria-hidden="true">
+									accordion-body2<br>accordion-body2
+								</div>
+								<div class="accordion-header">
+									<a href="#accor103" aria-controls="accor103" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+								</div>
+								<div id="accor103" class="accordion-body" aria-hidden="true">
+									accordion-body3<br>accordion-body3
+								</div>
+							</div>
+						</div>
+						<div class="accordion-header">
+							<a href="#accor92" aria-controls="accor92" class="js-acco-btn"><span class="acco-label">accordion-header2</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor92" class="accordion-body" aria-hidden="true">
+							accordion-body2<br>accordion-body2
+						</div>
+						<div class="accordion-header">
+							<a href="#accor93" aria-controls="accor93" class="js-acco-btn"><span class="acco-label">accordion-header3</span><i class="arw arw-fold black"></i></a>
+						</div>
+						<div id="accor93" class="accordion-body" aria-hidden="true">
+							accordion-body3<br>accordion-body3
+						</div>
+					</div>
+					<!-- // Layout -->
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>기본상태<br>
+											data-init="all" (모두 펼치기)<br>
+											data-init="first" (첫번째 펼치기)<br>
+											data-init="none" (모두 숨기기)
+										</li>
+										<li>동기화<br>
+											data-sync="true" (적용)<br>
+											data-sync="false" (미적용)
+										</li>
+										<li>토글기능<br>
+											data-toggle="true" (적용)<br>
+											data-toggle="false" (미적용)
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									<!-- data-속성 -->
+									<div class="accordion accordion-basic" data-init=""  data-sync=""  data-toggle=""></div>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core - Forms | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Forms</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-body">
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li class="is-active"><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content is-active">
+								<div class="brush-guide">
+									<ul class="g-desc">
+										<li>Placeholder : IE기준으로 포커스되는 순간 텍스트가 사라지도록 크로스브라우징 적용</li>
+										<li>Select : 사용자정의 화살표를 적용 하기위해 기본화살표 숨김처리 및 크로스브라우징 적용</li>
+										<li>속성 선언 : 타입(type) &gt; 요소정보(name, id) &gt; 데이터정보(value, title) &gt; 디자인(class, style) &gt; 기타(상태, 기능)</li>
+										<li>속성 선언의 우선순위는 참고하되 필요한 속성에 대해서만 엘리먼트에 적용한다.</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- 속성 선언순서를 적용한 예 -->
+									&lt;input type="text" name="" id="" value="" title="" class="" style="" readonly /&gt;
+									&lt;input type="radio" name="" id="" value="" title="" class="" style="" checked /&gt;
+									&lt;input type="checkbox" name="" id="" value="" title="" class="" style="" checked /&gt;
+									&lt;textarea name="" id="" rows="" cols="" class="">&lt;/textarea>
+									&lt;select name="" id="" value="" title="" class="" style="" multiple disabled />&lt;/select>
+
+
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Default */
+									input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#999;}/* IE 10 + */
+									input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color:#999;}/* Webkit Browser */
+									input:-moz-placeholder, textarea:-moz-placeholder {color:#999;}/* Mozilla Firefox 4 to 18 */
+									input::-moz-placeholder, textarea::-moz-placeholder {color:#999;}/* Mozilla Firefox 19+ */
+									input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color:transparent;}/* IE 10 + */
+									input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {color:transparent;}/* Webkit Browser */
+									input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {color:transparent;}/* Mozilla Firefox 4 to 18 */
+									input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {color:transparent;}/* Mozilla Firefox 19+ */
+									input {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; border:0px; vertical-align:middle;}
+									textarea {width:100%; vertical-align:middle; resize:none;}
+									select {appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none;}
+									select::-ms-expand {display:none;}
+									:root select {padding:0px 30px 0px 5px;}
+									.ie9 select {padding:5px 35px 4px 5px;background:none;}
+									.ie9 :root select {padding:0; font-size:0;}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+								/* Placeholders.js v4.0.1 */
+								/*!
+								 * The MIT License
+								 * Copyright (c) 2012 James Allardice
+								 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+								 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+								 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+								 */
+								!function(a){"use strict";function b(){}function c(){try{return document.activeElement}catch(a){}}function d(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return!0;return!1}function e(a,b,c){return a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent?a.attachEvent("on"+b,c):void 0}function f(a,b){var c;a.createTextRange?(c=a.createTextRange(),c.move("character",b),c.select()):a.selectionStart&&(a.focus(),a.setSelectionRange(b,b))}function g(a,b){try{return a.type=b,!0}catch(c){return!1}}function h(a,b){if(a&&a.getAttribute(B))b(a);else for(var c,d=a?a.getElementsByTagName("input"):N,e=a?a.getElementsByTagName("textarea"):O,f=d?d.length:0,g=e?e.length:0,h=f+g,i=0;h>i;i++)c=f>i?d[i]:e[i-f],b(c)}function i(a){h(a,k)}function j(a){h(a,l)}function k(a,b){var c=!!b&&a.value!==b,d=a.value===a.getAttribute(B);if((c||d)&&"true"===a.getAttribute(C)){a.removeAttribute(C),a.value=a.value.replace(a.getAttribute(B),""),a.className=a.className.replace(A,"");var e=a.getAttribute(I);parseInt(e,10)>=0&&(a.setAttribute("maxLength",e),a.removeAttribute(I));var f=a.getAttribute(D);return f&&(a.type=f),!0}return!1}function l(a){var b=a.getAttribute(B);if(""===a.value&&b){a.setAttribute(C,"true"),a.value=b,a.className+=" "+z;var c=a.getAttribute(I);c||(a.setAttribute(I,a.maxLength),a.removeAttribute("maxLength"));var d=a.getAttribute(D);return d?a.type="text":"password"===a.type&&g(a,"text")&&a.setAttribute(D,"password"),!0}return!1}function m(a){return function(){P&&a.value===a.getAttribute(B)&&"true"===a.getAttribute(C)?f(a,0):k(a)}}function n(a){return function(){l(a)}}function o(a){return function(){i(a)}}function p(a){return function(b){return v=a.value,"true"===a.getAttribute(C)&&v===a.getAttribute(B)&&d(x,b.keyCode)?(b.preventDefault&&b.preventDefault(),!1):void 0}}function q(a){return function(){k(a,v),""===a.value&&(a.blur(),f(a,0))}}function r(a){return function(){a===c()&&a.value===a.getAttribute(B)&&"true"===a.getAttribute(C)&&f(a,0)}}function s(a){var b=a.form;b&&"string"==typeof b&&(b=document.getElementById(b),b.getAttribute(E)||(e(b,"submit",o(b)),b.setAttribute(E,"true"))),e(a,"focus",m(a)),e(a,"blur",n(a)),P&&(e(a,"keydown",p(a)),e(a,"keyup",q(a)),e(a,"click",r(a))),a.setAttribute(F,"true"),a.setAttribute(B,T),(P||a!==c())&&l(a)}var t=document.createElement("input"),u=void 0!==t.placeholder;if(a.Placeholders={nativeSupport:u,disable:u?b:i,enable:u?b:j},!u){var v,w=["text","search","url","tel","email","password","number","textarea"],x=[27,33,34,35,36,37,38,39,40,8,46],y="#ccc",z="placeholdersjs",A=new RegExp("(?:^|\\s)"+z+"(?!\\S)"),B="data-placeholder-value",C="data-placeholder-active",D="data-placeholder-type",E="data-placeholder-submit",F="data-placeholder-bound",G="data-placeholder-focus",H="data-placeholder-live",I="data-placeholder-maxlength",J=100,K=document.getElementsByTagName("head")[0],L=document.documentElement,M=a.Placeholders,N=document.getElementsByTagName("input"),O=document.getElementsByTagName("textarea"),P="false"===L.getAttribute(G),Q="false"!==L.getAttribute(H),R=document.createElement("style");R.type="text/css";var S=document.createTextNode("."+z+" {color:"+y+";}");R.styleSheet?R.styleSheet.cssText=S.nodeValue:R.appendChild(S),K.insertBefore(R,K.firstChild);for(var T,U,V=0,W=N.length+O.length;W>V;V++)U=V&lt;N.length?N[V]:O[V-N.length],T=U.attributes.placeholder,T&&(T=T.nodeValue,T&&d(w,U.type)&&s(U));var X=setInterval(function(){for(var a=0,b=N.length+O.length;b>a;a++)U=a&lt;N.length?N[a]:O[a-N.length],T=U.attributes.placeholder,T?(T=T.nodeValue,T&&d(w,U.type)&&(U.getAttribute(F)||s(U),(T!==U.getAttribute(B)||"password"===U.type&&!U.getAttribute(D))&&("password"===U.type&&!U.getAttribute(D)&&g(U,"text")&&U.setAttribute(D,"password"),U.value===U.getAttribute(B)&&(U.value=T),U.setAttribute(B,T)))):U.getAttribute(C)&&(k(U),U.removeAttribute(B));Q||clearInterval(X)},J);e(a,"beforeunload",function(){M.disable()})}}(this),function(a,b){"use strict";var c=a.fn.val,d=a.fn.prop;b.Placeholders.nativeSupport||(a.fn.val=function(a){var b=c.apply(this,arguments),d=this.eq(0).data("placeholder-value");return void 0===a&&this.eq(0).data("placeholder-active")&&b===d?"":b},a.fn.prop=function(a,b){return void 0===b&&this.eq(0).data("placeholder-active")&&"value"===a?"":d.apply(this,arguments)})}(jQuery,this);
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="row g-form-component">
+						<div class="col col-3">
+							<div class="g-item">
+								<input type="text" name="" id="" value="" placeholder="Placeholder" title="" class="form-basic" />
+							</div>
+							<div class="g-item">
+								<input type="text" name="" id="" value="Value" placeholder="Placeholder" title="" class="form-basic" />
+								<button type="button" class="btn btn-basic btn-md"><span>버튼</span></button>
+							</div>
+							<div class="g-item">
+								<span class="form-addon type-sch">
+									<input type="text" name="" id="" value="" placeholder="검색어를 입력하세요." title="" class="form-basic" />
+									<button type="button" class="btn"><span><i class="ico ico-srch">Search</i></span></button>
+								</span>
+							</div>
+							<div class="g-item">
+								<div class="form-addon">
+									<input type="text" id="sDate1" placeholder="YYYYMMDD" class="form-basic form-datepicker">
+								</div>
+								<script type="text/javascript">
+								<!--
+								$(function() {
+									//Datepicker
+									$(".form-datepicker").datepicker({showOn: "button"});
+								});
+								//-->
+								</script>
+							</div>
+						</div>
+						<div class="col col-3">
+							<div class="g-item">
+								<span class="select-basic">
+									<select name="" id="select2" value="" title="" class="form-basic">
+										<option value="">Default</option>
+									</select>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="select-basic">
+									<select name="" id="" value="" title="" class="form-basic">
+										<option value="">Outer Button</option>
+									</select>
+								</span>
+								<button type="button" class="btn btn-basic btn-md"><span>버튼</span></button>
+							</div>
+							<div class="g-item">
+								<span class="form-addon type-sns3">
+									<span class="select-basic">
+										<select name="" id="" value="" title="" class="form-basic">
+											<option value="">add-on select</option>
+										</select>
+									</span>
+									<i class="ico ico-facebook3 addon"></i>
+								</span>
+							</div>
+							<div class="g-item">
+								<span class="select-basic">
+									<button type="button" class="form-basic"><span>Select Layer</span></button>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" /><span class="simple">전체</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="radio1" /><span class="simple">전체</span></label>
+								</span>
+							</div>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-check"><input type="checkbox" checked /><span>선택</span></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-check"><input type="radio" name="radio1" checked /><span>선택</span></label>
+								</span>
+							</div>
+							<div class="row g-item">
+								<span class="col col-5">
+									<label class="form-switch"><input type="checkbox" /><i></i></label>
+								</span>
+								<span class="col col-6">
+									<label class="form-switch"><input type="checkbox" /><i class="round"></i></label>
+								</span>
+							</div>
+						</div>
+						<div class="col col-3">
+							<textarea name="" rows="9" cols="10" placeholder="내용을 입력하세요." class="form-basic"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;!-- Input Text - Basic-->
+									&lt;input type="text" name="" id="" value="" placeholder="Placeholder" title="" class="form-basic" />
+
+									&lt;!-- Input Text - Outer Button  -->
+									&lt;input type="text" name="" id="" value="Value" placeholder="Placeholder" title="" class="form-basic" />
+									&lt;button type="button" class="btn btn-basic btn-md">&lt;span>버튼&lt;/span>&lt;/button>
+
+									&lt;!-- Input Text - Add-On (Type Search) -->
+									&lt;span class="form-addon type-sch">
+										&lt;input type="text" name="" id="" value="" placeholder="검색어를 입력하세요." title="" class="form-basic" />
+										&lt;button type="button" class="btn">&lt;span>&lt;i class="ico ico-srch">Search&lt;/i>&lt;/span>&lt;/button>
+									&lt;/span>
+
+									&lt;!-- Input Text - Add-On (Type Datepicker) -->
+									&lt;span class="form-addon">
+										&lt;input type="text" id="sDate1" placeholder="YYYYMMDD" class="form-basic form-datepicker">
+									&lt;/span>
+
+									&lt;!-- Select - Basic -->
+									&lt;span class="select-basic">
+										&lt;select name="" id="select2" value="" title="" class="form-basic">
+											&lt;option value="">Default&lt;/option>
+										&lt;/select>
+									&lt;/span>
+
+									&lt;!-- Select - Outer Button  -->
+									&lt;span class="select-basic">
+										&lt;select name="" id="" value="" title="" class="form-basic">
+											&lt;option value="">Outer Button&lt;/option>
+										&lt;/select>
+									&lt;/span>
+									&lt;button type="button" class="btn btn-basic btn-md">&lt;span>버튼&lt;/span>&lt;/button>
+
+									&lt;!-- Select - Add On (Type SNS)  -->
+									&lt;span class="form-addon type-sns3">
+										&lt;span class="select-basic">
+											&lt;select name="" id="" value="" title="" class="form-basic">
+												&lt;option value="">Add-on Select&lt;/option>
+											&lt;/select>
+										&lt;/span>
+										&lt;i class="ico ico-facebook3 addon">&lt;/i>
+									&lt;/span>
+
+									&lt;!-- Select - Button Type -->
+									&lt;span class="select-basic">
+										&lt;button type="button" class="form-basic">&lt;span>Select Layer&lt;/span>&lt;/button>
+									&lt;/span>
+
+									&lt;!-- Input Checkbox/Radio - Basic Simple -->
+									&lt;label class="form-check">&lt;input type="checkbox" />&lt;span class="simple">전체&lt;/span>&lt;/label>
+									&lt;label class="form-check">&lt;input type="radio" name="radio1" />&lt;span class="simple">전체&lt;/span>&lt;/label>
+
+									&lt;!-- Input Checkbox/Radio - Basic Nomal -->
+									&lt;label class="form-check">&lt;input type="checkbox" checked />&lt;span>선택&lt;/span>&lt;/label>
+									&lt;label class="form-check">&lt;input type="radio" name="radio1" checked />&lt;span>선택&lt;/span>&lt;/label>
+
+									&lt;!-- Input Checkbox/Radio - Switch -->
+									&lt;label class="form-switch">&lt;input type="checkbox" />&lt;i>&lt;/i>&lt;/label>
+									&lt;label class="form-switch">&lt;input type="checkbox" />&lt;i class="round">&lt;/i>&lt;/label>
+
+									&lt;!-- Textarea -->
+									&lt;textarea name="" rows="9" cols="10" placeholder="내용을 입력하세요." class="form-basic">&lt;/textarea>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Form Control */
+									.form-basic {height:36px; padding:2px 10px; font-size:14px; line-height:30px; border:1px solid #ddd; border-radius:3px; background-color:#fff; text-align:left;
+										transition:all 0.2s ease-out; -webkit-transition:all 0.2s ease-out 0s; -moz-transition:all 0.2s ease-out 0s; -o-transition:all 0.2s ease-out 0s;}
+									.form-basic, .form-basic.selected {color:#333;}
+									textarea.form-basic {width:100%; height:auto; padding:10px; line-height:20px;}
+									textarea.form-basic:focus,textarea.form-basic.is-focused {padding:9px;}
+									select.form-basic {padding:0px 30px 0px 10px; color:#999;}
+									select.form-basic option {color:#333;}
+									.select-basic {display:inline-block; position:relative;}
+									.select-basic:after {content:''; position:absolute; right:10px; top:50%; width:12px; height:7px; margin-top:-3px; background:url('../../images/common/arw_select.png') no-repeat left center;}
+
+									/* Form Control - Property */
+									.form-basic:hover,
+									.form-basic.hover {border:1px solid #888;}
+									.form-basic:focus,
+									.form-basic.is-focused {border:2px solid #278df5; padding:1px 9px; outline:0; background-color:#e2effc; color:#278df5; box-shadow:none;}
+									.form-basic.error {border:1px solid #f52727; background-color:#fff4f4; color:#f52727;}
+									.form-basic.error:focus {border-width:2px; padding:1px 9px;}
+
+									/* Form Check - Design */
+									.form-check {display:inline-block; position:relative; margin:5px 0; line-height:1; vertical-align:middle;}
+									.form-check {display:inline-block;}
+									.form-check span {display:inline-block; position:relative; padding:0 6px 0 24px; font-size:13px; line-height:20px;}
+									.form-check span.simple {width:20px; height:20px; padding:0; text-indent:-999em; text-align:left;}
+									.form-check span:before, .form-check span:after {content:''; position:absolute; left:0; top:0;}
+									.form-check span:before {top:0; width:20px; height:20px; border:1px solid #ddd; background:#fff;}
+									.form-check > input {position:absolute; left:0; top:0; width:20px; height:20px;}
+									.form-check > input:checked + span:before {border-color:#4b6fd8;}
+									.form-check > input:checked + span:after {left:5px; top:5px;}
+									.form-check > input[disabled]:checked + span:after {border-color:#ddd;}
+									.form-check > input[disabled] + span {color:#999;}
+									.form-check > input[disabled] + span:before {background-color:#f0f0f0;}
+									.form-check > input[type="checkbox"]:checked + span:before {border-color:#4b6fd8;}
+									.form-check > input[type="checkbox"]:checked + span:after {width:10px; height:7px; background:none; border-left:2px solid #4b6fd8; border-bottom:2px solid #4b6fd8; -webkit-transform:rotate(-45deg); transform:rotate(-45deg);}
+									.form-check > input[type="radio"] + span:before {border-radius:50%;}
+									.form-check > input[type="radio"]:checked + span:before {background-color:#fff;}
+									.form-check > input[type="radio"]:checked + span:after {top:5px; left:5px; width:10px; height:10px; border-radius:50%; background:#4b6fd8;}
+									.form-check + .form-check {margin-left:10px;}
+
+									/* Form Check - Property */
+									.form-check > input.hover + span:before,
+									.form-check > input:hover + span:before,
+									.form-check > input:focus + span:before {border-color:#888;}
+									.form-check > input:focus + span:before {box-shadow:0 0 0 2px rgba(136,136,136,0.5);}
+									.form-check > input:checked:focus + span:before,
+									.form-check > input:checked:hover + span:before {border-color:#4b6fd8;}
+									.form-check > input:checked:focus + span:before {box-shadow:0 0 0 2px rgba(75,111,216,0.5);}
+									.form-check > input.error + span {color:#f52727;}
+									.form-check > input.error + span:before,
+									.form-check > input.error:checked:hover + span:before,
+									.form-check > input.error:checked:focus + span:before  {border-color:#f52727;}
+									.form-check > input.error:focus + span:before {box-shadow:0 0 0 2px rgba(245,39,39,0.5);}
+									.form-check > input[type="radio"].error:checked + span:before {border-color:#f52727;}
+									.form-check > input[type="radio"].error:checked + span:after {background-color:#f52727;}
+									.form-check > input[type="checkbox"].error:checked + span:before {border-color:#f52727;}
+									.form-check > input[type="checkbox"].error:checked + span:after {border-color:#f52727;}
+
+									/* Form Switch */
+									.form-switch {position:relative; display:inline-block; width:42px; height:22px;}
+									.form-switch input + i {position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; -webkit-transition:.4s; transition:.4s}
+									.form-switch input + i:before {position:absolute; content:""; height:18px; width:18px; left:2px; bottom:2px; background-color:white; -webkit-transition:.4s; transition:.4s}
+									.form-switch input + i.round {border-radius:20px}
+									.form-switch input + i.round:before {border-radius:50%}
+									.form-switch input:checked + i {background-color:#2196F3}
+									.form-switch input:checked + i:before {-webkit-transform:translateX(20px); -ms-transform:translateX(20px); transform:translateX(20px)}
+									.form-switch input:focus + i {box-shadow:0 0 0 2px rgba(204,204,204,0.5);}
+									.form-switch input:checked:focus + i {box-shadow:0 0 0 2px rgba(33,150,233,0.5);}
+
+									/* Form File */
+									.form-file {display:inline-block; position:relative; overflow:hidden; vertical-align:middle;}
+									.form-file input[type=file] {position:absolute; top:-999em; left:-999em; width:0; height:0; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); -khtml-opacity:0; -moz-opacity:0;}
+
+									/* Form Text(라벨, 경고, 도움말) */
+									.form-label,
+									.form-static,
+									.form-help,
+									.form-alert,
+									.form-txt {height:26px; padding:5px 0; line-height:26px; vertical-align:middle;}
+									.form-label:first-child,
+									.form-static:first-child,
+									.form-help:first-child,
+									.form-alert:first-child,
+									.form-txt:first-child {padding-left:0;}
+									.form-label,
+									span.form-static,
+									span.form-help,
+									span.form-alert,
+									span.form-txt {display:inline-block; padding-left:5px; padding-right:5px;}
+									.form-txt {min-width:25px; text-align:center;}
+									.form-required {display:inline-block;}
+									.form-required:before {content:'*'; position:relative; top:2px; margin-right:3px;}
+									.form-label + .form-required span {position:absolute; left:-999rem; top:-999rem;}
+
+									/* Form Add-on */
+									.form-addon {display:inline-block; position:relative;}
+									.form-addon.type-sch button {display:inline-block; position:absolute; top:0; height:36px; line-height:36px; right:5px;}
+									.form-addon.type-sch .form-basic {padding-right:40px;}
+									.form-addon.type-sns3 .ico {display:inline-block; position:absolute; top:50%; left:10px; margin-top:-10px;}
+									.form-addon.type-sns3 .form-basic {padding-left:30px;}
+
+									/* Form Group */
+									.form-group {display:inline-block;}
+									.form-group.type-email {}
+									.form-group.type-jumin {}
+									.form-group.type-phone {}
+									.form-group.type-address {}
+
+									/* Gutter */
+									.form-group-row {padding:5px 0;}
+									.form-group + .form-group {margin-left:16px;}
+									.form-group-row + .form-group-row {margin-top:5px;}
+									.form-label + .form-basic,
+									.form-label + [class^=form-group],
+									.form-basic + .form-basic,
+									.form-basic + .select-basic,
+									.select-basic + .form-basic,
+									.form-basic + .btn,
+									.select-basic + .btn,
+									.form-addon + .form-addon {margin-left:4px;}
+									.form-basic + .form-label {margin-left:16px}
+
+									/*-----------------------------------------------------------------------------
+										jquery.ui.Datepicker
+									-----------------------------------------------------------------------------*/
+									/* Plugin */
+									.ui-datepicker{width:17em;padding:1em;display:none;background-color:#fff;border:1px solid #eee;}.ui-datepicker .ui-datepicker-header{position:relative;padding:.2em 0;}.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next{position:absolute;top:2px;width:1.8em;height:1.8em;}.ui-datepicker .ui-datepicker-prev-hover,.ui-datepicker .ui-datepicker-next-hover{top:1px;}.ui-datepicker .ui-datepicker-prev{left:2px;}.ui-datepicker .ui-datepicker-next{right:2px;}.ui-datepicker .ui-datepicker-prev-hover{left:1px;}.ui-datepicker .ui-datepicker-next-hover{right:1px;}.ui-datepicker .ui-datepicker-prev span,.ui-datepicker .ui-datepicker-next span{display:block;position:absolute;left:50%;margin-left:-8px;top:50%;margin-top:-8px;}.ui-datepicker .ui-datepicker-title{margin:0 2.3em;line-height:1.8em;text-align:center;}.ui-datepicker .ui-datepicker-title select{font-size:1em;margin:1px 0;}.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year{width:45%;}.ui-datepicker table{width:100%;font-size:.9em;border-collapse:collapse;margin:0 0 .4em;}.ui-datepicker th{padding:.7em .3em;text-align:center;font-weight:bold;border:0;}.ui-datepicker td{border:0;padding:1px;}.ui-datepicker td span,.ui-datepicker td a{display:block;padding:.2em;text-align:right;text-decoration:none;}.ui-datepicker .ui-datepicker-buttonpane{background-image:none;margin:.7em 0 0 0;padding:0 .2em;border-left:0;border-right:0;border-bottom:0;}.ui-datepicker .ui-datepicker-buttonpane button{float:right;margin:.5em .2em .4em;cursor:pointer;padding:.2em .6em .3em .6em;width:auto;overflow:visible;}.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current{float:left;}/* with multiple calendars */.ui-datepicker.ui-datepicker-multi{width:auto;}.ui-datepicker-multi .ui-datepicker-group{float:left;}.ui-datepicker-multi .ui-datepicker-group table{width:95%;margin:0 auto .4em;}.ui-datepicker-multi-2 .ui-datepicker-group{width:50%;}.ui-datepicker-multi-3 .ui-datepicker-group{width:33.3%;}.ui-datepicker-multi-4 .ui-datepicker-group{width:25%;}.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header{border-left-width:0;}.ui-datepicker-multi .ui-datepicker-buttonpane{clear:left;}.ui-datepicker-row-break{clear:both;width:100%;font-size:0;}/* RTL support */.ui-datepicker-rtl{direction:rtl;}.ui-datepicker-rtl .ui-datepicker-prev{right:2px;left:auto;}.ui-datepicker-rtl .ui-datepicker-next{left:2px;right:auto;}.ui-datepicker-rtl .ui-datepicker-prev:hover{right:1px;left:auto;}.ui-datepicker-rtl .ui-datepicker-next:hover{left:1px;right:auto;}.ui-datepicker-rtl .ui-datepicker-buttonpane{clear:right;}.ui-datepicker-rtl .ui-datepicker-buttonpane button{float:left;}.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,.ui-datepicker-rtl .ui-datepicker-group{float:right;}.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header{border-right-width:0;border-left-width:1px;}
+
+									/* Design - Button */
+									.ui-datepicker-trigger {
+										display:inline-block; position:absolute; right:5px; top:50%; width:22px; height:22px; margin-top:-11px;
+										background:url(../../images/common/icon_sprite.png) no-repeat -230px -125px; vertical-align:middle; text-indent:-9999em;
+									}
+
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									$(function() {
+										//Datepicker
+										$(".form-datepicker").datepicker({showOn: "button"});
+									});
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

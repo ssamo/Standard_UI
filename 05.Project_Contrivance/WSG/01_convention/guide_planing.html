@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Convention &gt; 설계가이드 | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript">guide.include('libs')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">설계가이드</h1>
+				<div class="g-guideLink">
+					<a href="#section1" data-role="spy-scroll">파일구분</a>
+					<a href="#section2" data-role="spy-scroll">범위구분</a>
+					<a href="#section3" data-role="spy-scroll">설계구분</a>
+					<a href="#section4" data-role="spy-scroll">설계방법</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- section1 -->
+			<section id="section1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">파일구분</h2>
+				</div>
+				<div class="g-section-body">
+					<ul class="g-desc">
+						<li>종류별로 파일로 구분하는것이 기본이나, 파일을 병합하는 경우 주석으로 구분한다.</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>파일구분 정의</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>종류</th>
+									<th>파일명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="align-l">초기화</td>
+									<td class="align-l">base.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">유틸리티</td>
+									<td class="align-l">common.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">레이아웃</td>
+									<td class="align-l">layout.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">디자인공통</td>
+									<td class="align-l">ui.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">컨텐츠</td>
+									<td class="align-l">contents.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">테마</td>
+									<td class="align-l">theme.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">반응형</td>
+									<td class="align-l">responsive.css</td>
+								</tr>
+								<tr>
+									<td class="align-l">에니메이션</td>
+									<td class="align-l">animate.css</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- //section1 -->
+
+			<!-- section2 -->
+			<section id="section2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">구분범위</h2>
+				</div>
+				<div class="g-section-body">
+					<ul class="g-desc">
+						<li>종류별로 파일로 구분하는것이 기본이나, 파일을 병합하는 경우 주석으로 구분한다.</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>네이밍 규약</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">단계</th>
+									<th scope="col">범위</th>
+									<th scope="col">예시</th>
+									<th scope="col">설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1단계</td>
+									<td>Global</td>
+									<td>-theme, -lang</td>
+									<td>전체 요소들을 구분한다. (예:테마구분, 다국어구분)</td>
+								</tr>
+								<tr>
+									<td>2단계</td>
+									<td>Wrapper</td>
+									<td>-wrapper</td>
+									<td>레이아웃을 구분한다. (예:메인, 서브별 메인)</td>
+								</tr>
+								<tr>
+									<td>3단계</td>
+									<td>Contents</td>
+									<td>-contents</td>
+									<td>페이지를 구분한다. (예:업무단위, 화면단위)</td>
+								</tr>
+								<tr>
+									<td>4단계</td>
+									<td>Section</td>
+									<td>-section</td>
+									<td>컨텐츠 그룹을 구분한다. (예:컨텐츠 유형별)</td>
+								</tr>
+								<tr>
+									<td>5단계</td>
+									<td>Detail</td>
+									<td>.[ui], .[contents]</td>
+									<td>컨텐츠 내용을 구분한다. (예:형태단위, 컨텐츠 내용단위)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- //section2 -->
+
+			<!-- section3 -->
+			<section id="section3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">설계구분</h2>
+				</div>
+				<div class="g-section-body">
+					<ul class="g-desc">
+						<li>구분범위에 관계없이 유형별로 분리하여, 어디에서나 사용할 수 있어야 한다.</li>
+					</ul>
+					<div class="g-tbl-type1">
+						<table>
+							<caption>설계구분 정의</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">유형</th>
+									<th scope="col">예시</th>
+									<th scope="col">예약어</th>
+									<th scope="col">설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>영역</td>
+									<td>바깥영역<br>안쪽영역</td>
+									<td>-wrap<br>-inner</td>
+									<td>형태와 분리되는 바깥영역의 스타일가이드</td>
+								</tr>
+								<tr>
+									<td>레이아웃</td>
+									<td>전체영역<br>고정<br>가변<br>그리드<br>균등분할</td>
+									<td>-wide<br>-fixed<br>-flex<br>-grid<br>-table</td>
+									<td>디자인과 무관하므로 형태별 공통으로 분류된다.</td>
+								</tr>
+								<tr>
+									<td>형태</td>
+									<td>박스, 블릿, 표</td>
+									<td>[형태]</td>
+									<td>스타일가이드의 기준이지만, 디자인가이드를 덛붙혀 사용한다.</td>
+								</tr>
+								<tr>
+									<td>디자인</td>
+									<td>유형별, 의미별, 컨텐츠별</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>컨텐츠</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>기능</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>상태</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- //section3 -->
+
+			<!-- section4 -->
+			<section id="section4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">설계방법</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //section4 -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

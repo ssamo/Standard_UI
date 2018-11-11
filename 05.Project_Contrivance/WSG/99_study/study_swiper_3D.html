@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Study Swiper | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<script type="text/javascript" src="/common/js/plugins/jquery.swiper.min.js"></script>
+<style type="text/css">
+/* Default */
+.swiper-container {position:relative; overflow:hidden;}
+.swiper-container .swiper-wrapper {display:flex; width:100%; display:-webkit-flex; display:-webkit-box;}
+.swiper-container .swiper-wrapper .swiper-slide {display:flex;}
+
+/* Option - 3D */
+.swiper-container-3d {perspective:1200px; -webkit-perspective:1200px;}
+.swiper-container-3d .swiper-wrapper {transform-style:preserve-3d; -webkit-transform-style:preserve-3d;}
+.swiper-container-3d .swiper-slide-shadow-top {
+	background-image:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0));
+	background-image:-o-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+	background-image:-webkit-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+	background-image:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+}
+.swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top {
+	position:absolute; left:0; top:0; width:100%; height:1005; pointer-events:none; z-index:10;}
+.swiper-container-3d .swiper-cube-shadow, .swiper-container-3d .swiper-slide, .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top, .swiper-container-3d .swiper-wrapper {
+	-webkit-transform-style:preserve-3d; transform-style:preserve-3d;
+}
+
+/* Option - Cube */
+.swiper-container-cube {overflow:visible;}
+.swiper-container-cube .swiper-slide {width:100%; height:100%; z-index:1; pointer-events:none; backface-visibility:hidden; -webkit-backface-visibility:hidden; visibility:hidden; transform-origin:0 0; -webkit-transform-origin:0 0; -ms-transform-origin:0 0;}
+.swiper-container-cube .swiper-slide-prev,
+.swiper-container-cube .swiper-slide-next,
+.swiper-container-cube .swiper-slide-next + .swiper-slide,
+.swiper-container-cube .swiper-slide-active {pointer-events:auto; visibility:visible;}
+
+/* Option - Vertical */
+.swiper-container-vertical .swiper-wrapper {-webkit-box-orient:vertical; -webkit-box-direction:normal; -webkit-flex-direction:column; -ms-flex-direction:column; flex-direction:column;}
+
+/* Design - Standard */
+.std-swiper .swiper-container .swiper-wrapper .swiper-slide {width:700px; margin:0 20px; text-align:center;}
+.std-swiper .swiper-container .swiper-wrapper .swiper-slide img {width:100%;}
+.std-swiper .swiper-container .swiper-pagination {position:absolute; left:0; bottom:30px; width:100%; text-align:center; z-index:10;}
+.std-swiper .swiper-container .swiper-pagination .swiper-pagination-bullet {display:inline-block; width:10px; height:10px; margin:0 10px; border-radius:50%; border:1px solid #fff; background-color:#fff;}
+.std-swiper .swiper-container .swiper-pagination .swiper-pagination-bullet-active {background-color:transparent;}
+
+/* Design - Cube */
+.cube-swiper .swiper-container .swiper-wrapper .swiper-slide {display:block; width:500px; height:300px; overflow:hidden; margin:0 20px; text-align:center;}
+.cube-swiper .swiper-container .swiper-pagination {position:absolute; left:0; bottom:30px; width:100%; text-align:center; z-index:10;}
+.cube-swiper .swiper-container .swiper-pagination .swiper-pagination-bullet {display:inline-block; width:10px; height:10px; margin:0 10px; border-radius:50%; border:1px solid #fff; background-color:#fff;}
+.cube-swiper .swiper-container .swiper-pagination .swiper-pagination-bullet-active {background-color:transparent;}
+
+</style>
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+	//jQuery
+	var content = {
+		slides : {
+			standard : function(){
+				//샘플 swiper1
+				var std_swiper = new Swiper('.std-swiper .swiper-container', {
+					slidesPerView : 'auto',
+					centeredSlides : true,
+					pagination : {
+						el: '.std-swiper .swiper-pagination',
+						clickable : true,
+					}
+				});
+			},
+			cube : function(){
+				//샘플 swiper1
+				var cube_swiper = new Swiper('.cube-swiper .swiper-container', {
+					direction: 'vertical',
+					effect: 'cube',
+					grabCursor: true,
+					cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					},
+					pagination: {
+						el: '.cube-swiper .swiper-pagination',
+					},
+				});
+			}
+		}
+	}
+	content.slides.standard();
+	content.slides.cube();
+})
+//-->
+</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+				<div class="g-guideLink">
+					<a href="#gStep1" data-role="spy-scroll">Default</a>
+					<a href="#gStep2" data-role="spy-scroll">Standard</a>
+					<a href="#gStep3" data-role="spy-scroll">Custom</a>
+					<a href="#gStep4" data-role="spy-scroll">Cube</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Step1 -->
+			<section id="gStep1" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-2">HTML</a></li>
+								<li class="is-active"><a href="#tabContentSample01-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;script type="text/javascript" src="/common/js/plugins/jquery.swiper.min.js">&lt;/script>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content is-active">
+								<pre class="brush:css">
+									/*-----------------------------------------------------------------------------
+													Swiper 4.3.3
+									-----------------------------------------------------------------------------*/
+									/* Default */
+									.swiper-container {position:relative; overflow:hidden;}
+									.swiper-container .swiper-wrapper {display:flex; width:100%; display:-webkit-flex; display:-webkit-box;}
+									.swiper-container .swiper-wrapper .swiper-slide {display:flex;}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step1 -->
+
+			<!-- Step2 -->
+			<section id="gStep2" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Standard</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="std-swiper">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="https://bxslider.com//assets/images/coffee3.jpg" title="Happy trees"></div>
+								<div class="swiper-slide"><img src="https://bxslider.com/assets/images/coffee1.jpg" title="Funky roots"></div>
+								<div class="swiper-slide"><img src="https://bxslider.com//assets/images/coffee2.jpg" title="The long and winding road"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample02-1">GUIDE</a></li>
+								<li><a href="#tabContentSample02-2">HTML</a></li>
+								<li><a href="#tabContentSample02-3">CSS</a></li>
+								<li><a href="#tabContentSample02-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample02-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample02-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;script type="text/javascript" src="/common/js/plugins/jquery.swiper.min.js">&lt;/script>
+									&lt;div class="std-slider">
+										&lt;div class="swiper-container">
+											&lt;div class="swiper-wrapper">
+												&lt;div class="swiper-slide">&lt;img src="https://bxslider.com//assets/images/coffee3.jpg" title="Happy trees">&lt;/div>
+												&lt;div class="swiper-slide">&lt;img src="https://bxslider.com/assets/images/coffee1.jpg" title="Funky roots">&lt;/div>
+												&lt;div class="swiper-slide">&lt;img src="https://bxslider.com//assets/images/coffee2.jpg" title="The long and winding road">&lt;/div>
+											&lt;/div>
+											&lt;div class="swiper-pagination">&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample02-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Design - Standard */
+									.std-slider .swiper-container .swiper-wrapper .swiper-slide {width:700px; margin:0 20px; text-align:center;}
+									.std-slider .swiper-container .swiper-wrapper .swiper-slide img {width:100%;}
+									.std-slider .swiper-container .swiper-pagination {position:absolute; left:0; bottom:30px; width:100%; text-align:center; z-index:10;}
+									.std-slider .swiper-container .swiper-pagination .swiper-pagination-bullet {display:inline-block; width:10px; height:10px; margin:0 10px; border-radius:50%; border:1px solid #fff; background-color:#fff;}
+									.std-slider .swiper-container .swiper-pagination .swiper-pagination-bullet-active {background-color:transparent;}
+								</pre>
+							</div>
+							<div id="tabContentSample02-4" class="g-tab-content">
+								<pre class="brush:js">
+									$(document).ready(function(){
+										//jQuery
+										var content = {
+											slides : {
+												standard : function(){
+													//샘플 swiper1
+													var sample_swiper1 = new Swiper('.sample-slider1 .swiper-container', {
+														slidesPerView : 'auto',
+														centeredSlides : true,
+														pagination : {
+															el: '.sample-slider1 .swiper-pagination',
+															clickable : true,
+														}
+													});
+												}
+											}
+										}
+										content.slides.standard();
+									})
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step2 -->
+
+			<!-- Step3 -->
+			<section id="gStep3" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Custom</h2>
+				</div>
+				<div class="g-section-body">
+					Wait
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step3 -->
+
+			<!-- Step4 -->
+			<section id="gStep4" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Cube</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="cube-swiper">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" style="background:url(https://bxslider.com//assets/images/coffee1.jpg);"></div>
+								<div class="swiper-slide" style="background:url(https://bxslider.com//assets/images/coffee2.jpg);"></div>
+								<div class="swiper-slide" style="background:url(https://bxslider.com//assets/images/coffee3.jpg);"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Step4 -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

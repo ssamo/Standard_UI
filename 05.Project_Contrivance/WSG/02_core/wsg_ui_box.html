@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Core - Boxs | WSG Master</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-core-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">Boxs</h1>
+				<div class="g-guideLink">
+					<a href="#gDefault" data-role="spy-scroll">Defuault</a>
+					<a href="#gCommon" data-role="spy-scroll">Common</a>
+					<a href="#gDesign" data-role="spy-scroll">Design</a>
+					<a href="#gEtc" data-role="spy-scroll">Etc</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- Default Guide -->
+			<section id="gDefault" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Default Guide</h2>
+				</div>
+				<div class="g-section-body">
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample01-1">GUIDE</a></li>
+								<li class="is-active"><a href="#tabContentSample01-2">HTML</a></li>
+								<li><a href="#tabContentSample01-3">CSS</a></li>
+								<li><a href="#tabContentSample01-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample01-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample01-2" class="g-tab-content is-active">
+								<pre class="brush:html">
+									&lt;div class="box-wrap">
+										&lt;div class="box box-이름">
+											&lt;div class="box-header">
+												box-header
+											&lt;/div>
+											&lt;div class="box-body">
+												box-body
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample01-3" class="g-tab-content">
+								<pre class="brush:css">
+									/*-------------------------------------------------------------------
+										## Box
+									----------------------------------------------------------------- --*/
+									/* Default */
+									.box {position:relative;}
+									.box-inner,.box-header,.box-body,.box-footer {position:relative; z-index:2;}
+								</pre>
+							</div>
+							<div id="tabContentSample01-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Default Guide -->
+
+			<!-- Common Guide -->
+			<section id="gCommon" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common Guide</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Basic</h3>
+					<div class="box box-basic">
+						<div class="box-inner">
+							<div class="box-header">
+								box-header
+							</div>
+							<div class="box-body">
+								box-body
+							</div>
+							<div class="box-footer">
+								box-footer
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample021-1">GUIDE</a></li>
+								<li><a href="#tabContentSample021-2">HTML</a></li>
+								<li><a href="#tabContentSample021-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample021-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample021-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="box box-basic">
+										&lt;div class="box-inner">
+											&lt;div class="box-header">
+												box-header
+											&lt;/div>
+											&lt;div class="box-body">
+												box-body
+											&lt;/div>
+											&lt;div class="box-footer">
+												box-footer
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample021-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="g-section-body">
+					<h3 class="g-h3">Hover</h3>
+					<!-- Overlay -->
+					<h4 class="g-h4"><strong>Overay</strong></h4>
+					<div class="box box-basic box-hover">
+						<div class="box-inner">
+							<div class="box-header">
+								box-header
+							</div>
+							<div class="box-body">
+								box-body<br>
+								box-hover는 box기본구조와 관계없다.
+							</div>
+							<div class="box-footer">
+								box-footer
+							</div>
+						</div>
+						<div class="box-hover-overlay">
+							<div class="box-hover-inner">
+								<div class="box-hover-body">
+									box-hover-overlay
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Underlay -->
+					<h4 class="g-h4"><strong>Underlay</strong></h4>
+					<div class="box box-basic box-hover">
+						<div class="box-inner">
+							<div class="box-header">
+								box-header
+							</div>
+							<div class="box-body">
+								box-body<br>
+								box-hover는 box기본구조와 관계없다.
+							</div>
+							<div class="box-footer">
+								box-footer
+							</div>
+						</div>
+						<div class="box-hover-underlay">
+							<div class="box-hover-inner">
+								<div class="box-hover-body">
+									box-hover-underlay
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //VIEW -->
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample022-1">GUIDE</a></li>
+								<li><a href="#tabContentSample022-2">HTML</a></li>
+								<li><a href="#tabContentSample022-3">CSS</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample022-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample022-2" class="g-tab-content">
+								<pre class="brush:html">
+									&lt;div class="box box-basic box-hover">
+										&lt;div class="box-inner">
+											(생략)
+										&lt;/div>
+										&lt;div class="box-hover-overlay">
+											&lt;div class="box-hover-inner">
+												&lt;div class="box-hover-body">
+													box-hover-overlay
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+									&lt;br>&lt;br>
+
+									&lt;!-- Underlay -->
+									&lt;p>&lt;strong>Underlay&lt;/strong>&lt;/p>&lt;br>
+									&lt;div class="box box-basic box-hover">
+										&lt;div class="box-inner">
+											(생략)
+										&lt;/div>
+										&lt;div class="box-hover-underlay">
+											&lt;div class="box-hover-inner">
+												&lt;div class="box-hover-body">
+													box-hover-underlay
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+								</pre>
+							</div>
+							<div id="tabContentSample022-3" class="g-tab-content">
+								<pre class="brush:css">
+									/* Hover */
+									.box-hover {display:block;}
+									.box-hover-overlay {z-index:3;}
+									.box-hover-underlay {z-index:1;}
+									.box-hover-inner {display:table; width:100%; height:100%;}
+									.box-hover-body {display:table-cell; width:100%; height:100%; text-align:center; vertical-align:middle;}
+									.box-hover-overlay,
+									.box-hover-underlay {position:absolute; top:0; right:0; bottom:0; left:0; opacity:0; background-color:#eee;
+										transition:all 0.3s ease-out 0s; -webkit-transition:all 0.3s ease-out 0s; -moz-transition:all 0.3s ease-out 0s; -o-transition:all 0.3s ease-out 0s;}
+									.box-hover:hover .box-hover-overlay,
+									.box-hover:focus .box-hover-overlay,
+									.box-hover:hover .box-hover-underlay,
+									.box-hover:focus .box-hover-underlay {opacity:1;}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Common Guide -->
+
+			<!-- Design Guide -->
+			<section id="gDesign" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Design Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample03-1">GUIDE</a></li>
+								<li><a href="#tabContentSample03-2">HTML</a></li>
+								<li><a href="#tabContentSample03-3">CSS</a></li>
+								<li><a href="#tabContentSample03-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample03-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample03-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample03-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample03-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Design Guide -->
+
+			<!-- Etc Guide -->
+			<section id="gEtc" class="g-section g-in-sec display-n">
+				<div class="g-section-header">
+					<h2 class="g-h2">Etc Guide</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+				<div class="g-section-tab">
+					<div class="g-tab g-tab-codeview js-tab">
+						<div class="g-tab-nav">
+							<ul>
+								<li><a href="#tabContentSample04-1">GUIDE</a></li>
+								<li><a href="#tabContentSample04-2">HTML</a></li>
+								<li><a href="#tabContentSample04-3">CSS</a></li>
+								<li><a href="#tabContentSample04-4">SCRIPT</a></li>
+							</ul>
+						</div>
+						<div class="g-tab-body">
+							<div id="tabContentSample04-1" class="g-tab-content">
+								<div class="brush-guide">
+									Source Guide
+								</div>
+							</div>
+							<div id="tabContentSample04-2" class="g-tab-content">
+								<pre class="brush:html">
+									Source HTML
+								</pre>
+							</div>
+							<div id="tabContentSample04-3" class="g-tab-content">
+								<pre class="brush:css">
+									Source CSS
+								</pre>
+							</div>
+							<div id="tabContentSample04-4" class="g-tab-content">
+								<pre class="brush:js">
+									Source JAVASCRIPT
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Etc Guide -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

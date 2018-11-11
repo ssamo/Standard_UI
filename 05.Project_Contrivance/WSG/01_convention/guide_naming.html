@@ -1,0 +1,2092 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Convention &gt; 예약어 가이드 | WSG Library</title>
+<script src="../common/js/include.js"></script>
+<script type="text/javascript">guide.include('core')</script>
+<script type="text/javascript">guide.include('guide')</script>
+<!-- //codeview -->
+</head>
+<body id="g-body">
+<div id="g-wrap">
+	<script type="text/javascript">guide.include('aside')</script>
+	<div id="g-content" class="g-convention-wrap">
+		<div class="g-content-header">
+			<div class="g-in-sec">
+				<h1 class="g-h1">설계 가이드</h1>
+				<div class="g-guideLink">
+					<a href="#sec_general" data-role="spy-scroll">General</a>
+					<a href="#sec_common" data-role="spy-scroll">Common</a>
+					<a href="#sec_layout" data-role="spy-scroll">Layout</a>
+					<a href="#sec_ui" data-role="spy-scroll">UI/UX</a>
+					<a href="#sec_jquery" data-role="spy-scroll">Jquery</a>
+					<a href="#sec_content" data-role="spy-scroll">Content</a>
+				</div>
+			</div>
+		</div>
+		<div class="g-content-body">
+			<!-- sec_general -->
+			<section id="sec_general" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">General</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">단계별 구분</h3>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">단계</th>
+												<th scope="col">구분단위</th>
+												<th scope="col">구분방법</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1단계</td>
+												<td>body</td>
+												<td>-theme, -lang</td>
+											</tr>
+											<tr>
+												<td>2단계</td>
+												<td>.wrapper</td>
+												<td>-wrapper</td>
+											</tr>
+											<tr>
+												<td>3단계</td>
+												<td>.content</td>
+												<td>-cont</td>
+											</tr>
+											<tr>
+												<td>4단계</td>
+												<td>.section</td>
+												<td>-sec</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">단계</th>
+												<th scope="col">구분단위</th>
+												<th scope="col">구분방법</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>5단계</td>
+												<td>[UI] Wrap</td>
+												<td>-wrap</td>
+											</tr>
+											<tr>
+												<td>6단계</td>
+												<td>[UI]</td>
+												<td>.[ui]</td>
+											</tr>
+											<tr>
+												<td>7단계</td>
+												<td>[UI] Child</td>
+												<td>-header, -body</td>
+											</tr>
+											<tr>
+												<td>8단계</td>
+												<td>Inline Content</td>
+												<td>-[이름]</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h3 class="g-h3">공통 예약어</h3>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">Name</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>크기</td>
+												<td>-xl</td>
+												<td>더 크게</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-lg</td>
+												<td>크게</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-md</td>
+												<td>기본</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-sm</td>
+												<td>작게</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-xs</td>
+												<td>더 작게</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>그룹</td>
+												<td>-wrap</td>
+												<td>현재 유형의 최상위 그룹</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-sec</td>
+												<td>연속적인 컨텐츠 그룹</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-inner</td>
+												<td>안쪽 영역</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-area</td>
+												<td>지역 그룹</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-group</td>
+												<td>요소의 묶음</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>상태</td>
+												<td>active</td>
+												<td>활성화 상태</td>
+											</tr>
+											<tr>
+												<td>(상태 예약서 생략)</td>
+												<td>currunt</td>
+												<td>현재 위치</td>
+											</tr>
+											<tr>
+												<td>(적용규칙에 따른다)</td>
+												<td>focus, hover</td>
+												<td>키 포커스, 마우스 호버</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>on, off</td>
+												<td>켜다, 끄다</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>fold, unfold</td>
+												<td>접다, 펴다</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">Name</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>의미</td>
+												<td>-primary</td>
+												<td>가장 중요한</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-success</td>
+												<td>성공</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-fail, -error</td>
+												<td>실패, 오류</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-warning</td>
+												<td>주의</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-danger</td>
+												<td>위험</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>기능</td>
+												<td>js-</td>
+												<td>스크립트</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>is-</td>
+												<td>상태</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>has-</td>
+												<td>무엇이 있을 때</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>e-</td>
+												<td>효과</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>type-</td>
+												<td>컨텐츠 유형</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>data-</td>
+												<td>-value</td>
+												<td>일반적인 값</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-min, -max, -now</td>
+												<td>최소, 최대, 현재 값</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-target, -name</td>
+												<td>대상이름, 자신이름</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-mode</td>
+												<td>설정값</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>-event</td>
+												<td>적용할 이벤트</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_general -->
+
+			<!-- sec_common -->
+			<section id="sec_common" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Common</h2>
+				</div>
+				<div class="g-section-body">
+					<h3 class="g-h3">Default</h3>
+					<ul class="g-desc">
+						<li>가이드 설계를 대체하는 목적으로 사용하지 않는다.</li>
+						<li>가이드 설계에 포함하기 어려운 예외처리를 목적으로 활용한다.</li>
+					</ul>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Style</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>IR</td>
+												<td>.blind</td>
+												<td>웹접근성 숨김처리</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Display</td>
+												<td>.display-b</td>
+												<td>display:block</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-ib</td>
+												<td>display:inline-block</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-i</td>
+												<td>display:inline</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-n</td>
+												<td>display:none</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-t</td>
+												<td>display:table</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-tr</td>
+												<td>display:table-row</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-trg</td>
+												<td>display:table-row-group</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.display-tc</td>
+												<td>display:table-cell</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Position</td>
+												<td>.position-r</td>
+												<td>position:relative</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.position-a</td>
+												<td>position:absolute</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.position-f</td>
+												<td>position:fixed</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.position-s</td>
+												<td>position:static</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Float</td>
+												<td>.float-n</td>
+												<td>float:none</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.float-l</td>
+												<td>float:left</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.float-r</td>
+												<td>float:right</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.clear-b</td>
+												<td>clear:both</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Scroll</td>
+												<td>.scroll-a</td>
+												<td>overflow:auto</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.scroll-h</td>
+												<td>overflow:hidden</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.scroll-x</td>
+												<td>overflow-x:scroll</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.scroll-y</td>
+												<td>overflow-y:scroll</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Style</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Gutter Clear</td>
+												<td>.m-0</td>
+												<td>margin:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.mt-0</td>
+												<td>margin-top:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.mr-0</td>
+												<td>margin-right:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.mb-0</td>
+												<td>margin-bottom:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.ml-0</td>
+												<td>margin-left:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.p-0</td>
+												<td>padding:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pt-0</td>
+												<td>padding-top:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pr-0</td>
+												<td>padding-right:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pb-0</td>
+												<td>padding-bottom:0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pl-0</td>
+												<td>padding-left:0</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Align</td>
+												<td>.align-l</td>
+												<td>text-align:left</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-c</td>
+												<td>text-align:center</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-r</td>
+												<td>text-align:right</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-t</td>
+												<td>vertical-align:top</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-m</td>
+												<td>vertical-align:middle</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-b</td>
+												<td>vertical-align:bottom</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.align-central</td>
+												<td>정중앙 (부모 relative 필요)</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Transition</td>
+												<td>.e-trans</td>
+												<td>트랜지션 기본값 (0.3s)</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.e-trans.pro-</td>
+												<td>트랜지션 속성</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.e-trans.dur-</td>
+												<td>트랜지션 출력시간</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.e-trans.ease</td>
+												<td>트랜지션 부드러움</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Grid Layout</h3>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Default</td>
+												<td>.row</td>
+												<td>행 그룹</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.col</td>
+												<td>column</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.gutter-[n]</td>
+												<td>전체간격</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Style</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Detail</td>
+												<td>.col-[n]</td>
+												<td>자신의 column</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.cols-[n]</td>
+												<td>자식의 column</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.gutter-h[n]</td>
+												<td>가로간격</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.gutter-v[n]</td>
+												<td>세로간격</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Custom Color</h3>
+					<div class="scroll">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>글자색 명암</td>
+												<td>.c-none</td>
+												<td>투명</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-black</td>
+												<td>검정</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-white</td>
+												<td>흰색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-2</td>
+												<td>Gray 2번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-4</td>
+												<td>Gray 4번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-6</td>
+												<td>Gray 6번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-8</td>
+												<td>Gray 8번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-9</td>
+												<td>Gray 9번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-a</td>
+												<td>Gray a번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-c</td>
+												<td>Gray c번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-gray-e</td>
+												<td>Gray e번</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>글자색 채도</td>
+												<td>.c-[color1]</td>
+												<td>color1 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color1]-dark</td>
+												<td>color1 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color1]-light</td>
+												<td>color1 밝은색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color2]</td>
+												<td>color2 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color2]-dark</td>
+												<td>color2 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color2]-light</td>
+												<td>color2 밝은색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color3]</td>
+												<td>color3 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color3]-dark</td>
+												<td>color3 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-[color3]-light</td>
+												<td>color3 밝은색</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>글자색 의미</td>
+												<td>.c-basic</td>
+												<td>기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-main</td>
+												<td>대표 포인트컬러</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-main-dark</td>
+												<td>대표 포인트컬러 어두운</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-main-light</td>
+												<td>대표 포인트컬러 밝은</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-sub</td>
+												<td>서브 포인트컬러</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-sub-dark</td>
+												<td>서브 포인트컬러 어두운</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-sub-light</td>
+												<td>서브  포인트컬러 밝은</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-primary</td>
+												<td>중요한</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-secondary</td>
+												<td>후순위</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-success</td>
+												<td>성공</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-failed</td>
+												<td>실패</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-warning</td>
+												<td>경고</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-danger</td>
+												<td>위험</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-error</td>
+												<td>오류</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.c-info</td>
+												<td>정보</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>배경색 명암</td>
+												<td>.bg-none</td>
+												<td>투명</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-black</td>
+												<td>검정</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-white</td>
+												<td>흰색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-2</td>
+												<td>Gray 2번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-4</td>
+												<td>Gray 4번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-6</td>
+												<td>Gray 6번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-8</td>
+												<td>Gray 8번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-9</td>
+												<td>Gray 9번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-a</td>
+												<td>Gray a번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-c</td>
+												<td>Gray c번</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-gray-e</td>
+												<td>Gray e번</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>배경색 채도</td>
+												<td>.bg-[color1]</td>
+												<td>color1 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color1]-dark</td>
+												<td>color1 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color1]-light</td>
+												<td>color1 밝은색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color2]</td>
+												<td>color2 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color2]-dark</td>
+												<td>color2 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color2]-light</td>
+												<td>color2 밝은색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color3]</td>
+												<td>color3 기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color3]-dark</td>
+												<td>color3 진한색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-[color3]-light</td>
+												<td>color3 밝은색</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>배경색 의미</td>
+												<td>.bg-basic</td>
+												<td>기본색</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-main</td>
+												<td>대표 포인트컬러</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-main-dark</td>
+												<td>대표 포인트컬러 어두운</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-main-light</td>
+												<td>대표 포인트컬러 밝은</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-sub</td>
+												<td>서브 포인트컬러</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-sub-dark</td>
+												<td>서브 포인트컬러 어두운</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-sub-light</td>
+												<td>서브  포인트컬러 밝은</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-primary</td>
+												<td>중요한</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-secondary</td>
+												<td>후순위</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-success</td>
+												<td>성공</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-failed</td>
+												<td>실패</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-warning</td>
+												<td>경고</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-danger</td>
+												<td>위험</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-error</td>
+												<td>오류</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.bg-info</td>
+												<td>정보</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="g-h3">Fixed Size &amp; Gutter</h3>
+					<div class="scroll-h">
+						<div class="row gutter-h20">
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Width</td>
+												<td>.w-[n]</td>
+												<td>Pixel</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.w-[n]p</td>
+												<td>Percent</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.w-[n]r</td>
+												<td>Rem</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Margin</td>
+												<td>.mt-[n]</td>
+												<td>Top</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.mr-[n]</td>
+												<td>Right</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.mb-[n]</td>
+												<td>Bottom</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.ml-[n]</td>
+												<td>Left</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<colgroup>
+											<col style="width:25%">
+											<col style="width:35%">
+											<col style="width:40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">분류</th>
+												<th scope="col">Selector</th>
+												<th scope="col">Summary</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Height</td>
+												<td>.h-[n]</td>
+												<td>Pixel</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.h-[n]p</td>
+												<td>Percent</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.h-[n]r</td>
+												<td>Rem</td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td>Padding</td>
+												<td>.pt-[n]</td>
+												<td>Top</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pr-[n]</td>
+												<td>Right</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pb-[n]</td>
+												<td>Bottom</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>.pl-[n]</td>
+												<td>Left</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_common -->
+
+			<!-- sec_layout -->
+			<section id="sec_layout" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Layout</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="scroll-h">
+						<div class="row gutter-20">
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Master Layout</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>wrapper</td>
+											</tr>
+											<tr>
+												<td>skipNav</td>
+											</tr>
+											<tr>
+												<td>header</td>
+											</tr>
+											<tr>
+												<td>header-inner</td>
+											</tr>
+											<tr>
+												<td>container</td>
+											</tr>
+											<tr>
+												<td>content</td>
+											</tr>
+											<tr>
+												<td>aside</td>
+											</tr>
+											<tr>
+												<td>footer</td>
+											</tr>
+											<tr>
+												<td>footer-inner</td>
+											</tr>
+											<tr>
+												<td>popupName</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Section Layout</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>aside</td>
+											</tr>
+											<tr>
+												<td>aside-header</td>
+											</tr>
+											<tr>
+												<td>aside-body</td>
+											</tr>
+											<tr>
+												<td>content</td>
+											</tr>
+											<tr>
+												<td>content-header</td>
+											</tr>
+											<tr>
+												<td>content-body</td>
+											</tr>
+											<tr>
+												<td>section-wrap</td>
+											</tr>
+											<tr>
+												<td>section</td>
+											</tr>
+											<tr>
+												<td>section-header</td>
+											</tr>
+											<tr>
+												<td>section-body</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Navigation</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>breadcrumb</td>
+											</tr>
+											<tr>
+												<td>gnb (Global)</td>
+											</tr>
+											<tr>
+												<td>lnb (Local)</td>
+											</tr>
+											<tr>
+												<td>mnb (Mobile)</td>
+											</tr>
+											<tr>
+												<td>anb (All)</td>
+											</tr>
+											<tr>
+												<td>snb (Sub)</td>
+											</tr>
+											<tr>
+												<td>qnb (Quick)</td>
+											</tr>
+											<tr>
+												<td>fnb (Footer)</td>
+											</tr>
+											<tr>
+												<td>depth[n]</td>
+											</tr>
+											<tr>
+												<td>node[n]</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Elements</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>header-util</td>
+											</tr>
+											<tr>
+												<td>header-logo</td>
+											</tr>
+											<tr>
+												<td>header-sns</td>
+											</tr>
+											<tr>
+												<td>header-search</td>
+											</tr>
+											<tr>
+												<td>header-login</td>
+											</tr>
+											<tr>
+												<td>footer-logo</td>
+											</tr>
+											<tr>
+												<td>footer-sns</td>
+											</tr>
+											<tr>
+												<td>footer-mark</td>
+											</tr>
+											<tr>
+												<td>footer-site</td>
+											</tr>
+											<tr>
+												<td>footer-copy</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_layout -->
+
+			<!-- sec_ui -->
+			<section id="sec_ui" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">UI</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="scroll-h">
+						<div class="row gutter-20">
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Text</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>tit-</td>
+											</tr>
+											<tr>
+												<td>txt-</td>
+											</tr>
+											<tr>
+												<td>num-</td>
+											</tr>
+											<tr>
+												<td>lang-</td>
+											</tr>
+											<tr>
+												<td>explain-</td>
+											</tr>
+											<tr>
+												<td>summary-</td>
+											</tr>
+											<tr>
+												<td>help-</td>
+											</tr>
+											<tr>
+												<td>desc-</td>
+											</tr>
+											<tr>
+												<td>notice-</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Form</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>form-control</td>
+											</tr>
+											<tr>
+												<td>form-label</td>
+											</tr>
+											<tr>
+												<td>form-text</td>
+											</tr>
+											<tr>
+												<td>form-check</td>
+											</tr>
+											<tr>
+												<td>form-file</td>
+											</tr>
+											<tr>
+												<td>:focus</td>
+											</tr>
+											<tr>
+												<td>:hover</td>
+											</tr>
+											<tr>
+												<td>:disabled</td>
+											</tr>
+											<tr>
+												<td>[readonly]</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Form Group</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>form-wrap</td>
+											</tr>
+											<tr>
+												<td>form-group</td>
+											</tr>
+											<tr>
+												<td>form-group-label</td>
+											</tr>
+											<tr>
+												<td>form-group-control</td>
+											</tr>
+											<tr>
+												<td>form-inline</td>
+											</tr>
+											<tr>
+												<td>form-inline-jumin</td>
+											</tr>
+											<tr>
+												<td>form-inline-biz</td>
+											</tr>
+											<tr>
+												<td>form-inline-email</td>
+											</tr>
+											<tr>
+												<td>form-inline-address</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Button</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>btn-wrap</td>
+											</tr>
+											<tr>
+												<td>btn-group</td>
+											</tr>
+											<tr>
+												<td>btn</td>
+											</tr>
+											<tr>
+												<td>btn-block</td>
+											</tr>
+											<tr>
+												<td>btn-skicy</td>
+											</tr>
+											<tr>
+												<td>btn-sm</td>
+											</tr>
+											<tr>
+												<td>btn-md</td>
+											</tr>
+											<tr>
+												<td>btn-lg</td>
+											</tr>
+											<tr>
+												<td>btn-primary</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="scroll-h">
+						<div class="row gutter-20">
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Icon, Label, Badge, Tag</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ico</td>
+											</tr>
+											<tr>
+												<td>label</td>
+											</tr>
+											<tr>
+												<td>badge</td>
+											</tr>
+											<tr>
+												<td>tag</td>
+											</tr>
+											<tr>
+												<td>-wrap</td>
+											</tr>
+											<tr>
+												<td>-outline</td>
+											</tr>
+											<tr>
+												<td>-[type]</td>
+											</tr>
+											<tr>
+												<td>-[type] -[name]</td>
+											</tr>
+											<tr>
+												<td>-[name]</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Bullet</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>bul</td>
+											</tr>
+											<tr>
+												<td>bul-dot</td>
+											</tr>
+											<tr>
+												<td>bul-cir</td>
+											</tr>
+											<tr>
+												<td>bul-squ</td>
+											</tr>
+											<tr>
+												<td>bul-num[n]</td>
+											</tr>
+											<tr>
+												<td>bul-kor[n]</td>
+											</tr>
+											<tr>
+												<td>bul-eng[n]</td>
+											</tr>
+											<tr>
+												<td>has-btn-[크기]</td>
+											</tr>
+											<tr>
+												<td>has-input-[크기]</td>
+											</tr>
+											<tr>
+												<td>has-ico-[name]</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Box, Card</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>box</td>
+											</tr>
+											<tr>
+												<td>card</td>
+											</tr>
+											<tr>
+												<td>-wrap</td>
+											</tr>
+											<tr>
+												<td>-inner</td>
+											</tr>
+											<tr>
+												<td>-header</td>
+											</tr>
+											<tr>
+												<td>-body</td>
+											</tr>
+											<tr>
+												<td>-hover</td>
+											</tr>
+											<tr>
+												<td>-hover underlay</td>
+											</tr>
+											<tr>
+												<td>-hover overay</td>
+											</tr>
+											<tr>
+												<td>-hover-inner</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Table</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>tbl-wrap</td>
+											</tr>
+											<tr>
+												<td>tbl-header</td>
+											</tr>
+											<tr>
+												<td>tbl-footer</td>
+											</tr>
+											<tr>
+												<td>tbl</td>
+											</tr>
+											<tr>
+												<td>tbl-col</td>
+											</tr>
+											<tr>
+												<td>tbl-row</td>
+											</tr>
+											<tr>
+												<td>tbl-form</td>
+											</tr>
+											<tr>
+												<td>tbl-responsive</td>
+											</tr>
+											<tr>
+												<td>tbl .dpeth1</td>
+											</tr>
+											<tr>
+												<td>tbl .dpeth2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_ui -->
+
+			<!-- sec_jquery -->
+			<section id="sec_jquery" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Jquery</h2>
+				</div>
+				<div class="g-section-body">
+					<div class="scroll-h">
+						<div class="row gutter-20">
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Tab</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>tab-wrap</td>
+											</tr>
+											<tr>
+												<td>tab-nav</td>
+											</tr>
+											<tr>
+												<td>tab-body</td>
+											</tr>
+											<tr>
+												<td>tab-content</td>
+											</tr>
+											<tr>
+												<td>tab-table</td>
+											</tr>
+											<tr>
+												<td>js-tab</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Tooltip</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>tooltip-wrap</td>
+											</tr>
+											<tr>
+												<td>tooltip</td>
+											</tr>
+											<tr>
+												<td>tooltip-header</td>
+											</tr>
+											<tr>
+												<td>tooltip-body</td>
+											</tr>
+											<tr>
+												<td>js-tooltip-toggle</td>
+											</tr>
+											<tr>
+												<td>js-tooltip-hover</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Dropdown</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>dropdown-wrap</td>
+											</tr>
+											<tr>
+												<td>dropdown</td>
+											</tr>
+											<tr>
+												<td>dropdown-item</td>
+											</tr>
+											<tr>
+												<td>dropdown-divider</td>
+											</tr>
+											<tr>
+												<td>js-dropdown-open</td>
+											</tr>
+											<tr>
+												<td>js-dropdown-close</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Accrodion</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>accordion</td>
+											</tr>
+											<tr>
+												<td>accordion-header</td>
+											</tr>
+											<tr>
+												<td>accordion-body</td>
+											</tr>
+											<tr>
+												<td>accordion-arw</td>
+											</tr>
+											<tr>
+												<td>accordion-inner</td>
+											</tr>
+											<tr>
+												<td>js-accordion-toggle</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="scroll-h">
+						<div class="row gutter-20">
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Modeless</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>modeless-wrap</td>
+											</tr>
+											<tr>
+												<td>modeless</td>
+											</tr>
+											<tr>
+												<td>modeless-header</td>
+											</tr>
+											<tr>
+												<td>modeless-body</td>
+											</tr>
+											<tr>
+												<td>modeless-footer</td>
+											</tr>
+											<tr>
+												<td>modeless-close</td>
+											</tr>
+											<tr>
+												<td>js-modal-open</td>
+											</tr>
+											<tr>
+												<td>js-modal-close</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Modal</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>modal-wrap</td>
+											</tr>
+											<tr>
+												<td>modal</td>
+											</tr>
+											<tr>
+												<td>modal-header</td>
+											</tr>
+											<tr>
+												<td>modal-body</td>
+											</tr>
+											<tr>
+												<td>modal-footer</td>
+											</tr>
+											<tr>
+												<td>modal-close</td>
+											</tr>
+											<tr>
+												<td>js-modal-open</td>
+											</tr>
+											<tr>
+												<td>js-modal-close</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Progress</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>progress-wrap</td>
+											</tr>
+											<tr>
+												<td>progress</td>
+											</tr>
+											<tr>
+												<td>progress[data-valuemin]</td>
+											</tr>
+											<tr>
+												<td>progress[data-valuemax]</td>
+											</tr>
+											<tr>
+												<td>progress[data-valuenow]</td>
+											</tr>
+											<tr>
+												<td>progress-bar</td>
+											</tr>
+											<tr>
+												<td>progress-active</td>
+											</tr>
+											<tr>
+												<td>progress-target</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col col-3">
+								<div class="g-tbl-type2">
+									<table>
+										<caption>네이밍 규약</caption>
+										<thead>
+											<tr>
+												<th scope="col">Carousel</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>carousel-wrap</td>
+											</tr>
+											<tr>
+												<td>carousel</td>
+											</tr>
+											<tr>
+												<td>carousel-title</td>
+											</tr>
+											<tr>
+												<td>carousel-caption</td>
+											</tr>
+											<tr>
+												<td>carousel-page</td>
+											</tr>
+											<tr>
+												<td>carousel-pager</td>
+											</tr>
+											<tr>
+												<td>carousel-control</td>
+											</tr>
+											<tr>
+												<td>carousel-item</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //sec_jquery -->
+
+			<!-- sec_content -->
+			<section id="sec_content" class="g-section g-in-sec">
+				<div class="g-section-header">
+					<h2 class="g-h2">Content</h2>
+				</div>
+				<div class="g-section-body">
+					Content
+				</div>
+			</section>
+			<!-- //sec_content -->
+
+			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
