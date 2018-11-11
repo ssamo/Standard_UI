@@ -5,7 +5,9 @@ var include = {
 		document.write('<script type="text/javascript" src="/common/js/standard.js"></script>');
 		document.write('<script type="text/javascript" src="/common/js/guide/guide.js"></script>');
 	},
-	header : function(){},
+	header : function(){
+
+	},
 	aside : function(){
 		document.write('	<aside id="g-aside">');
 		document.write('		<div class="g-js-scroll g-aside-scroll">');
@@ -70,5 +72,7 @@ var include = {
 		document.write('	</aside>');
 	},
 	quick : function(){},
-	footer : function(){}
+	footer : function(){
+		document.write('	<div class="g-mask"></div>');
+	}
 }

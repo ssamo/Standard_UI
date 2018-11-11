@@ -79,17 +79,17 @@ $color-sub-light:#74a75c;
 /*-------------------------------------------------------------------
 	CSS3 - 브라우저 호환성
 -------------------------------------------------------------------*/
-@mixin borderRadius($value) {
+@mixin mixBorderRadius($value) {
     border-radius: $value;
     -webkit-border-radius: $value;
 }
 
-@mixin transition($value) {
+@mixin mixTransition($value) {
     transition: $value;
     -webkit-transition: $value;
 }
 
-@mixin transform($value) {
+@mixin mixTransform($value) {
     transform: $value;
     -webkit-transform: $value;
     -moz-transform: $value;

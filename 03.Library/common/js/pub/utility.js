@@ -116,6 +116,7 @@ var ut = {
 		$(document).on('click focusin', function(e){
 			if ($this.has(e.target).length == 0){
 				if (callback){ callback() }
+				console.log(callback);
 			}
 		});
 	},

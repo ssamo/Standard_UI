@@ -2078,10 +2078,31 @@ a:hover {
 /*-------------------------------------------------------------------
     ## Variables
 -------------------------------------------------------------------*/
+/* 기본정책 */
+/* 레이아웃 */
 /*-------------------------------------------------------------------
     ## Layout
 -------------------------------------------------------------------*/
 /* Wrapper */
+#g-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #222;
+  transform: translate(250px, -102%);
+  -webkit-transform: translate(250px, -102%);
+  -moz-transform: translate(250px, -102%);
+  -ms-transform: translate(250px, -102%);
+  -o-transform: translate(250px, -102%);
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out; }
+
+#g-header .g-header-inner {
+  height: 100%; }
+
 #g-aside, #g-content {
   min-height: 100vh; }
 
@@ -2090,8 +2111,20 @@ a:hover {
   left: 0;
   top: 0;
   bottom: 0;
+  z-index: 200;
   width: 250px;
-  background-color: #222; }
+  background-color: #222;
+  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out; }
 
 #g-aside .g-aside-scroll {
   height: 100%;
@@ -2099,7 +2132,42 @@ a:hover {
 
 #g-content {
   padding-left: 250px;
-  background-color: #f0f0f0; }
+  background-color: #f0f0f0;
+  -o-transition: padding-left 0.3s ease-out;
+  transition: padding-left 0.3s ease-out;
+  -webkit-transition: padding-left 0.3s ease-out; }
+
+#g-content .g-content-inner {
+  padding-top: 0;
+  -o-transition: padding-top 0.3s ease-out;
+  transition: padding-top 0.3s ease-out;
+  -webkit-transition: padding-top 0.3s ease-out; }
+
+.g-mask {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #000;
+  opacity: 0;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out; }
+
+.is-aside-opened .g-mask {
+  left: 0;
+  right: 0;
+  opacity: 0.5; }
+
+.is-aside-opened #g-aside {
+  z-index: 10001;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0); }
 
 /* Logo */
 .g-logo {
@@ -2118,8 +2186,49 @@ a:hover {
   background-size: 80% auto;
   vertical-align: middle; }
 
+.g-btn-anb {
+  display: inline-block;
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 40px;
+  color: transparent;
+  background-color: transparent;
+  border-right: 1px solid #454545; }
+
+.g-btn-anb:before, .g-btn-anb:after {
+  content: ''; }
+
+.g-btn-anb:before, .g-btn-anb:after, .g-btn-anb span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 2px;
+  overflow: hidden;
+  background-color: #ccc;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%); }
+
+.g-btn-anb:before {
+  margin-top: -6px; }
+
+.g-btn-anb:after {
+  margin-top: 6px; }
+
+.g-location {
+  display: inline-block;
+  float: left;
+  line-height: 40px;
+  color: #fff;
+  padding: 0 10px; }
+
 /* LNB */
-.g-lnb-group, .g-logo {
+.g-lnb-group, #g-aside .g-logo {
   padding: 15px; }
 
 .g-lnb-group {
@@ -2155,6 +2264,25 @@ a:hover {
 
 .g-content-body {
   padding: 20px; }
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  #g-header {
+    transform: translate(0, 0%);
+    -webkit-transform: translate(0, 0%);
+    -moz-transform: translate(0, 0%);
+    -ms-transform: translate(0, 0%);
+    -o-transform: translate(0, 0%); }
+  #g-aside {
+    transform: translateX(-250px);
+    -webkit-transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px);
+    -o-transform: translateX(-250px); }
+  #g-content {
+    padding-left: 0; }
+  #g-content .g-content-inner {
+    padding-top: 40px; } }
 
 /*-------------------------------------------------------------------
     ## UI
