@@ -9,7 +9,9 @@ var include = {
 		document.write('	<header id="g-header">');
 		document.write('		<div class="g-header-inner">');
 		document.write('			<button type="button" class="g-btn-anb"><span>전체메뉴</span></button>');
-		document.write('			<span class="g-location">Pages</span>');
+		document.write('			<span class="g-location site">Standard UI</span>');
+		document.write('			<span class="g-location group">Prototype</span>');
+		document.write('			<span class="g-location menu">Pages</span>');
 		document.write('		</div>');
 		document.write('	</header>');
 	},
@@ -17,8 +19,16 @@ var include = {
 		var baseURL = '/examples/';
 		document.write('	<aside id="g-aside">');
 		document.write('		<div class="g-js-scroll g-aside-scroll">');
-		document.write('			<h1 class="g-logo">STD UI</h1>');
+		document.write('			<h1 class="g-logo"><a href="/index.html">STD UI</a></h1>');
 		document.write('			<nav class="g-lnb">');
+		document.write('			    <!-- Prototype -->');
+		document.write('				<div class="g-lnb-group">');
+		document.write('					<h2 class="g-lnb-tit">Prototype</h2>');
+		document.write('					<ul class="g-depth1">');
+		document.write('						<li><a href="'+baseURL+'_prototype_pages.html">Pages</a></li>');
+		document.write('					</ul>');
+		document.write('				</div>');
+		document.write('			    <!-- //Prototype -->');
 		document.write('			    <!-- Globals -->');
 		document.write('				<div class="g-lnb-group">');
 		document.write('					<h2 class="g-lnb-tit">Globals</h2>');

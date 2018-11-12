@@ -7,36 +7,53 @@ document.write('<script src="/codeview/scripts/shBrushCss.js"></script>');
 document.write('<script>SyntaxHighlighter.all();</script>');
 
 var gCom = {
+	//Location Display
+	isLocationSite : true,
+	isLocationGroup : true,
+	isLocationMenu : true,
+
+	//Elements
+	asideEl : '#g-aside',
+	anbBtnEl : '.g-btn-anb',
+	maskEl : '.g-mask',
+	locationSiteEl : '.g-location.site',
+	locationGroupEl : '.g-location.group',
+	locationMenuEl : '.g-location.menu',
+
 	init : function(){
 		console.log('gCom.init()');
-		this.gAside.init();
+		this.event();
+		this.setMenu();
 	},
-	gAside : {
-		asideEl : '#g-aside',
-		anbBtnEl : '.g-btn-anb',
-		maskEl : '.g-mask',
-		currentEl : null,
-		asideWid : null,
-		init : function(){
-			this.asideWid = $(this.asideEl).width();
-			this.event();
-			this.setMenu();
-		},
-		event : function(){
-			//펼치기
-			$(this.anbBtnEl).not('.is-clickEvent').on('click', function(e){
-				$('body').toggleClass('is-aside-opened');
-			}).addClass('is-clickEvent');
+	event : function(){
+		//펼치기
+		$(this.anbBtnEl).not('.is-clickEvent').on('click', function(e){
+			$('body').toggleClass('is-aside-opened');
+		}).addClass('is-clickEvent');
 
-			//숨기기
-			$(this.maskEl).not('.is-clickEvent').on('click', function(e){
-				$('body').removeClass('is-aside-opened');
-			}).addClass('is-clickEvent');
-		},
-		setMenu : function(){
-			var path = location.pathname;
-			$(this.asideEl).find('a[href*="'+path+'"]').addClass('is-active');
-		}
+		//숨기기
+		$(this.maskEl).not('.is-clickEvent').on('click', function(e){
+			$('body').removeClass('is-aside-opened');
+		}).addClass('is-clickEvent');
+	},
+	setMenu : function(){
+		var path = location.pathname,
+			$activeEl = $(this.asideEl).find('a[href*="'+path+'"]'),
+			activeMenu = $activeEl.text(),
+			activeGroup = $activeEl.closest('.g-lnb-group').find('.g-lnb-tit').text(),
+		_end;
+
+		$activeEl.addClass('is-active');
+		this.setLocation(activeGroup, activeMenu);
+	},
+	setLocation : function(groupName, menuName){
+		$(this.locationGroupEl).text(groupName);
+		$(this.locationMenuEl).text(menuName);
+	},
+	isLocation : function(){
+		if (!this.isLocationSite){this.locationSiteEl.hide()}
+		if (!this.isLocationGroup){this.locationGroupEl.hide()}
+		if (!this.isLocationMenu){this.locationMenuEl.hide()}
 	}
 }
 

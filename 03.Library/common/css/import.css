@@ -2170,7 +2170,7 @@ a:hover {
   -o-transform: translateX(0); }
 
 /* Logo */
-.g-logo {
+.g-logo a {
   font-size: 16px;
   color: #fff;
   letter-spacing: 1px;
@@ -2182,7 +2182,7 @@ a:hover {
   position: relative;
   float: left;
   height: 100%;
-  width: 40px;
+  width: 50px;
   color: transparent;
   background-color: transparent;
   border-right: 1px solid #454545; }
@@ -2195,7 +2195,7 @@ a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 50%;
+  width: 40%;
   height: 2px;
   overflow: hidden;
   background-color: #ccc;
@@ -2216,7 +2216,8 @@ a:hover {
   float: left;
   line-height: 40px;
   color: #fff;
-  padding: 0 10px; }
+  padding: 0 20px;
+  border-right: 1px solid #454545; }
 
 /* LNB */
 .g-lnb-group, #g-aside .g-logo {
