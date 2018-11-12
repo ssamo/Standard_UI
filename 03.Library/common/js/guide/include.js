@@ -14,6 +14,7 @@ var include = {
 		document.write('	</header>');
 	},
 	aside : function(){
+		var baseURL = '/examples/';
 		document.write('	<aside id="g-aside">');
 		document.write('		<div class="g-js-scroll g-aside-scroll">');
 		document.write('			<h1 class="g-logo">STD UI</h1>');
@@ -22,9 +23,9 @@ var include = {
 		document.write('				<div class="g-lnb-group">');
 		document.write('					<h2 class="g-lnb-tit">Globals</h2>');
 		document.write('					<ul class="g-depth1">');
-		document.write('						<li><a href="#">Codeset</a></li>');
-		document.write('						<li><a href="#">General</a></li>');
-		document.write('						<li><a href="#">Layout</a></li>');
+		document.write('						<li><a href="'+baseURL+'globals_codeset.html">Codeset</a></li>');
+		document.write('						<li><a href="'+baseURL+'globals_general.html">General</a></li>');
+		document.write('						<li><a href="'+baseURL+'globals_layout.html">Layout</a></li>');
 		document.write('					</ul>');
 		document.write('				</div>');
 		document.write('			    <!-- //Globals -->');
@@ -32,18 +33,18 @@ var include = {
 		document.write('				<div class="g-lnb-group">');
 		document.write('					<h2 class="g-lnb-tit">Elements</h2>');
 		document.write('					<ul class="g-depth1">');
-		document.write('						<li><a href="#">Forms</a></li>');
-		document.write('						<li><a href="#">Buttons</a></li>');
-		document.write('						<li><a href="#">Icons</a></li>');
-		document.write('						<li><a href="#">Label</a></li>');
-		document.write('						<li><a href="#">Badge</a></li>');
-		document.write('						<li><a href="#">Bullet</a></li>');
-		document.write('						<li><a href="#">List</a></li>');
-		document.write('						<li><a href="#">Define</a></li>');
-		document.write('						<li><a href="#">Box</a></li>');
-		document.write('						<li><a href="#">Step</a></li>');
-		document.write('						<li><a href="#">Table</a></li>');
-		document.write('						<li><a href="#">Pagination</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_forms.html">Forms</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_buttons.html">Buttons</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_icons.html">Icons</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_label.html">Label</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_badge.html">Badge</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_bullet.html">Bullet</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_list.html">List</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_define.html">Define</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_box.html">Box</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_step.html">Step</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_table.html">Table</a></li>');
+		document.write('						<li><a href="'+baseURL+'elements_pagination.html">Pagination</a></li>');
 		document.write('					</ul>');
 		document.write('				</div>');
 		document.write('				<!-- //Elements -->');
@@ -51,24 +52,24 @@ var include = {
 		document.write('				<div class="g-lnb-group">');
 		document.write('					<h2 class="g-lnb-tit">Modules</h2>');
 		document.write('					<ul class="g-depth1">');
-		document.write('						<li><a href="#">Tab</a></li>');
-		document.write('						<li><a href="#">Accordion</a></li>');
-		document.write('						<li><a href="#">Folder</a></li>');
-		document.write('						<li><a href="#">Tooltip</a></li>');
-		document.write('						<li><a href="#">Dropdown</a></li>');
-		document.write('						<li><a href="#">Modal</a></li>');
-		document.write('						<li><a href="#">Progress</a></li>');
-		document.write('						<li><a href="#">Sticky</a></li>');
-		document.write('						<li><a href="#">Spy Scroll</a></li>');
-		document.write('						<li><a href="#">Custom Scroll</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_tab.html">Tab</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_accordion.html">Accordion</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_folder.html">Folder</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_tooltip.html">Tooltip</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_dropdown.html">Dropdown</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_modal.html">Modal</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_progress.html">Progress</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_sticky.html">Sticky</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_spyscroll.html">Spy Scroll</a></li>');
+		document.write('						<li><a href="'+baseURL+'modules_customscroll.html">Custom Scroll</a></li>');
 		document.write('					</ul>');
 		document.write('				</div>');
 		document.write('				<!-- //Modules -->');
 		document.write('				<!-- Behavior -->');
 		document.write('				<div class="g-lnb-group">');
-		document.write('					<h2 class="g-lnb-tit">Behavior</h2>');
+		document.write('					<h2 class="g-lnb-tit">API</h2>');
 		document.write('					<ul class="g-depth1">');
-		document.write('						<li><a href="#">Youtube</a></li>');
+		document.write('						<li><a href="'+baseURL+'api_youtube.html">Youtube</a></li>');
 		document.write('					</ul>');
 		document.write('				</div>');
 		document.write('				<!-- //Behavior -->');
@@ -76,7 +77,9 @@ var include = {
 		document.write('		</div>');
 		document.write('	</aside>');
 	},
-	quick : function(){},
+	quick : function(){
+
+	},
 	footer : function(){
 		document.write('	<div class="g-mask"></div>');
 	}

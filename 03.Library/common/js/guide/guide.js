@@ -15,10 +15,14 @@ var gCom = {
 		asideEl : '#g-aside',
 		anbBtnEl : '.g-btn-anb',
 		maskEl : '.g-mask',
+		currentEl : null,
 		asideWid : null,
 		init : function(){
 			this.asideWid = $(this.asideEl).width();
-
+			this.event();
+			this.setMenu();
+		},
+		event : function(){
 			//펼치기
 			$(this.anbBtnEl).not('.is-clickEvent').on('click', function(e){
 				$('body').toggleClass('is-aside-opened');
@@ -29,6 +33,10 @@ var gCom = {
 				$('body').removeClass('is-aside-opened');
 			}).addClass('is-clickEvent');
 		},
+		setMenu : function(){
+			var path = location.pathname;
+			$(this.asideEl).find('a[href*="'+path+'"]').addClass('is-active');
+		}
 	}
 }
 

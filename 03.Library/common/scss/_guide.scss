@@ -21,7 +21,7 @@ $width-responsive-min: 320px;
 
 /* 레이아웃 */
 $color-basic-bg: #222;
-$width-aside: 250px;
+$width-aside: 200px;
 $height-logo: 30px;
 $height-header: 40px;
 $height-contentHeader: 60px;
@@ -63,10 +63,12 @@ $opacity-mask: 0.5;
 .g-lnb-group .g-lnb-tit {color:#eee; font-weight:bold;}
 .g-lnb-group .g-depth1 {margin-top:10px;}
 .g-lnb-group .g-depth1 > li + li {margin-top:5px;}
-.g-lnb-group .g-depth1 > li > a {display:inline-block; line-height:1.5; color:#999; @include mixTransition(color 0.3s);}
+.g-lnb-group .g-depth1 > li > a {display:block; position:relative; line-height:1.5; color:#777; @include mixTransition(color 0.3s);}
 .g-lnb-group .g-depth1 > li > a:focus,
 .g-lnb-group .g-depth1 > li > a:active,
-.g-lnb-group .g-depth1 > li > a:hover {color:#fff;}
+.g-lnb-group .g-depth1 > li > a:hover,
+.g-lnb-group .g-depth1 > li > a.is-active {color:#fff;}
+.g-lnb-group .g-depth1 > li > a.is-active::before {content:'>'; display:inline-block; position:absolute; right:10px; top:50%; font-size:8px; @include mixTransform(translateY(-50%))}
 
 /* Content */
 .g-content-header {height:$height-contentHeader; padding:$gutter-content;}
