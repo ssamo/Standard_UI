@@ -2132,7 +2132,7 @@ a:hover {
 
 #g-content {
   padding-left: 200px;
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
   -o-transition: padding-left 0.3s ease-out;
   transition: padding-left 0.3s ease-out;
   -webkit-transition: padding-left 0.3s ease-out; }
@@ -2318,10 +2318,12 @@ a:hover {
 
 .g-section-body {
   margin-top: 20px;
-  padding: 20px;
+  padding: 15px;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-border-radius: 5px; }
+  -webkit-border-radius: 5px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1); }
 
 /* Tab */
 .g-tab-codeview {

@@ -21,6 +21,8 @@ $width-responsive-min: 320px;
 
 /* 레이아웃 */
 $color-basic-bg: #222;
+$color-body-bg: #f8f8f8;
+$color-section-bg: #fff;
 $width-aside: 200px;
 $height-logo: 30px;
 $height-header: 40px;
@@ -29,7 +31,7 @@ $duration-layout: 0.3s;
 $ease-layout: ease-out;
 $gutter-aside: 15px;
 $gutter-content: 20px;
-$gutter-section: 20px;
+$gutter-section: 15px;
 $opacity-mask: 0.5;
 
 /*-------------------------------------------------------------------
@@ -41,7 +43,7 @@ $opacity-mask: 0.5;
 #g-aside, #g-content {min-height:100vh;}
 #g-aside {position:fixed; left:0; top:0; bottom:0; z-index:200; width:$width-aside; background-color:$color-basic-bg;  @include mixTransform(translate(0, 0)); @include mixTransition(transform $duration-layout $ease-layout);}
 #g-aside .g-aside-scroll {height:100%; overflow:auto;}
-#g-content {padding-left:$width-aside; background-color:#f0f0f0; @include mixTransition(padding-left $duration-layout $ease-layout)}
+#g-content {padding-left:$width-aside; background-color:$color-body-bg; @include mixTransition(padding-left $duration-layout $ease-layout)}
 #g-content .g-content-inner {padding-top:0; @include mixTransition(padding-top $duration-layout $ease-layout)}
 .g-mask {display:block; position:fixed; left:0; top:0; bottom:0; z-index:1000; background-color:#000; opacity:0; @include mixTransition(opacity $duration-layout $ease-layout);}
 .is-aside-opened .g-mask {left:0; right:0; opacity:$opacity-mask;}
@@ -94,7 +96,7 @@ $opacity-mask: 0.5;
 .g-section {display:block;}
 .g-section + .g-section {margin-top:40px;}
 .g-section-header {margin-bottom:20px;}
-.g-section-body {margin-top:20px; padding:$gutter-section; background-color:#fff; @include mixBorderRadius(5px)}
+.g-section-body {margin-top:20px; padding:$gutter-section; background-color:$color-section-bg; @include mixBorderRadius(5px); @include mixBoxShdow(1px 1px 5px 0px rgba(0,0,0,0.1));}
 
 /* Tab */
 .g-tab-codeview {margin-top:10px; position:relative;}

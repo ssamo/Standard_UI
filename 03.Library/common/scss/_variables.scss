@@ -84,6 +84,11 @@ $color-sub-light:#74a75c;
     -webkit-border-radius: $value;
 }
 
+@mixin mixBoxShdow($value) {
+    box-shadow: $value;
+    -webkit-box-shadow: $value;
+}
+
 @mixin mixTransition($value) {
     transition: $value;
     -webkit-transition: $value;
