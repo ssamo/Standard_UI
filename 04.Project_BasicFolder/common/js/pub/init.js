@@ -23,11 +23,14 @@ var win = {
 		var scrollTime = null;
 		//스크롤 처음
 		if ($(window).scrollTop() == 0) {
-			$('body').addClass('is-scrTop').removeClass('is-scrBtm');
+			$('body').addClass('is-scrTop');
 		}
 		//스크롤 끝
-		if ($(window).scrollTop() == scr_H) {
+		else if ($(window).scrollTop() == scr_H) {
 			$('body').addClass('is-scrBtm').removeClass('is-scrTop');
+		}
+		else {
+			$('body').removeClass('is-scrBtm').removeClass('is-scrTop');
 		}
 		//스크롤 시작
 		if ($('body').hasClass('is-scrStart') == false) {

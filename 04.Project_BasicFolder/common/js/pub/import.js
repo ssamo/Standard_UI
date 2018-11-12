@@ -1,4 +1,6 @@
 var baseURL = '/common/js/';
+document.write('<script type="text/javascript" src="'+baseURL+'plugins/EasePack.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'plugins/TweenMax.js"></script>');
 document.write('<script type="text/javascript" src="'+baseURL+'pub/variables.js"></script>');
 document.write('<script type="text/javascript" src="'+baseURL+'pub/device.js"></script>');
 document.write('<script type="text/javascript" src="'+baseURL+'pub/utility.js"></script>');

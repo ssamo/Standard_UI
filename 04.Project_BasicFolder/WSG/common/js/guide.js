@@ -1,3 +1,11 @@
+document.write('<link href="/WSG/common/codeview/styles/shCoreDefaultWhite.css" rel="stylesheet" />');
+document.write('<script src="/WSG/common/codeview/scripts/shCore.js?cb=undefined"></script>');
+document.write('<script src="/WSG/common/codeview/scripts/shAutoLoader.js?cb=undefined"></script>');
+document.write('<script src="/WSG/common/codeview/scripts/shBrushjScript.js?cb=undefined"></script>');
+document.write('<script src="/WSG/common/codeview/scripts/shBrushXml.js?cb=undefined"></script>');
+document.write('<script src="/WSG/common/codeview/scripts/shBrushCss.js?cb=undefined"></script>');
+document.write('<script>SyntaxHighlighter.all();</script>');
+
 var ia = {
 	ajax : {
 		init : function(){
@@ -108,7 +116,44 @@ var iOSversion = function(){
 	}
 }
 
+var gCom = {
+	init : function(){
+		console.log('gCom.init()');
+		this.gAside.init();
+	},
+	gAside : {
+		asideEl : '#g-aside',
+		anbBtnEl : '.g-btn-anb',
+		maskEl : '.g-mask',
+		asideWid : null,
+		init : function(){
+			this.asideWid = $(this.asideEl).width();
+
+			//펼치기
+			$(this.anbBtnEl).not('.is-clickEvent').on('click', function(e){
+				$('body').toggleClass('is-aside-opened');
+			}).addClass('is-clickEvent');
+
+			//숨기기
+			$(this.maskEl).not('.is-clickEvent').on('click', function(e){
+				$('body').removeClass('is-aside-opened');
+			}).addClass('is-clickEvent');
+		},
+	}
+}
+
 var gUI = {
+	init : function(){
+		this.winEvent();
+		//mScroll
+		if ($('.g-js-scroll').length){
+			ut.setScriptLoader('/common/js/plugins/jquery.mCustomScrollbar.min.js', 'mScrollerScript');
+			this.mScroll.init();
+		}
+		this.spyScroll.init();
+		this.scrolled.init();
+		this.tabCodeview.init();
+	},
 	winEvent : function(){
 		var setTime = null;
 		$(window).on('scroll', function(){
@@ -117,6 +162,14 @@ var gUI = {
 				gUI.scrolled.init();
 			},10)
 		})
+	},
+	mScroll : {
+		scrollEl : '.g-js-scroll',
+		init : function(){
+			$(this.scrollEl).each(function(){
+				$(this).mCustomScrollbar();
+			})
+		}
 	},
 	spyScroll : {
 		init : function(){
@@ -185,8 +238,6 @@ $(document).ready(function(){
 		ia.url.init();
 	},500);
 
-	gUI.winEvent();
-	gUI.spyScroll.init();
-	gUI.scrolled.init();
-	gUI.tabCodeview.init();
+	gCom.init();
+	gUI.init();
 })
