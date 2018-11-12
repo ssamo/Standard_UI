@@ -16,7 +16,7 @@ var include = {
 	aside : function(){
 		document.write('	<aside id="g-aside">');
 		document.write('		<div class="g-js-scroll g-aside-scroll">');
-		document.write('			<h1 class="g-logo">LIBS</h1>');
+		document.write('			<h1 class="g-logo">STD UI</h1>');
 		document.write('			<nav class="g-lnb">');
 		document.write('			    <!-- Globals -->');
 		document.write('				<div class="g-lnb-group">');
