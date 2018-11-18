@@ -15,7 +15,7 @@ var include = {
 		document.write('<!-- Front -->');
 		document.write('<link href="/common/css/import.css" rel="stylesheet" />');
 		document.write('<script src="/common/js/libs/jquery-3.3.1.min.js"></script>');
-		document.write('<script src="/common/js/pub/import.js"></script>');
+		document.write('<script src="/common/js/pub/pub_import.js"></script>');
 		document.write('<!-- Guide -->');
 		document.write('<link href="/WSG/common/css/import.css" rel="stylesheet" />');
 		document.write('<script src="/WSG/common/js/import.js"></script>');
