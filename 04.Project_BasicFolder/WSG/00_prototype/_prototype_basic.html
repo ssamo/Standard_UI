@@ -8,15 +8,17 @@
 </head>
 <body>
 <div id="g-wrap">
-	<script type="text/javascript">include.header()</script>
+	<script>include.header()</script>
 	<div id="g-container">
-		<script type="text/javascript">include.aside()</script>
-		<div id="g-content">
+		<script>include.aside.init()</script>
+
+		<!-- Content -->
+		<article id="g-content">
 			<div class="g-content-header">
 				<h1 class="g-h1">가이드 분류</h1>
 			</div>
 			<div class="g-content-body">
-				<section class="g-section">
+				<section class="g-section g-in-sec">
 					<div class="g-section-header">
 						<h2 class="g-h2">가이드 구분1</h2>
 					</div>
@@ -98,7 +100,7 @@
 					</div>
 				</section>
 
-				<section class="g-section">
+				<section class="g-section g-in-sec">
 					<div class="g-section-header">
 						<h2 class="g-h2">가이드 구분2</h2>
 					</div>
@@ -180,7 +182,7 @@
 					</div>
 				</section>
 
-				<section class="g-section">
+				<section class="g-section g-in-sec">
 					<div class="g-section-header">
 						<h2 class="g-h2">가이드 구분3</h2>
 					</div>
@@ -262,7 +264,7 @@
 					</div>
 				</section>
 
-				<section class="g-section">
+				<section class="g-section g-in-sec">
 					<div class="g-section-header">
 						<h2 class="g-h2">가이드 구분4</h2>
 					</div>
@@ -344,7 +346,7 @@
 					</div>
 				</section>
 
-				<section class="g-section">
+				<section class="g-section g-in-sec">
 					<div class="g-section-header">
 						<h2 class="g-h2">가이드 구분5</h2>
 					</div>
@@ -425,13 +427,13 @@
 						</div>
 					</div>
 				</section>
-
-				<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
 			</div>
-		</div>
-		<script type="text/javascript">include.quick()</script>
+		</article>
+		<!-- //Content -->
+
+		<script>include.quick.init()</script>
 	</div>
-	<script type="text/javascript">include.footer()</script>
+	<script>include.footer()</script>
 </div>
 </body>
 </html>

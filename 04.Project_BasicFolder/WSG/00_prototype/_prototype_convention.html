@@ -2,66 +2,72 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Prototype &gt; Sub Title | WSG Library</title>
 <script src="/WSG/common/js/include.js"></script>
+<script>include.meta()</script>
 <script>include.head()</script>
 </head>
-<body id="g-body">
+<body>
 <div id="g-wrap">
-	<script type="text/javascript">guide.include('aside')</script>
-	<div id="g-content">
-		<div class="g-content-header g-in-sec">
-			<h1 class="g-h1">Prototype</h1>
-		</div>
-		<div class="g-content-body">
-			<!-- section1 -->
-			<section id="section1" class="g-section g-in-sec">
-				<div class="g-section-header">
-					<h2 class="g-h2">기본정책</h2>
-				</div>
-				<div class="g-section-body">
-					Content
-				</div>
-			</section>
-			<!-- //section1 -->
+	<script>include.header()</script>
+	<div id="g-container">
+		<script>include.aside.init()</script>
 
-			<!-- section2 -->
-			<section id="section2" class="g-section g-in-sec">
-				<div class="g-section-header">
-					<h2 class="g-h2">표준규칙</h2>
-				</div>
-				<div class="g-section-body">
-					Content
-				</div>
-			</section>
-			<!-- //section2 -->
+		<!-- Content -->
+		<article id="g-content">
+			<div class="g-content-header g-in-sec">
+				<h1 class="g-h1">Prototype</h1>
+			</div>
+			<div class="g-content-body">
+				<!-- section1 -->
+				<section id="section1" class="g-section g-in-sec">
+					<div class="g-section-header">
+						<h2 class="g-h2">기본정책</h2>
+					</div>
+					<div class="g-section-body">
+						Content
+					</div>
+				</section>
+				<!-- //section1 -->
 
-			<!-- section3 -->
-			<section id="section3" class="g-section g-in-sec">
-				<div class="g-section-header">
-					<h2 class="g-h2">코드규칙</h2>
-				</div>
-				<div class="g-section-body">
-					Content
-				</div>
-			</section>
-			<!-- //section3 -->
+				<!-- section2 -->
+				<section id="section2" class="g-section g-in-sec">
+					<div class="g-section-header">
+						<h2 class="g-h2">표준규칙</h2>
+					</div>
+					<div class="g-section-body">
+						Content
+					</div>
+				</section>
+				<!-- //section2 -->
 
-			<!-- section4 -->
-			<section id="section4" class="g-section g-in-sec">
-				<div class="g-section-header">
-					<h2 class="g-h2">네임규칙</h2>
-				</div>
-				<div class="g-section-body">
-					Content
-				</div>
-			</section>
-			<!-- //section4 -->
+				<!-- section3 -->
+				<section id="section3" class="g-section g-in-sec">
+					<div class="g-section-header">
+						<h2 class="g-h2">코드규칙</h2>
+					</div>
+					<div class="g-section-body">
+						Content
+					</div>
+				</section>
+				<!-- //section3 -->
 
-			<a href="#g-wrap" class="g-top" data-role="spy-scroll">TOP</a>
-		</div>
+				<!-- section4 -->
+				<section id="section4" class="g-section g-in-sec">
+					<div class="g-section-header">
+						<h2 class="g-h2">네임규칙</h2>
+					</div>
+					<div class="g-section-body">
+						Content
+					</div>
+				</section>
+				<!-- //section4 -->
+			</div>
+		</article>
+		<!-- //Content -->
+
+		<script>include.quick.init()</script>
 	</div>
+	<script>include.footer()</script>
 </div>
 </body>
 </html>

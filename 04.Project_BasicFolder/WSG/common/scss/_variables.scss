@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------
+    파일정의 : Variables
+    참고사항 : 가이드는 g- 접두어를 사용
+    분류순서 : 기본정책 > 유틸리티 > 레이아웃
+    속성순서 : Display > Position > Box Model > Design > Paragraph
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+    ## 기본정책
+-------------------------------------------------------------------*/
+/* 해상도정의 */
+$g-width-responsive-max: 1280px;
+$g-width-responsive-xl: 1024px;
+$g-width-responsive-lg: 720px;
+$g-width-responsive-md: 640px;
+$g-width-responsive-sm: 480px;
+$g-width-responsive-xs: 360px;
+$g-width-responsive-min: 320px;
+
+/* 색상정의 */
+$g-color-primary: #0066cc;
+
+/*-------------------------------------------------------------------
+    ## 레이아웃
+-------------------------------------------------------------------*/
+/* Extend */
+%g-logo {border-bottom:1px solid #454545;}
+%g-color-lnb-active {color:yellow;}
+
+/* Color */
+$g-color-header-bg: #fff;
+$g-color-aside-bg: #222;
+$g-color-snb-bg: #333;
+$g-color-body-bg: #fff;
+$g-color-section-bg: #fff;
+
+/* Area */
+$g-width-aside: 250px;
+$g-width-anb: 40px;
+$g-width-logo: $g-width-aside - $g-width-anb;
+$g-height-header: 60px;
+$g-height-content-header: 20px;
+
+/* Gutter */
+$g-gutter-logo: 0 15px;
+$g-gutter-aside: 15px;
+$g-gutter-content: 40px;
+$g-gutter-section: 30px;
+
+/* Etc */
+$g-duration-layout: 0.3s;
+$g-ease-layout: ease-out;
+$g-opacity-mask: 0.5;
+
+/* 유틸리티 */
+@mixin gMixBorderRadius($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+}
+
+@mixin gMixBoxShadow($value) {
+    box-shadow: $value;
+    -webkit-box-shadow: $value;
+}
+
+@mixin gMixTransition($value) {
+    transition: $value;
+    -webkit-transition: $value;
+}
+
+@mixin gMixTransform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
