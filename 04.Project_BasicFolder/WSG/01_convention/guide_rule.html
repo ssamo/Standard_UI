@@ -71,6 +71,17 @@
 										</td>
 									</tr>
 									<tr>
+										<th scope="row" class="align-l">웹 호환성</th>
+										<td>
+											<div class="g-browser-icons">
+												안드로이드 4.x 이상, IOS 9.x 이상, 사파리, 크롬
+											</div>
+											<style type="text/css">
+												.g-browser-icons img {width:30px; height:30px;}
+											</style>
+										</td>
+									</tr>
+									<tr>
 										<th scope="row" class="align-l">웹 접근성</th>
 										<td>기본 준수</td>
 									</tr>
@@ -155,40 +166,34 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td rowspan="14">사이트별 폴더</td>
+										<td rowspan="6">사이트별 폴더</td>
 										<td colspan="3">카테고리별 폴더</td>
 										<td>*.html</td>
 										<td>페이지.html</td>
 									</tr>
 									<tr>
-										<td rowspan="11">common</td>
-										<td rowspan="7" colspan="2">css</td>
-										<td>base.css</td>
-										<td>초기화</td>
-									</tr>
-									<tr>
-										<td>ui.css</td>
-										<td>디자인 공통</td>
-									</tr>
-									<tr>
-										<td>common.css</td>
-										<td>전역 공통</td>
-									</tr>
-									<tr>
-										<td>layout.css</td>
-										<td>레이아웃</td>
-									</tr>
-									<tr>
-										<td>content.css</td>
-										<td>컨텐츠</td>
-									</tr>
-									<tr>
-										<td>responsive.css</td>
-										<td>반응형(미디어쿼리)</td>
-									</tr>
-									<tr>
-										<td>animate.css</td>
-										<td>animate</td>
+										<td rowspan="5">common</td>
+										<td colspan="2">css</td>
+										<td>
+											import.css<br>
+											reset.css<br>
+											common.css<br>
+											layout.css<br>
+											ui.css<br>
+											content.css<br>
+											main.css<br>
+											animate.css
+										</td>
+										<td>
+											CSS 가져오기<br>
+											초기화 스타일<br>
+											전체영역 스타일<br>
+											레이아웃 스타일<br>
+											공통형태 스타일<br>
+											서브화면 스타일<br>
+											메인화면 스타일<br>
+											에니메이트 스타일
+										</td>
 									</tr>
 									<tr>
 										<td colspan="2">fonts</td>
@@ -202,14 +207,40 @@
 										<td>jquery 라이브러리 모음</td>
 									</tr>
 									<tr>
-										<td></td>
-										<td>plugins.js</td>
-										<td>plugin 모음</td>
+										<td>plugin</td>
+										<td>
+											EasePack.js<br>
+											TweenMax.js
+										</td>
+										<td>
+											모션효과 라이브러리<br>
+											모션모듈 라이브러리
+										</td>
 									</tr>
 									<tr>
-										<td></td>
-										<td>ui.js</td>
-										<td>ui 관련 스크립트</td>
+										<td>pub</td>
+										<td>
+											pub_import.js<br>
+											pub_variable.js<br>
+											pub_device.js<br>
+											pub_utility.js<br>
+											pub_common.js<br>
+											pub_module.js<br>
+											pub_content.js<br>
+											pub_main.js<br>
+											pub_init.js
+										</td>
+										<td>
+											가져오기 스크립트<br>
+											전역변수 스크립트<br>
+											기기체크 스크립트<br>
+											유틸리티 스크립트<br>
+											공통영역 스크립트<br>
+											공통모듈 스크립트<br>
+											서브화면 스크립트<br>
+											메인화면 스크립트<br>
+											초기실행 스크립트
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -449,7 +480,7 @@
 							</pre>
 						</div>
 
-						<h3 class="g-h3">빈줄 / 주석</h3>
+						<h3 class="g-h3">주석 / 빈줄</h3>
 						<ul class="g-desc">
 							<li>가독성을 고려하여 빈 줄을 추가한다. 단, 1줄을 초과하지 않는다.</li>
 						</ul>
@@ -472,11 +503,47 @@
 							</pre>
 						</div>
 
+						<h3 class="g-h3">수정/추가/삭제</h3>
+						<ul class="g-desc">
+							<li>개발팀에 결함처리 전달시 조치사항 정보를 남긴다. (예 : [날짜][이름][조치내용][이슈])</li>
+							<li>잦은 수정사항을 고려하여 다중구조인 경우만 닫기주석으로 범위를 표시한다.</li>
+						</ul>
+						<h4 class="g-h4">인라인 수정</h4>
+						<div class="g-code">
+							<pre class="brush:html">
+								&lt;div&gt;
+									(내용생략) &lt;!-- 181130 조찬기 금리변경건 수정 --&gt;
+								&lt;/div&gt;
+							</pre>
+						</div>
+						<h4 class="g-h4">단순구조 수정</h4>
+						<div class="g-code">
+							<pre class="brush:html">
+								&lt;!-- 181130 조찬기 금리변경건 수정 --&gt;
+								&lt;div&gt;
+									(내용생략)
+								&lt;/div&gt;
+							</pre>
+						</div>
+						<h4 class="g-h4">다중구조 수정</h4>
+						<div class="g-code">
+							<pre class="brush:html">
+								&lt;!-- 181130 조찬기 금리변경건 수정 --&gt;
+								&lt;div&gt;
+									(내용생략)
+								&lt;/div&gt;
+								&lt;div&gt;
+									(내용생략)
+								&lt;/div&gt;
+								&lt;!-- //181130 조찬기 금리변경건 수정 --&gt;
+							</pre>
+						</div>
+
 						<h3 class="g-h3">Attribute 지정 순서</h3>
-						<p class="g-desc">경로 &gt; 타입 &gt; 기능 &gt; 정보 &gt; 선택적속성 &gt; 디자인 &gt; 상태 순서로 적용한다.</p>
+						<p class="g-desc">기능 &gt; 이름 &gt; 정보  &gt; 선택속성 &gt; 클래스 &gt; 상태 순서로 적용한다.</p>
 						<h4 class="g-h4">A 엘리먼트</h4>
 						<div class="g-code">
-							<pre class="brush:html">&lt;a href="#none" title="새창" target="_blank"&gt;인쇄하기&lt;/a&gt;</pre>
+							<pre class="brush:html">&lt;a href="#none" title="새창열기" target="" class=""&gt;인쇄하기&lt;/a&gt;</pre>
 						</div>
 						<h4 class="g-h4">Iframe 엘리먼트</h4>
 						<div class="g-code">
@@ -492,19 +559,17 @@
 						</div>
 
 						<h3 class="g-h3">CSS 기본 규칙</h3>
-						<h4 class="g-h4">작업 정보</h4>
+						<h4 class="g-h4">작업정보</h4>
 						<div class="g-code">
 							<pre class="brush:css">
 							@charset "utf-8";
-							/*------------------------------------------------------------------------------------------------------------------------
-								File   : Layout.css
-								Author : Gildong, Hong 2017-07
-								CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
-								CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
-								CSS 속성 선언순서 : position(top, right, bottom, left, z-index), display, float/clear, overflow, width/height, margin/padding(top, right, bottom, left),
-								border(top, right, bottom, left), background(image,position,repeat,color), border-radius, box-shadow,
-								font(font-weight, font-style, font-variant, font-size/line-height, font-family), opacity, cursor, box-sizing, etc
-							/*------------------------------------------------------------------------------------------------------------------------*/
+							/*-------------------------------------------------------------------
+								파일정의 : 컨텐츠 스타일
+								작성날짜 : 2018-11-18 조찬기
+								참고사항 : 접근경로를 반드시 표시한다.
+								분류순서 : 공통화면 > 메뉴화면 > 팝업화면
+								속성순서 : 표시 > 위치 > 넘침/흐름 > 박스모델 > 박스모양 > 문단모양 > 기타
+							-------------------------------------------------------------------*/
 							</pre>
 						</div>
 
@@ -710,18 +775,9 @@
 								&lt;meta name="keywords" content="웹스타일가이드, 더웹스타일㈜">
 								&lt;meta name="description" content="웹스타일가이드, 더웹스타일㈜">
 								&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-								&lt;title>페이지 &gt; 대메뉴 - 사이트&lt;/title>
-								&lt;link rel="stylesheet" href="../common/css/base.css">
-								&lt;link rel="stylesheet" href="../common/css/common.css">
-								&lt;link rel="stylesheet" href="../common/css/ui_style.css">
-								&lt;link rel="stylesheet" href="../common/css/layout.css">
-								&lt;link rel="stylesheet" href="../common/css/content.css">
-								&lt;link rel="stylesheet" href="../common/css/Animate.css">
-								&lt;script src="../common/js/libs/jquery-1.12.4.min.js">&lt;/script>
-								&lt;script src="../common/js/libs/jquery-ui.min.js">&lt;/script>
-								&lt;script src="../common/js/libs/jquery.browser.check.js">&lt;/script>
-								&lt;script src="../common/js/plugins.js">&lt;/script>
-								&lt;script src="../common/js/ui.js">&lt;/script>
+								&lt;title>페이지명 | 사이트명&lt;/title>
+								&lt;link rel="stylesheet" href="/common/css/import.css">
+								&lt;script src="/common/js/pub/import.js">&lt;/script>
 								&lt;/head>
 								&lt;body>
 								&lt;/body>
@@ -893,7 +949,7 @@
 									</tr>
 									<tr>
 										<td>주소</td>
-										<td>adress</td>
+										<td>address</td>
 										<td></td>
 									</tr>
 									<tr>

@@ -1,0 +1,14 @@
+var baseURL = '/common/js/';
+document.write('<script type="text/javascript" src="'+baseURL+'plugins/EasePack.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'plugins/TweenMax.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_variable.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_device.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_utility.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_common.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_module.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_content.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_main.js"></script>');
+document.write('<script type="text/javascript" src="'+baseURL+'pub/pub_init.js"></script>');
+document.write('<!--[if lt IE 9]>');
+document.write('<script type="text/javascript" src="'+baseURL+'libs/html5shiv-printshiv.js"></script>');
+document.write('<![endif]-->');

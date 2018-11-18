@@ -30,7 +30,7 @@
 .g-btn-aside:after {margin-top:7px;}
 .g-btn-aside {display:inline-block; position:relative; float:left; height:100%; width:$g-width-anb; margin-left:20px; color:transparent; vertical-align:middle;}
 .g-breadcrumb {display:inline-block; float:left;}
-.g-breadcrumb p {padding:0 20px; font-size:20px; line-height:40px; color:$g-color-aside-bg;}
+.g-breadcrumb p {padding:0 20px; font-size:24px; font-family:'NSB'; line-height:40px; color:$g-color-aside-bg;}
 
 /* Aside */
 .g-logo {padding:0 $g-gutter-aside; background-color:$g-color-aside-bg; @extend %g-logo;}
