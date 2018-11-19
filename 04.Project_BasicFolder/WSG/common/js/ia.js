@@ -1,5 +1,5 @@
 var ia = {
-	baseUrl : '/WSG/03_ia/',
+	baseUrl : '/WSG/01_ia/',
 	init : function(){
 		var _this = this;
 		var lens = $('.g-section-ajax').length;
@@ -92,7 +92,7 @@ var ia = {
 	url : function(obj){
 		$(obj).find('td.col-url').each(function(){
 			var text = $(this).text();
-			$(this).empty().append('<a href="'+text+'" target="_blank">'+text+'</a>');
+			$(this).empty().append('<a href="/'+text+'" target="_blank">/'+text+'</a>');
 		})
 	},
 }

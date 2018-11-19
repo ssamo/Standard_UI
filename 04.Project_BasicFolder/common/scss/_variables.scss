@@ -17,8 +17,33 @@ $body-width:1200px;
 /*-------------------------------------------------------------------
 	유틸리티
 -------------------------------------------------------------------*/
+/* @extend */
 %clear-b {content:''; clear:both; display:block;} /* selector::after {@extend %clear-b;} */
 %centered {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%);} /* selector {@extend %central;} */
+
+/* @Include */
+@mixin mixBorderRadius($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+}
+
+@mixin mixBoxShadow($value) {
+    box-shadow: $value;
+    -webkit-box-shadow: $value;
+}
+
+@mixin mixTransition($value) {
+    transition: $value;
+    -webkit-transition: $value;
+}
+
+@mixin mixTransform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
 
 /*-------------------------------------------------------------------
 	컬러정의
@@ -83,24 +108,3 @@ $color-sub-light:#74a75c;
 	Border
 -------------------------------------------------------------------*/
 
-
-/*-------------------------------------------------------------------
-	CSS3 - 브라우저 호환성
--------------------------------------------------------------------*/
-@mixin borderRadius($value) {
-    border-radius: $value;
-    -webkit-border-radius: $value;
-}
-
-@mixin transition($value) {
-    transition: $value;
-    -webkit-transition: $value;
-}
-
-@mixin transform($value) {
-    transform: $value;
-    -webkit-transform: $value;
-    -moz-transform: $value;
-    -ms-transform: $value;
-    -o-transform: $value;
-}

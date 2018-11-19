@@ -26,15 +26,15 @@ $g-color-primary: #0066cc;
     ## 레이아웃
 -------------------------------------------------------------------*/
 /* Extend */
-%g-logo {border-bottom:1px solid #454545;}
-%g-color-lnb-active {color:yellow;}
+%g-logo {border-bottom:0px solid #454545;}
 
 /* Color */
 $g-color-header-bg: #fff;
 $g-color-aside-bg: #222;
-$g-color-snb-bg: #333;
+$g-color-snb-bg: #222;
 $g-color-body-bg: #fff;
 $g-color-section-bg: #fff;
+$g-color-lnb-active: yellow;
 
 /* Area */
 $g-width-aside: 250px;
@@ -42,10 +42,11 @@ $g-width-anb: 40px;
 $g-width-logo: $g-width-aside - $g-width-anb;
 $g-height-header: 60px;
 $g-height-content-header: 20px;
+$g-snb-group: 100%;
 
 /* Gutter */
-$g-gutter-logo: 0 15px;
-$g-gutter-aside: 15px;
+$g-gutter-logo: 0 20px;
+$g-gutter-aside: 15px 20px;
 $g-gutter-content: 40px;
 $g-gutter-section: 30px;
 

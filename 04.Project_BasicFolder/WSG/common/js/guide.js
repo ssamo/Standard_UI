@@ -30,6 +30,10 @@ var gCom = {
 		maskEl : '.g-mask',
 		asideWid : null,
 		init : function(){
+			if (location.hash != ''){
+				gUI.spyScroll.action(location.hash);
+			}
+
 			this.asideWid = $(this.asideEl).width();
 			this.setInit();
 			this.event();
@@ -37,7 +41,7 @@ var gCom = {
 		setInit : function(){
 			var _this = this;
 			var path = location.pathname;
-			$(this.asideEl).find('.g-lnb > ul > li > a[href*="'+path+'"]').parent().addClass('is-current').find('.g-snb').stop().slideDown();
+			$(this.asideEl).find('.g-lnb a[href*="'+path+'"]').parent().addClass('is-current').find('.g-snb').stop().slideDown('fast');
 		},
 		event : function(){
 			//펼치기
@@ -53,8 +57,8 @@ var gCom = {
 			$('.g-lnb > ul > li > a').on('click', function(e){
 				var $this = $(this);
 				if ($(this).next().length){
-					$('.g-snb').stop().slideUp();
-					$(this).parent().find('.g-snb').stop().slideToggle();
+					$('.g-snb').stop().slideUp('fast');
+					$(this).parent().find('.g-snb').stop().slideToggle('fast');
 					e.preventDefault();
 				}
 			})
@@ -107,15 +111,24 @@ var gUI = {
 	},
 	spyScroll : {
 		init : function(){
+			var _this = this;
+			var id = null;
 			$('[data-role=spy-scroll]').on('click', function(){
-				var target = $(this).attr('href');
-				var topH = $('#g-header').height();
-				var scrObj = 'html, body';
-				console.log(topH);
-				$(scrObj).stop().animate({scrollTop:$(target).offset().top - topH}, 500);
-				return false;
+				if ($(this).attr('href').indexOf('#') > -1){
+					id = '#' + $(this).attr('href').split('#')[1];
+				} else {
+					id = $(this).attr('href');
+				}
+
+				_this.action(id);
 			})
-		}
+		},
+		action : function(id){
+			var topH = $('#g-header').height();
+			var gapH = 30;
+			var scrObj = 'html, body';
+			$(scrObj).stop().animate({scrollTop:$(id).offset().top - topH - gapH}, 500);
+		},
 	},
 	scrolled : {
 		init : function(){
