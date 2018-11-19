@@ -2,12 +2,12 @@
     ## Layout
 -------------------------------------------------------------------*/
 /* Wrapper */
-#g-header {position:fixed; left:0; top:0; width:100%; z-index:100; height:$g-height-header; background-color:$g-color-header-bg; @include gMixTransform(translate(0, -102%)); @include gMixTransition(all $g-duration-layout $g-ease-layout);}
+#g-header {position:fixed; left:0; top:0; width:100%; z-index:100; height:$g-height-header; background-color:$g-color-header-bg; @include gMixTransform(translate(0, -102%)); @include gMixTransition(all $g-duration-layout $g-ease-layout); @include gMixBoxShadow(0 2px 2px 0px rgba(150,150,150,0.2));}
 #g-header .g-header-inner {height:100%; padding:10px;}
 #g-aside, #g-content {min-height:100vh;}
 #g-aside {position:fixed; left:0; top:0; bottom:0; z-index:200; overflow:hidden; width:$g-width-aside; background-color:$g-color-aside-bg;  @include gMixTransform(translate(0, 0)); @include gMixTransition(transform $g-duration-layout $g-ease-layout);}
 #g-aside .g-aside-scroll {height:100%; overflow:auto;}
-#g-content {padding-top:0; padding-left:$g-width-aside; background-color:$g-color-body-bg; @include gMixTransition(padding $g-duration-layout $g-ease-layout)}
+#g-content {padding-top:$g-height-header; padding-left:$g-width-aside; background-color:$g-color-body-bg; @include gMixTransition(padding $g-duration-layout $g-ease-layout)}
 .g-mask {display:block; position:fixed; left:0; top:$g-height-header; bottom:0; z-index:1000; background-color:#000; opacity:0; @include gMixTransition(opacity $g-duration-layout $g-ease-layout);}
 
 /* Active Layout */
@@ -21,20 +21,20 @@
 .is-aside-opened #g-content {padding-left:$g-width-aside;}
 
 /* Body Scrolled */
-.is-body-scrolled #g-header {@include gMixBoxShadow(0 2px 2px 0px rgba(150,150,150,0.5));}
+.is-body-scrolled #g-header {@include gMixBoxShadow(0 2px 2px 0px rgba(150,150,150,0.2));}
 
 /* Header */
 .g-btn-aside:before, .g-btn-aside:after {content:'';}
-.g-btn-aside:before, .g-btn-aside:after, .g-btn-aside span {display:block; position:absolute; left:50%; top:50%; width:24px; height:2px; overflow:hidden; background-color:$g-color-aside-bg; @include gMixTransform(translate(-50%, -50%)); @include gMixTransition(all 0.3s);}
-.g-btn-aside:before {margin-top:-7px;}
-.g-btn-aside:after {margin-top:7px;}
+.g-btn-aside:before, .g-btn-aside:after, .g-btn-aside span {display:block; position:absolute; left:50%; top:50%; width:20px; height:2px; overflow:hidden; background-color:$g-color-aside-bg; @include gMixTransform(translate(-50%, -50%)); @include gMixTransition(all 0.3s);}
+.g-btn-aside:before {margin-top:-6px;}
+.g-btn-aside:after {margin-top:6px;}
 .g-btn-aside {display:inline-block; position:relative; float:left; height:100%; width:$g-width-anb; margin-left:20px; color:transparent; vertical-align:middle;}
 .g-breadcrumb {display:inline-block; float:left;}
-.g-breadcrumb p {padding:0 20px; font-size:24px; font-family:'NSB'; line-height:40px; color:$g-color-aside-bg;}
+.g-breadcrumb p {padding:0 20px; font-size:18px; line-height:40px; color:transparent;}
 
 /* Aside */
-.g-logo {padding:$g-gutter-logo; background-color:$g-color-aside-bg; @extend %g-logo;}
-.g-logo a {font-size:16px; line-height:$g-height-header; color:#fff; letter-spacing:1px; font-weight:bold;}
+.g-logo {padding:$g-gutter-logo; background-color:$g-color-logo-bg; @extend %g-logo;}
+.g-logo a {font-size:20px; line-height:$g-height-header; color:#fff; letter-spacing:1px; font-weight:bold;}
 /* @include gMixBxShadow(0 2px 2px 0px rgba(0,0,0,0.5));*/
 
 /* LNB */
@@ -48,25 +48,24 @@
 
 /* SNB */
 .g-snb {display:none_;}
-.g-snb-group {padding:$g-gutter-aside; background-color:$g-color-snb-bg;}
-.g-snb-group {padding:$g-gutter-aside; border-top:1px solid #333;}
+.g-snb-group {padding:$g-gutter-aside; background-color:$g-color-snb-bg; border-top:1px solid $g-color-snb-border;}
 .g-snb-group .g-snb-tit {color:#eee; font-weight:bold;}
-.g-snb-group .g-snb-tit a {color:yellow;}
+.g-snb-group .g-snb-tit a {color:#eee;}
 .g-snb-group .g-snb-tit + .g-depth1 {margin-top:10px;}
 .g-snb-group .g-depth1:after {content:''; display:block; clear:both;}
 .g-snb-group .g-depth1 > li {float:left; width:$g-snb-group;}
-.g-snb-group .g-depth1 > li > a {display:inline-block; line-height:2; color:#999; @include gMixTransition(color 0.3s);}
+.g-snb-group .g-depth1 > li > a {display:block; line-height:2; color:$g-color-snb-txt; @include gMixTransition(color 0.3s);}
 .g-snb-group .g-depth1 > li.is-current > a,
 .g-snb-group .g-depth1 > li > a:focus,
-.g-snb-group .g-depth1 > li > a:hover {color:#fff;}
+.g-snb-group .g-depth1 > li > a:hover {color:$g-color-lnb-active;}
 
 /* Content */
-.g-content-header {height:60px; padding:0;}
+.g-content-header {padding-top:30px; padding-left:40px;}
 .g-content-body {padding:$g-gutter-content;}
 
 /* Responsive */
 @media screen and (min-width: $g-width-responsive-min) {
     #g-header {@include gMixTransform(translate(0, 0%));}
     #g-aside {@include gMixTransform(translateX($g-width-aside * -1));}
-    #g-content {padding-top:0; padding-left:0;}
+    #g-content {padding-left:0;}
 }

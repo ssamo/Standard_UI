@@ -20,7 +20,10 @@ $g-width-responsive-xs: 360px;
 $g-width-responsive-min: 320px;
 
 /* 색상정의 */
-$g-color-primary: #0066cc;
+$g-color-primary: #39c3dd;
+$g-color-primary-basic: #262932;
+$g-color-primary-active: #262932;
+$g-color-primary-border: #3a3e4f;
 
 /*-------------------------------------------------------------------
     ## 레이아웃
@@ -30,17 +33,20 @@ $g-color-primary: #0066cc;
 
 /* Color */
 $g-color-header-bg: #fff;
-$g-color-aside-bg: #222;
-$g-color-snb-bg: #222;
+$g-color-logo-bg: $g-color-primary;
+$g-color-aside-bg: $g-color-primary-basic;
+$g-color-snb-bg: $g-color-primary-basic;
+$g-color-snb-txt: #909098;
+$g-color-snb-border: $g-color-primary-border;
 $g-color-body-bg: #fff;
 $g-color-section-bg: #fff;
-$g-color-lnb-active: yellow;
+$g-color-lnb-active: $g-color-primary;
 
 /* Area */
 $g-width-aside: 250px;
-$g-width-anb: 40px;
+$g-width-anb: 30px;
 $g-width-logo: $g-width-aside - $g-width-anb;
-$g-height-header: 60px;
+$g-height-header: 50px;
 $g-height-content-header: 20px;
 $g-snb-group: 100%;
 
