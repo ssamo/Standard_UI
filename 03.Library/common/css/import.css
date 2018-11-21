@@ -33,21 +33,19 @@
 -------------------------------------------------------------------*/
 @import url(animate.css);
 @import url(plugin.css);
-::before, ::after, html, body, div, ul, ol, dl, li, dd, p, h1, h2, h3, h4, h5, h6, table, th, td, caption,
-address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section,
-button, select, textarea, input, fieldset, legend, a, span, strong, em, address, dfn, small, i, b {
+::before, ::after, html, body, div, ul, ol, dl, li, dd, p, h1, h2, h3, h4, h5, h6, table, th, td, caption, address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section, button, select, textarea, input, fieldset, legend, a, span, strong, em, address, dfn, small, i, b {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
-  font-style: normal;
-  font-size: 100%;
-  font-family: "NSR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial";
   margin: 0;
   padding: 0;
   border: 0;
   list-style: none;
-  word-break: break-all; }
+  word-break: break-all;
+  font-family: "NSR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial";
+  font-style: normal;
+  font-size: 100%; }
 
 ::before, ::after, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {
   display: block; }
