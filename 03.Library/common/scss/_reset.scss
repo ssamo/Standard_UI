@@ -2,29 +2,27 @@
 
 /*-------------------------------------------------------------------
     파일정의 : 초기화 스타일
-    분류순서 : Tags > Fonts
+    분류순서 : 필수초기값 > 선택초기값 > 사용자정의
     속성순서 : Display > Position > Box Model > Design > Paragraph
 -------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------
-    ## Tags
+    ## 필수초기화
 -------------------------------------------------------------------*/
-*, *:before, *:after {margin:0; padding:0; border:0; font-family:"NSR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial"; box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
-html {height:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box;}
-body {height:100%; font-size:14px; line-height:1;}
-address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block; margin:0; padding:0;}
-h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal;}
-img {vertical-align:middle;}
-ol, ul, li, dl, dt, dd {list-style:none;}
-table {width:100%; border-spacing:0px; border-collapse:collapse;}
-th, td {word-break:break-all; font-weight:normal;}
+::before, ::after, html, body, div, ul, ol, dl, li, dd, p, h1, h2, h3, h4, h5, h6, table, th, td, caption,
+address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section,
+button, select, textarea, input, fieldset, legend, a, span, strong, em, address, dfn, small, i, b {
+	box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;
+	font-style:normal; font-size:100%; font-family:"NSR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial";
+	margin:0; padding:0; border:0; list-style:none; word-break:break-all;
+}
+::before, ::after, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block;}
+img, a, frame, iframe, fieldset {border:0;}
 fieldset, iframe {width:100%;}
-em, address {font-style:normal;}
-button, select, input, label {vertical-align:middle; font-family:"NSR";}
-hr {display:none;}
-legend {position:absolute; left:-9999em; top:-9999em;}
+table {width:100%; border-spacing:0; border-collapse:collapse;}
 caption {visibility:hidden; height:0; line-height:0; font-size:0;}
-strong {font-weight:normal; font-family:"NSB";}
+legend {position:absolute; left:-9999em; top:-9999em;}
+hr {display:none;}
 
 /*-------------------------------------------------------------------
     ## Fonts
